@@ -1,6 +1,6 @@
 # Grab&Go Application
 
-After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find my self backtracking down aisles as if I am on a scavenger hunt. 
+After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles as if I am on a scavenger hunt. 
 
 ## CONCEPT
 The Concept is simple. 
@@ -39,6 +39,6 @@ Additional features that would be welcomed would be:
 
  - Ability to scan bar codes of items and add to list
  - Have different Store maps/information to choose from
- -Integration of Available coupons
- -Recipe Integration
- -Home Pantry Inventory
+ - Integration of Available coupons
+ - Recipe Integration
+ - Home Pantry Inventory
