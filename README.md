@@ -19,6 +19,10 @@ To accomplish this task, a few inventories would have to be maintained:
 
 ![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD.png)
 
+## REQUIREMENTS
+
+*[Requirements Page](https://github.com/cjpleasant88/Grab-Go/blob/master/Requirements.md)*
+
 ## WIRE-FRAMES for Grab & GO (DRAFT)
 
 The Landing Page would be a login Screen with the Grab & Go Logo and a tab to be able to sign up:
