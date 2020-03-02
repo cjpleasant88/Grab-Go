@@ -1,4 +1,4 @@
-# Grab&Go Application
+<div style = "center"># Grab&Go Application</div>
 
 ## Table of Contents
 
