@@ -1,4 +1,4 @@
-       # Grab&Go Application
+# Grab&Go Application
 
 ## Table of Contents
 
