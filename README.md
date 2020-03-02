@@ -7,7 +7,7 @@
 - [3. Implementation](#implementation)
 - [4. Entity Relationship Diagram (ERD)](#entity-relationship-diagram)
 - [5. Requirements](#requirements)
-- [6. WIRE-FRAMES (DRAFT)](#wire-frames-(draft))
+- [6. Wire-Frames (DRAFT)](#wire-frames)
 - [7. Feature List](#feature-list)
 
 ## INSPIRATION
