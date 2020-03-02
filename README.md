@@ -3,12 +3,12 @@
 ## Table of Contents
 
 - [1. Inspiration](#inspiration)
-- [2. Concept](concept)
-- [3. Implementation](implementation)
-- [4. Entity Relationship Diagram (ERD)](entity-relationship-diagram)
-- [5. Requirements](#5-requirements)
-- [6. WIRE-FRAMES for Grab & GO (DRAFT)](wire-frames-for-grab-&-g0-(draft))
-- [7. Feature List](feature-list)
+- [2. Concept](#concept)
+- [3. Implementation](#implementation)
+- [4. Entity Relationship Diagram (ERD)](#entity-relationship-diagram)
+- [5. Requirements](#requirements)
+- [6. WIRE-FRAMES for Grab & GO (DRAFT)](#wire-frames-for-grab-&-g0-(draft))
+- [7. Feature List](#feature-list)
 
 ## INSPIRATION
 
