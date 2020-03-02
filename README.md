@@ -35,7 +35,7 @@ To accomplish this task, a few inventories would have to be maintained:
 
 *[Requirements Page](https://github.com/cjpleasant88/Grab-Go/blob/master/Requirements.md)*
 
-## WIRE FRAMES (DRAFT)
+## WIRE FRAMES
 
 The Landing Page would be a login Screen with the Grab & Go Logo and a tab to be able to sign up:
 ![Landing Page](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Landing%20Page.png)
