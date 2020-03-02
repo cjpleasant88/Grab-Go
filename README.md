@@ -7,7 +7,7 @@
 - [3. Implementation](#implementation)
 - [4. Entity Relationship Diagram (ERD)](#entity-relationship-diagram)
 - [5. Requirements](#requirements)
-- [6. WIRE-FRAMES for Grab & GO (DRAFT)](#wire-frames-for-grab-&-g0-(draft))
+- [6. WIRE-FRAMES (DRAFT)](#wire-frames-for-grab-&-go-(draft))
 - [7. Feature List](#feature-list)
 
 ## INSPIRATION
