@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [1. Inspiration](#1-inspiration)
+- [1. Inspiration](#inspiration)
 - [2. Concept](#2-concept)
 - [3. Implementation](#3-implementation)
 - [4. Entity Relationship Diagram (ERD)](#4-entity-relationship-diagram)
