@@ -48,8 +48,8 @@ When they check off an item on their ordered list of grocery items,
 Then the item is displayed in strike through font
 And moved to the bottom of the list.
 
-## UML DIAGRAM:
-![UML Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/UML%20Use-Case%20Diagram.png)
+## USE CASE DIAGRAM:
+![Use Case Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/UML%20Use-Case%20Diagram.png)
 
 ## REQUIREMENTS:
 
