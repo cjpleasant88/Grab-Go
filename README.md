@@ -7,7 +7,7 @@
 - [3. Implementation](#implementation)
 - [4. Entity Relationship Diagram (ERD)](#entity-relationship-diagram)
 - [5. Requirements](#requirements)
-- [6. WIRE-FRAMES (DRAFT)](#wire-frames-for-grab-&-go-(draft))
+- [6. WIRE-FRAMES (DRAFT)](#wire-frames-(draft))
 - [7. Feature List](#feature-list)
 
 ## INSPIRATION
@@ -35,7 +35,7 @@ To accomplish this task, a few inventories would have to be maintained:
 
 *[Requirements Page](https://github.com/cjpleasant88/Grab-Go/blob/master/Requirements.md)*
 
-## WIRE-FRAMES for Grab & GO (DRAFT)
+## WIRE FRAMES (DRAFT)
 
 The Landing Page would be a login Screen with the Grab & Go Logo and a tab to be able to sign up:
 ![Landing Page](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Landing%20Page.png)
