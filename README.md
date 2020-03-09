@@ -11,7 +11,9 @@
 - [7. Use Case Diagram](#use-case-diagram)
 - [8. Requirements](#requirements)
 - [9. Wire-Frames (DRAFT)](#wire-frames)
-- [10. Feature List](#feature-list)
+- [10. Requirements Table](#requirements-table)
+- [11. Tests Table](#tests-table)
+- [12. Feature List](#feature-list)
 
 ## INSPIRATION
 
@@ -197,6 +199,21 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 | 7.0.0           | The Administrator shall be  able to add a new Store and Layout to the System | Inspection    | TC010        |
 | 7.1.0           | The System shall display a  form to the administrator for all required information of a Store entity | Demonstration | TC010        |
 | 7.1.1           | The software shall run  script(s) to take form data and create a new record of the item in the Store  Table | Inspection    | TC010        |
+
+## TESTS TABLE
+
+| Test ID | Requirement ID(s)                        | Test Procedure                                               | Current Status | Time Stamp | Version |
+| ------- | ---------------------------------------- | ------------------------------------------------------------ | -------------- | ---------- | ------- |
+| TC001   | 4.0.0, 4.1.0, 4.1.1, 4.1.2, 4.1.3        | User login w/o having logged in before, taken to signup screen to create  account. Sign out and login with new signup information. | Not Tested     | 3/8/2020   | N/A     |
+| TC002   | 4.1.4, 4.2.0                             | Check system database for list id of a new account creation  | Not Tested     | 3/8/2020   | N/A     |
+| TC003   | 5.0.0, 5.1.0, 5.1.1, 5.1.2, 4.1.2, 4.1.1 | Add new user, click share list, select user that does not already exist | Not Tested     | 3/8/2020   | N/A     |
+| TC004   | 5.0.0, 5.1.1, 5.2.0, 5.3.0, 5.3.1, 5.3.2 | using user from TC003, click share list, select user from TC001, login to  user from TC001 and verify shared list prompt, click approve | Not Tested     | 3/8/2020   | N/A     |
+| TC005   | 1.0.0, 1.1.0                             | Add bread, milk, eggs to an existing users list              | Not Tested     | 3/8/2020   | N/A     |
+| TC006   | 1.1.1, 1.1.2                             | Have administrator look at SQL data base and verify that report can be  pulled by category, and that the list in the application id the same items | Not Tested     | 3/8/2020   | N/A     |
+| TC007   | 2.0.0, 2.1.0, 2.1.1                      | Logged in user can select "Let's go Shopping" and see their  list in an ordered format according to store layout | Not Tested     | 3/8/2020   | N/A     |
+| TC008   | 3.0.0, 3.1.0                             | User can select "map View" and see their items on store map,  matching their physical location in the store | Not Tested     | 3/8/2020   | N/A     |
+| TC009   | 6.0.0, 6.1.0, 6.1.1                      | Administrator adds a new item to database, adds a non-existing item,  verifies that is shows up in the application | Not Tested     | 3/8/2020   | N/A     |
+| TC010   | 7.0.0, 7.1.0, 7.1.1                      | Administrator add a new store and layout to the database, verifies that  store and layout populate in the application | Not Tested     | 3/8/2020   | N/A     |
 
 ## Feature List
 Additional features that would be welcomed would be:
