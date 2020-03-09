@@ -163,6 +163,40 @@ One logged in, the user can create a shopping list in an arbitrary order. This l
 Once the "Let's go shopping" being has been clicked, the app will take the users list of items and reorder them in a way that creates the "fastest path" through the store. A map view can also be shown identifying the location of the items in the store with a bird's eye view of the store:
 ![Store Map](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Store%20Map.png)
 
+## REQUIREMENTS TABLE
+
+| Requirement  ID | Requirement Description                                      | Test Method   | TEST ID      |
+| --------------- | ------------------------------------------------------------ | ------------- | ------------ |
+| 1.0.0           | User Shall Input Grocery  Items into personal List by selecting items from a pre-populated list | Demonstration | TC005        |
+| 1.1.0           | System Shall show user  categories of items or all items for user to select from | Inspection    | TC005        |
+| 1.1.1           | The software shall  maintain the relationship of items and their parent category | Inspection    | TC006        |
+| 1.1.2           | The software shall allow  searching an filtering of users typed values with values in the stored list  of grocery items | Demonstration | TC006        |
+| 2.0.0           | User Shall view their list  in an ordered manner             | Demonstration | TC007        |
+| 2.1.0           | The System shall compare  user list with specific store layout to generate an ordered list | Test          | TC007        |
+| 2.1.1           | The software shall  display the users list in the newly ordered format | Demonstration | TC007        |
+| 3.0.0           | User shall select a map  view of the were their items are in the store | Test          | TC008        |
+| 3.1.0           | The system shall map the  location of users items onto a known store map | Test          | TC008        |
+| 4.0.0           | User shall be able to  create an account                     | Demonstration | TC001        |
+| 4.1.0           | The system shall store a  users username and password for sign in purposes | Inspection    | TC001        |
+| 4.1.1           | The software shall  validate the email is in a valid email format | Test          | TC001, TC003 |
+| 4.1.2           | The software shall ensure  that the username is not already in the system database | Demonstration | TC001, TC003 |
+| 4.1.3           | The system shall alert  the user if validation fails and gives reason why validation failed | Demonstration | TC001        |
+| 4.1.4           | The system will generate  a new Shopping list record and associate the Shopping List ID with the user  account | Inspection    | TC002        |
+| 4.2.0           | The system shall link a  user account with a grocery list that the user creates | Inspection    | TC002        |
+| 5.0.0           | User shall be able to share  their list with another user    | Demonstration | TC003, TC004 |
+| 5.1.0           | The system will ensure that  another user exists             | Test          | TC003, TC004 |
+| 5.1.1           | The software will compare  requested username with list of created accounts | Demonstration | TC003        |
+| 5.1.2           | The software will notify  original user of the requested user does not exists and halt shopping list  linking | Test          | TC003        |
+| 5.2.0           | The system will prompt  requested user upon next login that they have been selected to share list | Demonstration | TC004        |
+| 5.3.0           | The system will link list  upon requested users acceptance   | Test          | TC004        |
+| 5.3.1           | The software will drop  the requested users shopping list table from the database | Inspection    | TC004        |
+| 5.3.2           | The software will add the  Shopping List ID of the original user to the requested users account to  compete the linking process | Inspection    | TC004        |
+| 6.0.0           | The Administrator shall  add new grocery items to the Master Grocery List | Inspection    | TC009        |
+| 6.1.0           | The system shall display a  form to the administrator for all required information of a grocery item | Demonstration | TC009        |
+| 6.1.1           | The Software shall run  script(s) to take form data and create a new record of the item in the Master  Grocery List Table | Inspection    | TC009        |
+| 7.0.0           | The Administrator shall be  able to add a new Store and Layout to the System | Inspection    | TC010        |
+| 7.1.0           | The System shall display a  form to the administrator for all required information of a Store entity | Demonstration | TC010        |
+| 7.1.1           | The software shall run  script(s) to take form data and create a new record of the item in the Store  Table | Inspection    | TC010        |
 
 ## Feature List
 Additional features that would be welcomed would be:
