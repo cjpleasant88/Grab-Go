@@ -34,7 +34,7 @@ To accomplish this task, a few inventories would have to be maintained:
 
 ## ENTITY RELATIONSHIP DIAGRAM
 
-![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD.png)
+![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(updated).png)
 
 ## USER STORIES
 
