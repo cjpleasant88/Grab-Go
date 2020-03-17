@@ -14,7 +14,7 @@
 - [10. Requirements Table](#requirements-table)
 - [11. Tests Table](#tests-table)
 - [12. Feature List](#feature-list)
-- [13. Prototype](https://cjpleasant88.github.io/Grab-Go/)
+- [13. Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
 
 ## INSPIRATION
 
