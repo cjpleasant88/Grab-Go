@@ -16,11 +16,11 @@
 - [12. Feature List](#feature-list)
 - [13. Prototype](#prototype)
 
-## INSPIRATION - [Top](#table-of-contents)
+## INSPIRATION [(back to top)](#table-of-contents)
 
 After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles as if I am on a scavenger hunt. 
 
-## CONCEPT
+## CONCEPT [(back to top)](#table-of-contents)
 The Concept is simple. 
 Have a list of grocery store items listed in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once. 
 
