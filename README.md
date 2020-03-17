@@ -21,11 +21,13 @@
 
 After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles as if I am on a scavenger hunt. 
 
-## CONCEPT [(back to top)](#table-of-contents)
+## CONCEPT
+[(back to top)](#table-of-contents)
 The Concept is simple. 
 Have a list of grocery store items listed in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once. 
 
 ## IMPLEMENTATION
+[(back to top)](#table-of-contents)
 
 To accomplish this task, a few inventories would have to be maintained:
 
@@ -35,10 +37,12 @@ To accomplish this task, a few inventories would have to be maintained:
  - A list of items on a users Shopping List
 
 ## ENTITY RELATIONSHIP DIAGRAM
+[(back to top)](#table-of-contents)
 
 ![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(updated).png)
 
 ## USER STORIES
+[(back to top)](#table-of-contents)
 
 1) As a User, I need to input Grocery Items, So that I can track what I need.
 
@@ -55,6 +59,7 @@ To accomplish this task, a few inventories would have to be maintained:
 7) As a user, I need to indicate the items I have physically obtained when shopping, so that I can see what items are left to get on my list.
 
 ## USE CASES
+[(back to top)](#table-of-contents)
 
 1) Given the user has never logged in,
 	When the user attempts to login,
@@ -89,9 +94,11 @@ Then the item is displayed in strike through font
 And moved to the bottom of the list.
 
 ## USE CASE DIAGRAM
+[(back to top)](#table-of-contents)
 ![Use Case Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/UML%20Use-Case%20Diagram.png)
 
 ## REQUIREMENTS
+[(back to top)](#table-of-contents)
 
 * 1.0\. User Shall Input Grocery Items into personal List by selecting items from a pre-populated list
 
@@ -154,6 +161,7 @@ And moved to the bottom of the list.
 		* 7.1.1\. The software shall run script(s) to take form data and create a new record of the item in the Store Table
 
 ## WIRE FRAMES
+[(back to top)](#table-of-contents)
 
 The Landing Page would be a login Screen with the Grab & Go Logo and a tab to be able to sign up:
 ![Landing Page](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Landing%20Page.png)
@@ -168,6 +176,7 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 ![Store Map](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Store%20Map.png)
 
 ## REQUIREMENTS TABLE
+[(back to top)](#table-of-contents)
 
 | Requirement  ID | Requirement Description                                      | Test Method   | TEST ID      |
 | --------------- | ------------------------------------------------------------ | ------------- | ------------ |
@@ -203,6 +212,7 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 | 7.1.1           | The software shall run  script(s) to take form data and create a new record of the item in the Store  Table | Inspection    | TC010        |
 
 ## TESTS TABLE
+[(back to top)](#table-of-contents)
 
 | Test ID | Requirement ID(s)                        | Test Procedure                                               | Current Status | Time Stamp | Version |
 | ------- | ---------------------------------------- | ------------------------------------------------------------ | -------------- | ---------- | ------- |
@@ -218,6 +228,7 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 | TC010   | 7.0.0, 7.1.0, 7.1.1                      | Administrator add a new store and layout to the database, verifies that  store and layout populate in the application | Not Tested     | 3/8/2020   | N/A     |
 
 ## Feature List
+[(back to top)](#table-of-contents)
 Additional features that would be welcomed would be:
 
  - Ability to scan bar codes of items and add to list
@@ -227,6 +238,7 @@ Additional features that would be welcomed would be:
  - Home Pantry Inventory
  
  ## Prototype
+ [(back to top)](#table-of-contents)
  Details and Demonstration of the prototype can be found here:
  
  [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
