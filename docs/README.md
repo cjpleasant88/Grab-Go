@@ -15,7 +15,7 @@ This is a proof of concept and just to get a feel for page navigation.
 
 
 
-Details of the files can be viewed in the HTML_Prototype folder, however, to use the application live in its current state please navigate to the Main Repositories Table of Contents or follow this link:
+Details of the files can be viewed in the HTML_Prototype folder, however, to use the application live in its current state please naviagate to the following link:
 
 https://cjpleasant88.github.io/Grab-Go/
 
