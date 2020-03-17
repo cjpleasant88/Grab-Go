@@ -23,6 +23,7 @@ After having a newborn this past year, I have discovered how precious and valuab
 
 ## CONCEPT
 [(back to top)](#table-of-contents)
+
 The Concept is simple. 
 Have a list of grocery store items listed in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once. 
 
@@ -95,6 +96,7 @@ And moved to the bottom of the list.
 
 ## USE CASE DIAGRAM
 [(back to top)](#table-of-contents)
+
 ![Use Case Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/UML%20Use-Case%20Diagram.png)
 
 ## REQUIREMENTS
@@ -229,6 +231,7 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 
 ## Feature List
 [(back to top)](#table-of-contents)
+
 Additional features that would be welcomed would be:
 
  - Ability to scan bar codes of items and add to list
@@ -239,6 +242,7 @@ Additional features that would be welcomed would be:
  
  ## Prototype
  [(back to top)](#table-of-contents)
+ 
  Details and Demonstration of the prototype can be found here:
  
  [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
