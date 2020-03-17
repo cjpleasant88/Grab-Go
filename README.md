@@ -14,7 +14,7 @@
 - [10. Requirements Table](#requirements-table)
 - [11. Tests Table](#tests-table)
 - [12. Feature List](#feature-list)
-- [13. Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
+- [13. Prototype](#prototype)
 
 ## INSPIRATION
 
@@ -224,3 +224,7 @@ Additional features that would be welcomed would be:
  - Integration of Available coupons
  - Recipe Integration
  - Home Pantry Inventory
+ 
+ ## Prototype
+ Details and Demonstration of the prototype can be found here:
+ ![Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
