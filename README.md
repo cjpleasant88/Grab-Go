@@ -227,4 +227,4 @@ Additional features that would be welcomed would be:
  
  ## Prototype
  Details and Demonstration of the prototype can be found here:
- ![Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
+ [Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
