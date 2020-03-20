@@ -19,3 +19,8 @@ Details of the files can be viewed in the HTML_Prototype folder, however, to use
 
 https://cjpleasant88.github.io/Grab-Go/
 
+## Screen Shots
+
+##### Homepage
+
+![Store Map](https://github.com/cjpleasant88/Grab-Go/blob/master/docs/HTML_Prototype/HomePage.JPG)
