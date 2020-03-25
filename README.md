@@ -38,6 +38,7 @@ To accomplish this task, a few inventories would have to be maintained:
  - A list of items on a users Shopping List
 
 ## ENTITY RELATIONSHIP DIAGRAM
+[Preliminary Database](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/ISTA420%20-%20CPleasant%20-%2020200216%20-%20Project%20Step%205%20-%20DataBase%20Creation.sql)
 [(back to top)](#table-of-contents)
 
 ![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(updated).png)
@@ -246,7 +247,3 @@ Additional features that would be welcomed would be:
  Details and Demonstration of the prototype can be found here:
  
  [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
- 
- ## Database Creation
- 
- [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/ISTA420%20-%20CPleasant%20-%2020200216%20-%20Project%20Step%205%20-%20DataBase%20Creation.sql)
