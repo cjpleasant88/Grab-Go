@@ -15,6 +15,7 @@
 - [11. Tests Table](#tests-table)
 - [12. Feature List](#feature-list)
 - [13. Prototype](#prototype)
+- [14. Database Diagram](#database-diagram)
 
 ## INSPIRATION
 [(back to top)](#table-of-contents)
@@ -40,7 +41,7 @@ To accomplish this task, a few inventories would have to be maintained:
 ## ENTITY RELATIONSHIP DIAGRAM
 [Preliminary Database](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/ISTA420%20-%20CPleasant%20-%2020200216%20-%20Project%20Step%205%20-%20DataBase%20Creation.sql)
 
-![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(updated).png)
+![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(20200404).png)
 
 ## USER STORIES
 [(back to top)](#table-of-contents)
@@ -246,3 +247,6 @@ Additional features that would be welcomed would be:
  Details and Demonstration of the prototype can be found here:
  
  [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
+ 
+ ## Database Diagram
+ ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram.PNG)
