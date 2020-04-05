@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GrabAndGo.Models
 {
-    public interface IProductsRepository
+    public interface IProductRepository
     {
         Product GetProduct(int productID);
         IQueryable<Product> Products { get; }

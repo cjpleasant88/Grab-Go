@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
 using Microsoft.Extensions.Configuration;
+using GrabAndGo.Models;
 
 namespace GrabAndGo
 {
@@ -28,13 +29,22 @@ namespace GrabAndGo
 
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
-            services.AddDbContext<GrabAndGoContext>(options =>
-                    options.UseSqlServer(Configuration["Data:GrabAndGoContext:ConnectionString4"]));
+            ////THESE TO USE THE DATABASE
+            //services.AddDbContext<GrabAndGoContext>(options =>
+            //        options.UseSqlServer(Configuration["Data:GrabAndGoContext:ConnectionString4"]));
+            //services.AddTransient<IProductRepository, EFProductsRepository>();
 
+            //THIS TO USE THE FAKE REPOSITORY
+            services.AddTransient<IProductRepository, FakeProductRepository>();
+
+
+
+            //THESE TO TEST OTHER WAYS TO CONNECT
             //services.AddDbContext<GrabAndGoContext>(options =>
             //    options.UseSqlServer(Configuration.GetConnectionString("ConnectionString4")));
 
-            services.AddScoped<GrabAndGo.Models.IProductsRepository, GrabAndGo.Models.EFProductsRepository>();
+            //services.AddScoped<GrabAndGo.Models.IProductRepository, GrabAndGo.Models.EFProductsRepository>();
+            //services.AddScoped<GrabAndGo.Models.IProductRepository, GrabAndGo.Models.FakeProductRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

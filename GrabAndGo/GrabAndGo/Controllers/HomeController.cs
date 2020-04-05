@@ -11,31 +11,38 @@ namespace GrabAndGo.Controllers
 {
     public class HomeController : Controller
     {
+        //FOR FAKE REPO
+        //private readonly GrabAndGoContext context;
 
-
-        private readonly GrabAndGoContext context;
-
-        public HomeController(GrabAndGoContext ctx)
-        {
-            context = ctx;
-        }
-        public async Task<IActionResult> Index()
-        {
-            return View(await context.Product.ToListAsync());
-        }
-
-
-        //private IProductsRepository repository;
-
-        //public HomeController(IProductsRepository repo)
+        //public HomeController(GrabAndGoContext ctx)
         //{
-        //    repository = repo;
+        //    context = ctx;
+        //}
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await context.Product.ToListAsync());
         //}
 
-        //public IActionResult Index()
-        //{
-        //    return View(repository.Products);
-        //}
+
+
+
+        //FOR DATABASE REPO
+        private IProductRepository repository;
+
+        public HomeController(IProductRepository repo)
+        {
+            repository = repo;
+        }
+
+        public IActionResult Index()
+        {
+            return View(repository.Products);
+        }
+
+
+
+
+
         public IActionResult HomePage()
         {
             return View();

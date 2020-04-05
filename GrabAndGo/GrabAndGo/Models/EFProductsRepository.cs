@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrabAndGo.Models
 {
-    public class EFProductsRepository : IProductsRepository
+    public class EFProductsRepository : IProductRepository
     {
         private readonly GrabAndGoContext context;
 
