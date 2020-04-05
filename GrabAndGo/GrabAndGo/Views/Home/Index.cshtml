@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Products";
+}
+<h1>@ViewData["Title"]</h1>
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomePage">Home Page</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Section
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.ProductID
+                </td>
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @item.SectionID
+                <td>
+            </tr>
+        }
+    </tbody>
+</table>
