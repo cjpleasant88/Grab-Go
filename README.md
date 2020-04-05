@@ -15,6 +15,7 @@
 - [11. Tests Table](#tests-table)
 - [12. Feature List](#feature-list)
 - [13. Prototype](#prototype)
+- [14. Database Diagram](#database-diagram)
 
 ## INSPIRATION
 [(back to top)](#table-of-contents)
@@ -246,3 +247,6 @@ Additional features that would be welcomed would be:
  Details and Demonstration of the prototype can be found here:
  
  [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
+ 
+ ## Database Diagram
+ ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram%20(20200404).pdf)
