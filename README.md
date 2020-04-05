@@ -249,4 +249,4 @@ Additional features that would be welcomed would be:
  [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
  
  ## Database Diagram
- ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram%20(20200404).pdf)
+ ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram.PNG)
