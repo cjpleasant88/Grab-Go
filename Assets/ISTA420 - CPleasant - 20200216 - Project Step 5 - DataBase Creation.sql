@@ -504,7 +504,7 @@ GO
 --Populate the User Table
 INSERT INTO [User] (UserID, FirstName, LastName, ListID,ListName, StorePref) VALUES (1, 'Caleb', 'Pleasant', 1, 'Weekly List', 3);
 INSERT INTO [User] (UserID, FirstName, LastName, ListID,ListName, StorePref) VALUES (2, 'John', 'Smith', 2, '', 2);
-INSERT INTO [User] (UserID, FirstName, LastName, ListID,ListName, StorePref) VALUES (3, 'Melanie', 'Pleasnt', 1, 'Weekly List', 1);
+INSERT INTO [User] (UserID, FirstName, LastName, ListID,ListName, StorePref) VALUES (3, 'Melanie', 'Pleasant', 1, 'Weekly List', 1);
 GO
 
 --Populate the ShoppingList Table
