@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cplea\\iCloudDrive\\MSSA\\Class Project\\Grab and Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj": {}
+    "C:\\Users\\cplea\\OneDrive\\Documents\\GitHub\\Grab-Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cplea\\iCloudDrive\\MSSA\\Class Project\\Grab and Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj": {
+    "C:\\Users\\cplea\\OneDrive\\Documents\\GitHub\\Grab-Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cplea\\iCloudDrive\\MSSA\\Class Project\\Grab and Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj",
+        "projectUniqueName": "C:\\Users\\cplea\\OneDrive\\Documents\\GitHub\\Grab-Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj",
         "projectName": "GrabAndGo",
-        "projectPath": "C:\\Users\\cplea\\iCloudDrive\\MSSA\\Class Project\\Grab and Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj",
+        "projectPath": "C:\\Users\\cplea\\OneDrive\\Documents\\GitHub\\Grab-Go\\GrabAndGo\\GrabAndGo\\GrabAndGo.csproj",
         "packagesPath": "C:\\Users\\cplea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cplea\\iCloudDrive\\MSSA\\Class Project\\Grab and Go\\GrabAndGo\\GrabAndGo\\obj\\",
+        "outputPath": "C:\\Users\\cplea\\OneDrive\\Documents\\GitHub\\Grab-Go\\GrabAndGo\\GrabAndGo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
