@@ -14,6 +14,13 @@ Adding these lines to the .gitignore file will stop updates from being pushed to
 
 **/appsettings.production.json
 
-When testing, updates still seemed to be posting. Typing the following command in the command line within the directory of a cloned reository on my computer seemed to do the trick.
+When testing, Below are command line commands for the various ways to stop updates (make sure you are in the directory of the file).
 
-git rm --cached **/appsettings.json
+THIS REMOVES THE FILE FROM SHOWING UP IN GITHUB IF IT WAS ALREADY COMMITTED
+git rm --cached appsettings.json
+
+THIS KEEPS THE FILE IN GITHUB BUT STOPS TRACKING FUTURE CHANGES
+git update-index --assume-unchanged <file>
+  
+ THIS TURNS BACK ON TRACKING
+ git update-index --no-assume-unchanged <file>
