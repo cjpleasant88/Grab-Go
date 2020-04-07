@@ -7,11 +7,8 @@ Adding these lines to the .gitignore file will stop updates from being pushed to
 #ignore appsettings configuration files
 
 **/appsettings.json
-
 **/appsettings.development.json
-
 **/appsettings.staging.json
-
 **/appsettings.production.json
 
 When testing, updates still seemed to be posting. Typing the following command in the command line within the directory of a cloned reository on my computer seemed to do the trick.
