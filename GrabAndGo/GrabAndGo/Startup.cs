@@ -26,25 +26,24 @@ namespace GrabAndGo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
-            ////THESE TO USE THE DATABASE
-            //services.AddDbContext<GrabAndGoContext>(options =>
-            //        options.UseSqlServer(Configuration["Data:GrabAndGoContext:ConnectionString4"]));
-            //services.AddTransient<IProductRepository, EFProductsRepository>();
-
-            //THIS TO USE THE FAKE REPOSITORY
-            services.AddTransient<IProductRepository, FakeProductRepository>();
-
-
-
-            //THESE TO TEST OTHER WAYS TO CONNECT
+            services.AddDbContext<GrabAndGoContext>(options =>
+                    options.UseSqlServer(Configuration["Data:GrabAndGoContext:ConnectionString4"]));
+            //ANOTHER WAY TO CONNECT
             //services.AddDbContext<GrabAndGoContext>(options =>
             //    options.UseSqlServer(Configuration.GetConnectionString("ConnectionString4")));
 
-            //services.AddScoped<GrabAndGo.Models.IProductRepository, GrabAndGo.Models.EFProductsRepository>();
-            //services.AddScoped<GrabAndGo.Models.IProductRepository, GrabAndGo.Models.FakeProductRepository>();
+            //THIS TO USE THE Database REPOSITORY
+            //services.AddSingleton<IProductRepository, EFProductsRepository>();    //This makes a single instance that is reused throughout application on new requests (Good for a cart)
+            //services.AddScoped<IProductRepository, EFProductsRepository>();       //Same instance inscope of same request, new instance upon new request-like a post request (Good for creating a new Product, user, etc)
+            services.AddTransient<IProductRepository, EFProductRepository>();      //A new instance is created no matter what request is made
+            services.AddTransient<IUserRepository, EFUserRepository>();
+            //----------------------------------------------
+            //THIS TO USE THE FAKE REPOSITORY
+            //services.AddTransient<IProductRepository, FakeProductRepository>();
+            //---------------------------------------------------------------
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -58,8 +57,12 @@ namespace GrabAndGo
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: null,
+                    template: "{controller}/{action=Index}/{id?}");
+
+                routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=HomePage}/{id?}");
             });
         }
     }

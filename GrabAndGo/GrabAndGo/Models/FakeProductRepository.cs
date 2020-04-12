@@ -23,6 +23,12 @@ namespace GrabAndGo.Models
 
         }.AsQueryable<Store>();
 
+        public IQueryable<User> Users => new List<User>
+        {
+            new User {UserID = 1, FirstName = "Test User", LastName = "Test Last", Email = "test123@456.com", Password = "superSecret", ListID = 123, StorePref = 1},
+            new User {UserID = 2, FirstName = "John", LastName = "Smith", Email = "john@grabandgo.com", Password = "johnnyrocks", ListID = 3, StorePref = 2}
+        }.AsQueryable<User>();
+
         public Product Add(Product product)
         {
             return product;

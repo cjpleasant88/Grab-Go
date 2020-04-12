@@ -1,0 +1,76 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Current Users";
+}
+<h1>@ViewData["Title"]</h1>
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomePage">Home Page</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+
+            <th>
+                FirstName
+            </th>
+
+            <th>
+                LastName
+            </th>
+
+            <th>
+                Email
+            </th>
+
+            <th>
+                Password
+            </th>
+
+            <th>
+                ListID
+            </th>
+
+            <th>
+                StorePreference
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+         {
+            <tr>
+                <td>
+                    @item.UserID
+                </td>
+
+                <td>
+                    @item.FirstName
+                </td>
+
+                <td>
+                    @item.LastName
+                </td>
+
+                <td>
+                    @item.Email
+                </td>
+
+                <td>
+                    @item.Password
+                </td>
+
+                <td>
+                    @item.ListID
+                </td>
+
+                <td>
+                    @item.StorePref
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>

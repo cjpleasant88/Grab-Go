@@ -116,6 +116,8 @@ CREATE TABLE [User]
 	UserID			INT PRIMARY KEY				NOT NULL,
 	FirstName		varchar(30)					NOT NULL,
 	LastName		varchar(30)					NOT NULL,
+	Email			varchar(100)				NOT NULL,
+	Password		varchar(50)					NOT NULL,
 	ListId			INT,
 	ListName		varchar(30),
 	StorePref		INT							NOT NULL,
@@ -502,9 +504,10 @@ INSERT INTO Product (ProductID, ProductName, Price, SectionID) VALUES (9, 'Ramon
 GO
 
 --Populate the User Table
-INSERT INTO [User] (UserID, FirstName, LastName, ListID,ListName, StorePref) VALUES (1, 'Caleb', 'Pleasant', 1, 'Weekly List', 3);
-INSERT INTO [User] (UserID, FirstName, LastName, ListID,ListName, StorePref) VALUES (2, 'John', 'Smith', 2, '', 2);
-INSERT INTO [User] (UserID, FirstName, LastName, ListID,ListName, StorePref) VALUES (3, 'Melanie', 'Pleasant', 1, 'Weekly List', 1);
+INSERT INTO [User] (UserID, FirstName, LastName,Email, Password,ListID,ListName, StorePref) VALUES (1, 'Caleb', 'Pleasant',  'calebpleasant@gmail.com', '12345',1, 'Weekly List', 3);
+INSERT INTO [User] (UserID, FirstName, LastName,Email, Password,ListID,ListName, StorePref) VALUES (2, 'John', 'Smith',  'testtesttes@test.com', 'password',2, '', 2);
+INSERT INTO [User] (UserID, FirstName, LastName,Email, Password,ListID,ListName, StorePref) VALUES (3, 'Melanie', 'Pleasnt',  'calebpleasant@gmail.com', '54321',1, 'Weekly List', 1);
+
 GO
 
 --Populate the ShoppingList Table
@@ -524,3 +527,9 @@ INSERT INTO ShoppingList (ListID, ProductID, Quantity, ListName) VALUES (2, 4,2,
 INSERT INTO ShoppingList (ListID, ProductID, Quantity, ListName) VALUES (2, 5,4, 'Johns Stuff');
 INSERT INTO ShoppingList (ListID, ProductID, Quantity, ListName) VALUES (2, 6,1, 'Johns Stuff');
 GO
+
+
+
+
+
+SELECT * FROM [user]

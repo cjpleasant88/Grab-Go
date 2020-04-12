@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GrabAndGo.Models
 {
-    public class EFProductsRepository : IProductRepository
+    public class EFProductRepository : IProductRepository
     {
         private readonly GrabAndGoContext context;
 
-        public EFProductsRepository(GrabAndGoContext ctx)
+        public EFProductRepository(GrabAndGoContext ctx)
         {
             context = ctx;
         }
@@ -20,6 +20,8 @@ namespace GrabAndGo.Models
         public Product Add(Product product)
         {
             context.Add(product);
+            //Need this to save to the actual database, and not just the injected context database
+            context.SaveChanges();
             return product;
         }
 
