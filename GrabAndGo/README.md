@@ -27,4 +27,4 @@
 
 ## Login Page
 
-![Login Page](https://github.com/cjpleasant88/Grab-Go/blob/master/GrabAndGoAssets/20200412loginpage.PNG)
+![Login Page](https://github.com/cjpleasant88/Grab-Go/blob/master/GrabAndGo/Assets/20200412loginpage.PNG)
