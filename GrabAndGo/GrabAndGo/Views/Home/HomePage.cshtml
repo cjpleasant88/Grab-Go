@@ -10,6 +10,13 @@
     <title>Grab & Go</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .input-validation-error {border-color: red; background-color: #fee;}
+    </style>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </head>
 <body>
     <div class="image" style="background-image: url('../Images/walmart.jpg');">
@@ -18,7 +25,7 @@
             <div class="user-img"></div>
             <h2 class="text-center">Member Login</h2>
 
-            <form asp-controller="Users" asp-action="List">
+            <form asp-controller="Users" asp-action="List" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 <div class="form-group">
@@ -32,7 +39,7 @@
                 </div>
 
                 <div class="form-group text-center">
-                    <input type="submit" value="Login" class="btn btn-primary text-center" />
+                    <button type="submit" class="btn btn-primary text-center">Login</button>
                 </div>
             </form>
 

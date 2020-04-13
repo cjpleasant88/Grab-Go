@@ -61,6 +61,7 @@ namespace GrabAndGo.Controllers
         {
             if (ModelState.IsValid)
             {
+                user.Password = Encrypt(user.Password);
                 _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -218,7 +219,7 @@ namespace GrabAndGo.Controllers
                 }
                 else
                 {
-                    if (login.Password == user.Password)
+                    if (Encrypt(login.Password) == user.Password)
                     {
                         return RedirectToAction("List", "Home");
                     }
@@ -229,6 +230,7 @@ namespace GrabAndGo.Controllers
                     //return $"Email: {login.Email} and PW: {Encrypt(user.Password)} from the user list View, Will return the list for this user";
                 }
             }
+            //return View(login);
             return RedirectToAction("HomePage", "Home", login);
         }
 
