@@ -4,6 +4,7 @@
 
 ## Achievements
 
+- 14 April 2002 - Incorporated Encryption of Passwords that are stored in the database
 - 12 April 2020 - Incorporated Client side Entry Validation on Login Page
 - 11 April 2020 - Created Actions that allow the updating of the database within the app
 - 10 April 2020 - Added create Views for Products and Users
@@ -18,12 +19,8 @@
 
 [<h3>Current Sprint of issues working on can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/projects/2)
 
-- Encrypt passwords stored in database upon account creation
-- Look at Dijkstra's Algorithm or Greedy-Search for determining closest/fastest path
 - Update list page to use the database instead of local JavaScript memory
 - Add interfaces between the remaining models
-- [x] Move database to Azure SQL Database
-- [x] Add client Side Data Entry Validation on login page
 
  ## Database Diagram
  ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram.PNG)
