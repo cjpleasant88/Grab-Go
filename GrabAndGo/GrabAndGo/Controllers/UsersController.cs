@@ -101,6 +101,7 @@ namespace GrabAndGo.Controllers
             {
                 try
                 {
+                    user.Password = Encrypt(user.Password);
                     _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
