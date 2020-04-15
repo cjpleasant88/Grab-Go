@@ -15,7 +15,7 @@
 
 ## To-Do List
 
-<h3>[Current Sprint can be found here](https://github.com/cjpleasant88/Grab-Go/projects/2)</h3>
+[<h3>Current Sprint can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/projects/2)
 
 - Encrypt passwords stored in database upon account creation
 - Look at Dijkstra's Algorithm or Greedy-Search for determining closest/fastest path
