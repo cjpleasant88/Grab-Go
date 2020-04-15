@@ -14,8 +14,9 @@
 - 02 April 2020 - Created the beginnings of the Web Application, migrating from the Html only prototype
 
 ## To-Do List
+[<h3>Backlog of Issues can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/issues)
 
-[<h3>Current Sprint can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/projects/2)
+[<h3>Current Sprint of issues working on can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/projects/2)
 
 - Encrypt passwords stored in database upon account creation
 - Look at Dijkstra's Algorithm or Greedy-Search for determining closest/fastest path
