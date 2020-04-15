@@ -1,4 +1,4 @@
-# Grab&Go Web Application (In-Development) <h6>[(Back to Project Overview)]</h6>(https://github.com/cjpleasant88/Grab-Go)
+# Grab&Go Web Application (In-Development) <h6>[(Back to Project Overview)](https://github.com/cjpleasant88/Grab-Go)</h6>
 
 [(Back to Project Overview)](https://github.com/cjpleasant88/Grab-Go)
 
