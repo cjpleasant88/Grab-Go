@@ -22,6 +22,8 @@
 - [x] Move database to Azure SQL Database
 - [x] Add client Side Data Entry Validation on login page
 
+- [Current Sprint can be found here](https://github.com/cjpleasant88/Grab-Go/projects/2)
+
  ## Database Diagram
  ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram.PNG)
 
