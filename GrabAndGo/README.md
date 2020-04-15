@@ -15,14 +15,14 @@
 
 ## To-Do List
 
+<h3>[Current Sprint can be found here](https://github.com/cjpleasant88/Grab-Go/projects/2)</h3>
+
 - Encrypt passwords stored in database upon account creation
 - Look at Dijkstra's Algorithm or Greedy-Search for determining closest/fastest path
 - Update list page to use the database instead of local JavaScript memory
 - Add interfaces between the remaining models
 - [x] Move database to Azure SQL Database
 - [x] Add client Side Data Entry Validation on login page
-
-- [Current Sprint can be found here](https://github.com/cjpleasant88/Grab-Go/projects/2)
 
  ## Database Diagram
  ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram.PNG)
