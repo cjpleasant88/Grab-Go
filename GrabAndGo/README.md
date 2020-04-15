@@ -1,6 +1,6 @@
 # Grab&Go Web Application (In-Development)
 
-- [(Back to Project Overview)](https://github.com/cjpleasant88/Grab-Go)
+[(Back to Project Overview)](https://github.com/cjpleasant88/Grab-Go)
 
 ## Achievements
 
