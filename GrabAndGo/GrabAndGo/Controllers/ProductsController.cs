@@ -25,6 +25,13 @@ namespace GrabAndGo.Controllers
             return View(await _context.Product.ToListAsync());
         }
 
+        public async Task<IActionResult> List(int ListID)
+        {
+            ViewBag.ListId = ListID;
+
+            return View(await _context.Product.ToListAsync());
+        }
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -54,7 +61,7 @@ namespace GrabAndGo.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID,ProductName,Price,SectionID")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductID,ProductName,CategoryID")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +93,7 @@ namespace GrabAndGo.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,Price,SectionID")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,CategoryID")] Product product)
         {
             if (id != product.ProductID)
             {

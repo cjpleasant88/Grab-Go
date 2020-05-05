@@ -12,12 +12,14 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <!--<input type="hidden" asp-for="UserID" />-->
-            <div class="form-group">
-                <label asp-for="UserID" class="control-label"></label>
-                <input asp-for="UserID" class="form-control" />
-                <span asp-validation-for="UserID" class="text-danger"></span>
-            </div>
+
+            <input type="hidden" asp-for="UserID"/>
+
+            @*<div class="form-group">
+            <label asp-for="UserID" class="control-label"></label>
+            <input asp-for="UserID" class="form-control" />
+            <span asp-validation-for="UserID" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -35,13 +37,21 @@
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" type="password" class="form-control" placeholder"......."/>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <input type="hidden" asp-for="ListID" />
+            @*<div class="form-group">
                 <label asp-for="ListID" class="control-label"></label>
                 <input asp-for="ListID" class="form-control" />
                 <span asp-validation-for="ListID" class="text-danger"></span>
+            </div>*@
+
+            <div class="form-group">
+                <label asp-for="ListName" class="control-label"></label>
+                <input asp-for="ListName" class="form-control" />
+                <span asp-validation-for="ListName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StorePref" class="control-label"></label>

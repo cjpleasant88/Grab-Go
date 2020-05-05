@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GrabAndGo.Models.Product>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Current Item List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryID)
+                </td>
+                <td>
+                        <a asp-controller="ShoppingListLines" asp-action="AddToList" asp-route-ProductID="@item.ProductID" asp-route-ListID="@ViewBag.ListID">Add To List</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -13,7 +13,8 @@ namespace GrabAndGo.Migrations
                     AisleID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StoreID = table.Column<int>(nullable: false),
-                    CategoryType = table.Column<int>(nullable: false)
+                    AisleNumber = table.Column<int>(nullable: false),
+                    CategoryID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,8 +41,7 @@ namespace GrabAndGo.Migrations
                     ProductID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductName = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false),
-                    SectionID = table.Column<int>(nullable: false)
+                    CategoryID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,46 +49,19 @@ namespace GrabAndGo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Section",
+                name: "ShoppingListLine",
                 columns: table => new
                 {
-                    SectionID = table.Column<int>(nullable: false)
+                    ShoppingListLineID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SectionName = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Section", x => x.SectionID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Shelf",
-                columns: table => new
-                {
-                    ShelfID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    StoreID = table.Column<int>(nullable: false),
-                    AisleID = table.Column<int>(nullable: false),
-                    SectionID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Shelf", x => x.ShelfID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ShoppingList",
-                columns: table => new
-                {
-                    ListID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ListID = table.Column<int>(nullable: false),
                     ProductID = table.Column<int>(nullable: false),
-                    Quantity = table.Column<int>(nullable: false),
-                    ListName = table.Column<string>(nullable: true)
+                    ProductName = table.Column<string>(nullable: true),
+                    Quantity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShoppingList", x => x.ListID);
+                    table.PrimaryKey("PK_ShoppingListLine", x => x.ShoppingListLineID);
                 });
 
             migrationBuilder.CreateTable(
@@ -97,10 +70,10 @@ namespace GrabAndGo.Migrations
                 {
                     StoreID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StoreName = table.Column<string>(nullable: true),
-                    Street = table.Column<string>(nullable: true),
-                    City = table.Column<string>(nullable: true),
-                    State = table.Column<string>(nullable: true),
+                    StoreName = table.Column<string>(nullable: false),
+                    Street = table.Column<string>(nullable: false),
+                    City = table.Column<string>(nullable: false),
+                    State = table.Column<string>(nullable: false),
                     ZipCode = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -114,14 +87,74 @@ namespace GrabAndGo.Migrations
                 {
                     UserID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
                     ListID = table.Column<int>(nullable: false),
+                    ListName = table.Column<string>(nullable: true),
                     StorePref = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.UserID);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Aisle",
+                columns: new[] { "AisleID", "AisleNumber", "CategoryID", "StoreID" },
+                values: new object[,]
+                {
+                    { 1, 1, 1, 1 },
+                    { 2, 2, 3, 1 },
+                    { 3, 1, 2, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "CategoryID", "CategoryName" },
+                values: new object[,]
+                {
+                    { 1, "Dairy" },
+                    { 2, "Bakery" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Product",
+                columns: new[] { "ProductID", "CategoryID", "ProductName" },
+                values: new object[,]
+                {
+                    { 1, 1, "Milk" },
+                    { 2, 2, "Bread" },
+                    { 3, 3, "Eggs" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ShoppingListLine",
+                columns: new[] { "ShoppingListLineID", "ListID", "ProductID", "ProductName", "Quantity" },
+                values: new object[,]
+                {
+                    { 1, 1, 1, "Milk", 2 },
+                    { 2, 2, 2, "Bread", 3 },
+                    { 3, 2, 3, "Eggs", 12 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Store",
+                columns: new[] { "StoreID", "City", "State", "StoreName", "Street", "ZipCode" },
+                values: new object[,]
+                {
+                    { 1, "Ocenaside", "CA", "Target", "123 BeachTime", 12345 },
+                    { 2, "Vista", "CA", "Ralphs", "456 ImHungry", 98765 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "UserID", "Email", "FirstName", "LastName", "ListID", "ListName", "Password", "StorePref" },
+                values: new object[,]
+                {
+                    { 1, "test123@456.com", "Test User", "Test Last", 123, "Test List", "superSecret", 1 },
+                    { 2, "john@grabandgo.com", "John", "Smith", 3, "John's List", "johnnyrocks", 2 }
                 });
         }
 
@@ -137,13 +170,7 @@ namespace GrabAndGo.Migrations
                 name: "Product");
 
             migrationBuilder.DropTable(
-                name: "Section");
-
-            migrationBuilder.DropTable(
-                name: "Shelf");
-
-            migrationBuilder.DropTable(
-                name: "ShoppingList");
+                name: "ShoppingListLine");
 
             migrationBuilder.DropTable(
                 name: "Store");

@@ -1,57 +1,63 @@
 ﻿@model LoginViewModel;
 
-<!DOCTYPE html>
 @{
-    Layout = null;
+    Layout = "_Validation";
+    ViewData["Title"] = "Login";
 }
 
-<html lang="en">
-<head>
-    <title>Grab & Go</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <style>
-        .input-validation-error {border-color: red; background-color: #fee;}
-    </style>
+    <div class="background-image" style="background-image: url('../Images/walmart.jpg');">
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-</head>
-<body>
-    <div class="image" style="background-image: url('../Images/walmart.jpg');">
-        <div class="form-container">
-            <div><h2 class="title">Grab & Go</h2></div>
-            <div class="user-img"></div>
-            <h2 class="text-center">Member Login</h2>
-
-            <form asp-controller="Users" asp-action="List" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="form-group">
-                    <input asp-for="Email" class="form-control" placeholder="Email" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+        <div class="container text-center">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title">Grab & Go</h2>
+                    </div>
                 </div>
-
-                <div class="form-group text-center">
-                    <input asp-for="Password" type="password" class="form-control" placeholder="........." />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary text-center">Login</button>
-                </div>
-            </form>
-
-            <div class="form-group text-danger text-center">Forgot Password?</div>
-            <div class="form-group text-center">
-                <a asp-controller="home" asp-action="SignUp" style="background-color: #0a883b; width:100px;" class="btn btn-primary text-center">Sign Up!</a>
             </div>
 
-            <div class="form-group text-center">
-                <a asp-controller="Users" asp-action="Index" class="btn btn-primary text-center">Current Users</a>
+
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div><img class="cart-img center" src="~/Images/speedycart.png" alt="Grab&Go Logo"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-container">
+
+                <h2 class="text-center">Member Login</h2>
+
+                <form asp-controller="Users" asp-action="List2" method="post">
+                    <!--<div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+
+                    <div class="form-group text-center">
+                        <input asp-for="Email" class="form-control input-gray" placeholder="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <input asp-for="Password" type="password" class="form-control input-gray" placeholder="........." />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary text-center">Login</button>
+                    </div>
+                </form>
+
+                <div class="form-group text-danger text-center">Forgot Password?</div>
+
+                <div class="form-group text-center">
+                    <a asp-controller="home" asp-action="SignUp" class="btn btn-primary text-center btn-signup">Sign Up!</a>
+                </div>
+
+                <div class="form-group text-center">
+                    <a asp-controller="Users" asp-action="Index" class="btn btn-primary text-center">Current Users</a>
+                </div>
             </div>
         </div>
+
     </div>
-</body>
-</html>

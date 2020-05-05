@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.IO;
+using Microsoft.AspNetCore;
+
 
 namespace GrabAndGo
 {
@@ -13,7 +16,12 @@ namespace GrabAndGo
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            //var host = BuildWebHostBuilder(args);
+
+            var host = CreateHostBuilder(args).Build();
+
+            host.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +30,8 @@ namespace GrabAndGo
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        //public static IWebHost BuildWebHostBuilder(string[] args) =>
+        //    WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().UseDefaultServiceProvider(options => options.ValidateScopes = false).Build();
     }
 }

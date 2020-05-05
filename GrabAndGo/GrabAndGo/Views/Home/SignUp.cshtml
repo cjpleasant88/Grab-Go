@@ -1,62 +1,87 @@
-﻿@{
-    Layout = null;
+﻿@model User
+
+@{
+    Layout = "_Validation";
+    ViewData["Title"] = "Sign Up!";
 }
-<!DOCTYPE HTML>
-<style>
-
-    .loginbox {
-        font-size: 30px;
-        color: #333333;
-        /*display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;*/
-        /*display: flex;*/
-        justify-content: center;
-        align-items: center;
-        width: 400px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: #fff;
-        margin: 0 auto;
-    }
-
-    .loginlogo {
-        padding: 10px;
-    }
-</style>
-
-<html lang="en-US">
-
-<head>
-    <title> Sign Up!</title>
-    <META charset="UTF-8">
-    <META name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--<link rel="stylesheet" href="StorageStyle.css">-->
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
-</head>
 
 
-<body>
-    <div class="image" style="background-image: url('../Images/vegies.jpg');">
-        <div class="form-container">
-            <div><a href="HomePage.html"><h2 class="title">Grab & Go</h2></a></div>
-            <div class="user-img"></div>
-            <form asp-action="HomePage">
-                <ul class="list">
-                    <li><h2>Member Login</h2></li>
-                    <li><input type="text" name="First Name" placeholder="FirstName" /></li>
-                    <li><input type="text" name="Last Name" placeholder="LastName" /></li>
-                    <li><input type="date" name="birthday" placeholder="Birthday" /></li>
-                    <li><input type="text" name="Last Name" placeholder="E-Mail Address" /></li>
-                    <li><input type="password" name="Password" placeholder="Password" /></li>
-                    <li><input type="password" name="ConfirmPassword" placeholder="Confirm Password" /></li>
+    <div class="background-image" style="background-image: url('../Images/vegies.jpg');">
+        <div class="container text-center">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title">Grab & Go</h2>
+                    </div>
+                </div>
+            </div>
 
-                    <li><input type="submit" asp-action="HomePage" value="Submit" /></li>
 
-                </ul>
-            </form>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div><img class="cart-img center" src="~/Images/speedycart.png" alt="Grab&Go Logo"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-container">
+
+                <h2 class="text-center">Member SignUp</h2>
+
+                <form asp-controller="Users" asp-action="Create" method="post">
+                    <!--<div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+                    <input type="hidden" asp-for="UserID" />
+
+                    @*<div class="form-group">
+                        <input asp-for="UserID" class="form-control" placeholder="UserID" />
+                        <span asp-validation-for="UserID" class="text-danger"></span>
+                    </div>*@
+                    <div class="form-group">
+                        @*<label asp-for="FirstName" class="control-label"></label>*@
+                        <input asp-for="FirstName" class="form-control input-gray" placeholder="FirstName" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @*<label asp-for="LastName" class="control-label"></label>*@
+                        <input asp-for="LastName" class="form-control input-gray" placeholder="Last Name" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @*<label asp-for="Email" class="control-label"></label>*@
+                        <input asp-for="Email" class="form-control input-gray" placeholder="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        @*<label asp-for="Password" class="control-label"></label>*@
+                        <input asp-for="Password" type="password" class="form-control input-gray" placeholder="Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <input type="hidden" asp-for="ListID" />
+                    @*<div class="form-group">
+                        <input asp-for="ListID" class="form-control" placeholder="ListID" />
+                        <span asp-validation-for="ListID" class="text-danger"></span>
+                    </div>*@
+
+                    <input type="hidden" asp-for="ListName" />
+                    @*<div class="form-group">
+                        <input asp-for="ListName" class="form-control" placeholder="Default: FirstName's List" />
+                        <span asp-validation-for="ListName" class="text-danger"></span>
+                    </div>*@
+
+                    <input type="hidden" asp-for="StorePref" value="1" />
+                    @*<div class="form-group">
+                        <input asp-for="StorePref" class="form-control" placeholder="StorePref" />
+                        <span asp-validation-for="StorePref" class="text-danger"></span>
+                    </div>*@
+
+                    <div class="form-group">
+                        <input type="submit" value="Sign Up!" class="btn btn-primary text-center" />
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</body>
-</html>

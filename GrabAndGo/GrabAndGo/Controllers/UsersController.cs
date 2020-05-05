@@ -9,7 +9,6 @@ using GrabAndGo.Data;
 using GrabAndGo.Models;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GrabAndGo.Controllers
 {
@@ -27,6 +26,7 @@ namespace GrabAndGo.Controllers
         {
             return View(await _context.User.ToListAsync());
         }
+
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -57,13 +57,23 @@ namespace GrabAndGo.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserID,FirstName,LastName,Email,Password,ListID,StorePref")] User user)
+        public async Task<IActionResult> Create([Bind("UserID,FirstName,LastName,Email,Password,ListID,ListName,StorePref")] User user)
         {
             if (ModelState.IsValid)
             {
                 user.Password = Encrypt(user.Password);
+                if (user.ListName == null)
+                {
+                    user.ListName = user.FirstName + "'s List";
+                }
                 _context.Add(user);
                 await _context.SaveChangesAsync();
+
+                var newuser = await _context.User.FirstOrDefaultAsync(m => m.Email == user.Email).ConfigureAwait(false);
+                newuser.ListID = newuser.UserID;
+                _context.Update(newuser);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             return View(user);
@@ -90,24 +100,34 @@ namespace GrabAndGo.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserID,FirstName,LastName,Email,Password,ListID,StorePref")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("UserID,FirstName,LastName,Email,Password,ListID,ListName,StorePref")] User user)
         {
-            if (id != user.UserID)
-            {
-                return NotFound();
-            }
+            //if (id != user.UserID)
+            //{
+            //    return RedirectToAction("DoesNotExist");
+            //    //return NotFound();
+            //}
 
+            //var updatedUser = await _context.User.FirstOrDefaultAsync(m => m.UserID == user.UserID).ConfigureAwait(false);
+            var updatedUser = await _context.User.FindAsync(id);
             if (ModelState.IsValid)
             {
                 try
                 {
-                    user.Password = Encrypt(user.Password);
-                    _context.Update(user);
+                    updatedUser.FirstName = user.FirstName;
+                    updatedUser.LastName = user.LastName;
+                    updatedUser.Email = user.Email;
+                    updatedUser.Password = Encrypt(user.Password);
+                    updatedUser.ListName = user.ListName;
+                    updatedUser.StorePref = user.StorePref;
+                    updatedUser.ListID = updatedUser.UserID;
+
+                    _context.Update(updatedUser);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserExists(user.Email))
+                    if (!UserExists(user.UserID))
                     {
                         return NotFound();
                     }
@@ -235,9 +255,49 @@ namespace GrabAndGo.Controllers
             return RedirectToAction("HomePage", "Home", login);
         }
 
-        private bool UserExists(string email)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult List2([Bind("Email,Password")] LoginViewModel login)
         {
-            return _context.User.Any(e => e.Email == email);
+            if (ModelState.IsValid)
+            {
+                //var user = await _context.User.FirstOrDefault(u => u.Email == login.Email);
+
+
+                var user = _context.User.FirstOrDefault(u => u.Email == login.Email);
+
+                //var user = await _context.User.FindAsync(login.Email);
+                //if (user == null)
+                //{
+                //    RedirectToAction("DoesNotExist")
+                //    //return NotFound();
+                //}
+
+                if (user == null)
+                {
+                    return RedirectToAction("DoesNotExist");
+                }
+                else
+                {
+                    if (Encrypt(login.Password) == user.Password)
+                    {
+
+                        return RedirectToAction("List2", "Home", new { listID = user.ListID});
+                    }
+                    else
+                    {
+                        return RedirectToAction("IncorrectPassword");
+                    }
+                    //return $"Email: {login.Email} and PW: {Encrypt(user.Password)} from the user list View, Will return the list for this user";
+                }
+            }
+            //return View(login);
+            return RedirectToAction("HomePage", "Home", login);
+        }
+
+        private bool UserExists(int id)
+        {
+            return _context.User.Any(e => e.UserID == id);
         }
     }
 }

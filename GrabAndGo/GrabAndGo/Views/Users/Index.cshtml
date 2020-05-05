@@ -31,6 +31,9 @@
                 @Html.DisplayNameFor(model => model.ListID)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ListName)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.StorePref)
             </th>
             <th></th>
@@ -56,6 +59,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ListID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StorePref)
