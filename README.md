@@ -1,5 +1,7 @@
 # Grab&Go Application
 
+<img href="https://github.com/cjpleasant88/Grab-Go/blob/master/docs/HTML_Prototype/speedy%20cart.png" alt="Logo"/>
+
 ## Table of Contents
 
 - [1. Inspiration](#inspiration)
