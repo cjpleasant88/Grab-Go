@@ -1,6 +1,6 @@
 # Grab&Go Application
 
-<aside><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/docs/HTML_Prototype/speedy%20cart.png" style="width:50px; height:50px; align-text: center;"></aside>
+<div style="text-align:center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/docs/HTML_Prototype/speedy%20cart.png" style="width:50px; height:50px;"></div>
 
 ## Table of Contents
 
