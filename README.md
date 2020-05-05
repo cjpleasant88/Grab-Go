@@ -1,4 +1,4 @@
-# Grab&Go Application
+# <div align="center">Grab&Go Application</div>
 
 <div align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/docs/HTML_Prototype/speedy%20cart.png"width="100" height="100"/></div>
 
