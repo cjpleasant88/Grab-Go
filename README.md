@@ -1,6 +1,8 @@
-# Grab&Go Application
+# <div align="center">Grab&Go Application</div>
 
-## Table of Contents
+<div align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/docs/HTML_Prototype/speedy%20cart.png"width="100" height="100"/></div>
+
+## <div align="center">Table of Contents</div>
 
 - [1. Inspiration](#inspiration)
 - [2. Concept](#concept)
@@ -18,18 +20,18 @@
 - [14. Database Diagram](#database-diagram)
 - [15. Web Application Source Code (In-Development)](https://github.com/cjpleasant88/Grab-Go/tree/master/GrabAndGo)
 
-## INSPIRATION
+## <div align="center">INSPIRATION</div>
 [(back to top)](#table-of-contents)
 
 After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles as if I am on a scavenger hunt. 
 
-## CONCEPT
+## <div align="center">CONCEPT</div>
 [(back to top)](#table-of-contents)
 
 The Concept is simple. 
 Have a list of grocery store items listed in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once. 
 
-## IMPLEMENTATION
+## <div align="center">IMPLEMENTATION</div>
 [(back to top)](#table-of-contents)
 
 To accomplish this task, a few inventories would have to be maintained:
@@ -39,12 +41,12 @@ To accomplish this task, a few inventories would have to be maintained:
  - A Catalog of items along with the section they belong to
  - A list of items on a users Shopping List
 
-## ENTITY RELATIONSHIP DIAGRAM
+## <div align="center">ENTITY RELATIONSHIP DIAGRAM</div>
 [Preliminary Database](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/ISTA420%20-%20CPleasant%20-%2020200216%20-%20Project%20Step%205%20-%20DataBase%20Creation.sql)
 
 ![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(20200404).png)
 
-## USER STORIES
+## <div align="center">USER STORIES</div>
 [(back to top)](#table-of-contents)
 
 1) As a User, I need to input Grocery Items, So that I can track what I need.
@@ -61,7 +63,7 @@ To accomplish this task, a few inventories would have to be maintained:
 
 7) As a user, I need to indicate the items I have physically obtained when shopping, so that I can see what items are left to get on my list.
 
-## USE CASES
+## <div align="center">USE CASES</div>
 [(back to top)](#table-of-contents)
 
 1) Given the user has never logged in,
@@ -96,12 +98,12 @@ When they check off an item on their ordered list of grocery items,
 Then the item is displayed in strike through font
 And moved to the bottom of the list.
 
-## USE CASE DIAGRAM
+## <div align="center">USE CASE DIAGRAM</div>
 [(back to top)](#table-of-contents)
 
 ![Use Case Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/UML%20Use-Case%20Diagram.png)
 
-## REQUIREMENTS
+## <div align="center">REQUIREMENTS</div>
 [(back to top)](#table-of-contents)
 
 * 1.0\. User Shall Input Grocery Items into personal List by selecting items from a pre-populated list
@@ -164,7 +166,7 @@ And moved to the bottom of the list.
 
 		* 7.1.1\. The software shall run script(s) to take form data and create a new record of the item in the Store Table
 
-## WIRE FRAMES
+## <div align="center">WIRE FRAMES</div>
 [(back to top)](#table-of-contents)
 
 The Landing Page would be a login Screen with the Grab & Go Logo and a tab to be able to sign up:
@@ -179,7 +181,7 @@ One logged in, the user can create a shopping list in an arbitrary order. This l
 Once the "Let's go shopping" being has been clicked, the app will take the users list of items and reorder them in a way that creates the "fastest path" through the store. A map view can also be shown identifying the location of the items in the store with a bird's eye view of the store:
 ![Store Map](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Store%20Map.png)
 
-## REQUIREMENTS TABLE
+## <div align="center">REQUIREMENTS TABLE</div>
 [(back to top)](#table-of-contents)
 
 | Requirement  ID | Requirement Description                                      | Test Method   | TEST ID      |
@@ -215,7 +217,7 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 | 7.1.0           | The System shall display a  form to the administrator for all required information of a Store entity | Demonstration | TC010        |
 | 7.1.1           | The software shall run  script(s) to take form data and create a new record of the item in the Store  Table | Inspection    | TC010        |
 
-## TESTS TABLE
+## <div align="center">TESTS TABLE</div>
 [(back to top)](#table-of-contents)
 
 | Test ID | Requirement ID(s)                        | Test Procedure                                               | Current Status | Time Stamp | Version |
@@ -231,7 +233,7 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 | TC009   | 6.0.0, 6.1.0, 6.1.1                      | Administrator adds a new item to database, adds a non-existing item,  verifies that is shows up in the application | Not Tested     | 3/8/2020   | N/A     |
 | TC010   | 7.0.0, 7.1.0, 7.1.1                      | Administrator add a new store and layout to the database, verifies that  store and layout populate in the application | Not Tested     | 3/8/2020   | N/A     |
 
-## Feature List
+## <div align="center">Feature List</div>
 [(back to top)](#table-of-contents)
 
 Additional features that would be welcomed would be:
@@ -242,12 +244,12 @@ Additional features that would be welcomed would be:
  - Recipe Integration
  - Home Pantry Inventory
  
- ## Prototype
+ ## <div align="center">Prototype</div>
  [(back to top)](#table-of-contents)
  
  Details and Demonstration of the prototype can be found here:
  
  [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
  
- ## Database Diagram
+ ## <div align="center">Database Diagram</div>
  ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram.PNG)

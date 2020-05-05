@@ -17,10 +17,7 @@
 ## To-Do List
 [<h3>Backlog of Issues can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/issues)
 
-[<h3>Current Sprint of issues working on can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/projects/2)
-
-- Update list page to use the database instead of local JavaScript memory
-- Add interfaces between the remaining models
+[<h3>Current Sprint of issues working on can be found here</h3>](https://github.com/cjpleasant88/Grab-Go/projects)
 
  ## Database Diagram
  ![Database Diagram](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Database%20Diagram.PNG)
