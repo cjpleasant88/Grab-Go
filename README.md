@@ -2,7 +2,7 @@
 
 <div align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/docs/HTML_Prototype/speedy%20cart.png"width="100" height="100"/></div>
 
-## Table of Contents
+## <div align="center">Table of Contents</div>
 
 - [1. Inspiration](#inspiration)
 - [2. Concept](#concept)
@@ -20,7 +20,7 @@
 - [14. Database Diagram](#database-diagram)
 - [15. Web Application Source Code (In-Development)](https://github.com/cjpleasant88/Grab-Go/tree/master/GrabAndGo)
 
-## INSPIRATION
+## <div align="center">INSPIRATION</div>
 [(back to top)](#table-of-contents)
 
 After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles as if I am on a scavenger hunt. 
