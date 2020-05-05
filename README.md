@@ -25,13 +25,13 @@
 
 After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles as if I am on a scavenger hunt. 
 
-## CONCEPT
+## <div align="center">CONCEPT</div>
 [(back to top)](#table-of-contents)
 
 The Concept is simple. 
 Have a list of grocery store items listed in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once. 
 
-## IMPLEMENTATION
+## <div align="center">IMPLEMENTATION</div>
 [(back to top)](#table-of-contents)
 
 To accomplish this task, a few inventories would have to be maintained:
@@ -41,12 +41,12 @@ To accomplish this task, a few inventories would have to be maintained:
  - A Catalog of items along with the section they belong to
  - A list of items on a users Shopping List
 
-## ENTITY RELATIONSHIP DIAGRAM
+## <div align="center">ENTITY RELATIONSHIP DIAGRAM</div>
 [Preliminary Database](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/ISTA420%20-%20CPleasant%20-%2020200216%20-%20Project%20Step%205%20-%20DataBase%20Creation.sql)
 
 ![Grab&Go ERD](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(20200404).png)
 
-## USER STORIES
+## <div align="center">USER STORIES</div>
 [(back to top)](#table-of-contents)
 
 1) As a User, I need to input Grocery Items, So that I can track what I need.
