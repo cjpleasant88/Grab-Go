@@ -11,6 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
 using Microsoft.Extensions.Configuration;
 using GrabAndGo.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace GrabAndGo
 {
@@ -27,11 +31,35 @@ namespace GrabAndGo
         {
             services.AddControllersWithViews();
 
+            services.AddMvc(option =>
+                {
+                    option.EnableEndpointRouting = false;
 
-            services.AddMvc(option => option.EnableEndpointRouting = false);
+                    //The Below two lines enforce a global Authorization policy and must be logged in to do anything
+                    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                    option.Filters.Add(new AuthorizeFilter(policy));
+                });
 
             services.AddDbContext<GrabAndGoContext>(options =>
                     options.UseSqlServer(Configuration["Data:GrabAndGoContext:ConnectionString5"]));
+
+            //Using the Identity Servieds all while changing the password Regular Expression charactersitics to allow less secure passwords.
+            //Passowrd only needs to be 3 characters in length and needs 3 different characters
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 3;
+                options.Password.RequiredUniqueChars = 3;
+                options.Password.RequireDigit = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<GrabAndGoContext>();
+
+            //Below Not Needed as it is done in the services.AddIdentity line above
+            //services.Configure<IdentityOptions>(options =>
+            //{
+            //    options.Password.RequiredLength = 3;
+            //    options.Password.RequiredUniqueChars = 0;
+            //});
 
             //ANOTHER WAY TO CONNECT
             //services.AddDbContext<GrabAndGoContext>(options =>
@@ -66,9 +94,14 @@ namespace GrabAndGo
                 app.UseDeveloperExceptionPage();
                 app.UseStatusCodePages();
             }
+
             app.UseStaticFiles();
+
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
+
                 routes.MapRoute(
                     name: null,
                     template: "{controller}/{action=Index}/{id?}");

@@ -33,7 +33,7 @@
                     @Html.DisplayFor(modelItem => item.CategoryID)
                 </td>
                 <td>
-                        <a asp-controller="ShoppingListLines" asp-action="AddToList" asp-route-ProductID="@item.ProductID" asp-route-ListID="@ViewBag.ListID">Add To List</a>
+                    <a asp-controller="ShoppingListLines" asp-action="AddToList" asp-route-ProductID="@item.ProductID" asp-route-userName="@User.Identity.Name">Add To List</a>
                 </td>
             </tr>
         }

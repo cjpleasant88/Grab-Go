@@ -8,6 +8,7 @@ using GrabAndGo.Models.ViewModels;
 using GrabAndGo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrabAndGo.Controllers
 {
@@ -43,6 +44,7 @@ namespace GrabAndGo.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult MainPage()
         {
             return View();
@@ -73,7 +75,7 @@ namespace GrabAndGo.Controllers
             //return View(UserShoppingList);
             ViewBag.ListID = listID;
 
-            return View(listRepo.ShoppingListLines.Where(p => p.ListID == listID));
+            return View(listRepo.ShoppingListLines.Where(p => p.ListID.Equals(listID)));
         }
 
 

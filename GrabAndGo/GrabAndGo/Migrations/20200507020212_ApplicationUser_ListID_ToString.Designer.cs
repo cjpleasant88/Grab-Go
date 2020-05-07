@@ -4,14 +4,16 @@ using GrabAndGo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GrabAndGo.Migrations
 {
     [DbContext(typeof(GrabAndGoContext))]
-    partial class GrabAndGoContextModelSnapshot : ModelSnapshot
+    [Migration("20200507020212_ApplicationUser_ListID_ToString")]
+    partial class ApplicationUser_ListID_ToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -215,8 +217,8 @@ namespace GrabAndGo.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ListID")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ListID")
+                        .HasColumnType("int");
 
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
@@ -235,7 +237,7 @@ namespace GrabAndGo.Migrations
                         new
                         {
                             ShoppingListLineID = 1,
-                            ListID = "1",
+                            ListID = 1,
                             ProductID = 1,
                             ProductName = "Milk",
                             Quantity = 2
@@ -243,7 +245,7 @@ namespace GrabAndGo.Migrations
                         new
                         {
                             ShoppingListLineID = 2,
-                            ListID = "2",
+                            ListID = 2,
                             ProductID = 2,
                             ProductName = "Bread",
                             Quantity = 3
@@ -251,7 +253,7 @@ namespace GrabAndGo.Migrations
                         new
                         {
                             ShoppingListLineID = 3,
-                            ListID = "2",
+                            ListID = 2,
                             ProductID = 3,
                             ProductName = "Eggs",
                             Quantity = 12

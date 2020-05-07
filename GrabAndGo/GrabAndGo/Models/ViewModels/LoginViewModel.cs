@@ -11,9 +11,14 @@ namespace GrabAndGo.Models
     public class LoginViewModel
     {
         [Required(ErrorMessage = "Please enter and email")]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [Display(Name = "Remeber me")]
+        public bool RememberMe { get; set; }
     }
 }

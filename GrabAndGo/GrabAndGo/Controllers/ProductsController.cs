@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
 using GrabAndGo.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace GrabAndGo.Controllers
 {
     public class ProductsController : Controller
     {
         private readonly GrabAndGoContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public ProductsController(GrabAndGoContext context)
+        public ProductsController(GrabAndGoContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Products
@@ -25,9 +28,10 @@ namespace GrabAndGo.Controllers
             return View(await _context.Product.ToListAsync());
         }
 
-        public async Task<IActionResult> List(int ListID)
+        public async Task<IActionResult> List(string userName)
         {
-            ViewBag.ListId = ListID;
+            var user = await _userManager.FindByNameAsync(userName);
+            ViewBag.ListId = user.ListID;
 
             return View(await _context.Product.ToListAsync());
         }

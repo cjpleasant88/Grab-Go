@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
 using GrabAndGo.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace GrabAndGo.Controllers
 {
@@ -14,9 +15,12 @@ namespace GrabAndGo.Controllers
     {
         private readonly GrabAndGoContext _context;
 
-        public ShoppingListLinesController(GrabAndGoContext context)
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public ShoppingListLinesController(GrabAndGoContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: ShoppingListLines
@@ -28,32 +32,80 @@ namespace GrabAndGo.Controllers
             return View(await _context.ShoppingListLine.ToListAsync());
         }
 
-        public async Task<IActionResult> AddToList(int ProductID, int ListID)
+        public async Task<IActionResult> YourList(string userName)
         {
+            var user = await _userManager.FindByNameAsync(userName);
 
-            var join = from pid in _context.Product
-                       join cat in _context.Category on pid.CategoryID equals cat.CategoryID
-                       where pid.ProductID == ProductID
-                       select new { name = pid.ProductName, id = pid.ProductID };
 
-            string name = join.FirstOrDefault(line => line.id == ProductID).name;
-            ViewBag.ListID = ListID;
-            ViewBag.ProductID = ProductID;
-            ViewBag.Name = name;
 
-            var newitem = new ShoppingListLine
+            return View(_context.ShoppingListLine.Where(p => p.ListID.Equals(user.ListID)));
+        }
+
+        public async Task<IActionResult> AddToList(int ProductID, string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+
+            //var join = from pid in _context.Product
+            //           join cat in _context.Category on pid.CategoryID equals cat.CategoryID
+            //           where pid.ProductID == ProductID
+            //           select new { name = pid.ProductName, id = pid.ProductID };
+
+            //string name = join.FirstOrDefault(line => line.id == ProductID).name;
+
+            Product product = _context.Product
+            .FirstOrDefault(p => p.ProductID == ProductID);
+
+            if (product != null)
             {
-                ListID = ListID,
-                ProductID = ProductID,
-                ProductName = name,
-                Quantity = 1
-            };
+                ShoppingListLine line = _context.ShoppingListLine
+                    .Where(p => p.ProductID == ProductID && p.ListID.Equals(user.ListID))
+                    .FirstOrDefault();
 
-            _context.ShoppingListLine.Add(newitem);
+                if (line == null)
+                {
+                    _context.ShoppingListLine.Add(new ShoppingListLine
+                    {
+                        ListID = user.ListID,
+                        ProductID = ProductID,
+                        ProductName = product.ProductName,
+                        Quantity = 1
+                    });
+                }
+                else
+                {
+                    line.Quantity += 1;
+                }
+
+            }
+
+
+
+            
+
+            //ViewBag.ListID = user.ListID;
+            //ViewBag.ProductID = ProductID;
+            //ViewBag.Name = name;
+
+            //string name = join.FirstOrDefault(line => line.id == ProductID).name;
+            //ViewBag.ListID = ListID;
+            //ViewBag.ProductID = ProductID;
+            //ViewBag.Name = name;
+
+            //var newitem = new ShoppingListLine
+            //{
+            //    ListID = user.ListID,
+            //    ProductID = ProductID,
+            //    ProductName = name,
+            //    Quantity = 1
+            //};
+
+            //_context.ShoppingListLine.Add(newitem);
+
+
             await _context.SaveChangesAsync();
 
             //return View();
-            return RedirectToAction("List2", "Home", new { listId = ListID });
+            return RedirectToAction("YourList", "ShoppingListLines", new { userName = user.Email });
         }
 
         // GET: ShoppingListLines/Details/5

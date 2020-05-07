@@ -14,7 +14,8 @@ namespace GrabAndGo.Models
         [BindNever]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ShoppingListLineID { get; set; }
-        public int ListID { get; set; }
+
+        public string ListID { get; set; }
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public int Quantity { get; set; }

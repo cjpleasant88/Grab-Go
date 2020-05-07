@@ -4,14 +4,16 @@ using GrabAndGo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GrabAndGo.Migrations
 {
     [DbContext(typeof(GrabAndGoContext))]
-    partial class GrabAndGoContextModelSnapshot : ModelSnapshot
+    [Migration("20200507025037_ShoppingListLine_ListID_ToString")]
+    partial class ShoppingListLine_ListID_ToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

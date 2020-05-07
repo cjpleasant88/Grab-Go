@@ -21,6 +21,7 @@ namespace GrabAndGo.Controllers
             _context = context;
         }
 
+
         // GET: Users
         public async Task<IActionResult> Index()
         {
@@ -66,6 +67,7 @@ namespace GrabAndGo.Controllers
                 {
                     user.ListName = user.FirstName + "'s List";
                 }
+
                 _context.Add(user);
                 await _context.SaveChangesAsync();
 
