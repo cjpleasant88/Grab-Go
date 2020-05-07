@@ -2,7 +2,7 @@
 
 [(Back to Project Overview)](https://github.com/cjpleasant88/Grab-Go)
 
-## Achievements
+## Achievements ([Moved to Projects Section](https://github.com/cjpleasant88/Grab-Go/projects))
 
 - New updates and Progress are now in the "Projects" Section found [Here](https://github.com/cjpleasant88/Grab-Go/projects)
 - 14 April 2002 - Incorporated Encryption of Passwords that are stored in the database
