@@ -4,6 +4,7 @@
 
 ## Achievements
 
+- New updates and Progress are now in the "Projects" Section found [Here](https://github.com/cjpleasant88/Grab-Go/projects)
 - 14 April 2002 - Incorporated Encryption of Passwords that are stored in the database
 - 12 April 2020 - Incorporated Client side Entry Validation on Login Page
 - 11 April 2020 - Created Actions that allow the updating of the database within the app
