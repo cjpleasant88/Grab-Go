@@ -222,9 +222,9 @@ Once the "Let's go shopping" being has been clicked, the app will take the users
 
 | Test ID | Requirement ID(s)                        | Test Procedure                                               | Current Status | Time Stamp | Version |
 | ------- | ---------------------------------------- | ------------------------------------------------------------ | -------------- | ---------- | ------- |
-| TC001   | 4.0.0, 4.1.0, 4.1.1, 4.1.2, 4.1.3        | User login w/o having logged in before, taken to signup screen to create  account. Sign out and login with new signup information. | :heavy_check_mark:    | 3/8/2020   | N/A     |
-| TC002   | 4.1.4, 4.2.0                             | Check system database for list id of a new account creation  | Not Tested     | 3/8/2020   | N/A     |
-| TC003   | 5.0.0, 5.1.0, 5.1.1, 5.1.2, 4.1.2, 4.1.1 | Add new user, click share list, select user that does not already exist | Not Tested     | 3/8/2020   | N/A     |
+| TC001   | 4.0.0, 4.1.0, 4.1.1, 4.1.2, 4.1.3        | User login w/o having logged in before, taken to signup screen to create  account. Sign out and login with new signup information. | :heavy_check_mark:    | 5/6/2020   | N/A     |
+| TC002   | 4.1.4, 4.2.0                             | Check system database for list id of a new account creation  | :heavy_check_mark:     | 5/6/2020   | N/A     |
+| TC003   | 5.0.0, 5.1.0, 5.1.1, 5.1.2, 4.1.2, 4.1.1 | Add new user, click share list, select user that does not already exist | :x:     | 5/6/2020   | N/A     |
 | TC004   | 5.0.0, 5.1.1, 5.2.0, 5.3.0, 5.3.1, 5.3.2 | using user from TC003, click share list, select user from TC001, login to  user from TC001 and verify shared list prompt, click approve | Not Tested     | 3/8/2020   | N/A     |
 | TC005   | 1.0.0, 1.1.0                             | Add bread, milk, eggs to an existing users list              | Not Tested     | 3/8/2020   | N/A     |
 | TC006   | 1.1.1, 1.1.2                             | Have administrator look at SQL data base and verify that report can be  pulled by category, and that the list in the application id the same items | Not Tested     | 3/8/2020   | N/A     |
