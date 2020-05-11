@@ -4,14 +4,16 @@ using GrabAndGo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GrabAndGo.Migrations
 {
     [DbContext(typeof(GrabAndGoContext))]
-    partial class GrabAndGoContextModelSnapshot : ModelSnapshot
+    [Migration("20200510223756_User_Sharing_properties")]
+    partial class User_Sharing_properties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

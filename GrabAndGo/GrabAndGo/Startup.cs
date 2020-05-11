@@ -94,6 +94,16 @@ namespace GrabAndGo
                 app.UseDeveloperExceptionPage();
                 app.UseStatusCodePages();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+
+                //app.UseStatusCodePages();
+                //app.UseStatusCodePagesWithRedirects("/Error/{0}");
+
+                //This will return the original status (code ex:"404") instead of the Change URL status code of 302
+                app.UseStatusCodePagesWithReExecute("/Error/{0)}");
+            }
 
             app.UseStaticFiles();
 
@@ -102,9 +112,9 @@ namespace GrabAndGo
             app.UseMvc(routes =>
             {
 
-                routes.MapRoute(
-                    name: null,
-                    template: "{controller}/{action=Index}/{id?}");
+                //routes.MapRoute(
+                //    name: null,
+                //    template: "{controller}/{action=Index}/{id?}");
 
                 routes.MapRoute(
                     name: "default",

@@ -10,9 +10,15 @@ namespace GrabAndGo.Models.ViewModels
 {
     public class ShoppingList
     {
-        public List<string> Products { get; set; }
 
-        public List<ShoppingListLine> UserShoppingList { get; set; }
+        public string  ProductName { get; set; }
+        public int Quantity { get; set; }
+        public int AisleNumber { get; set; }
+        public string Category { get; set; }
+
+        //public List<string> Products { get; set; }
+
+        //public List<ShoppingListLine> UserShoppingList { get; set; }
 
         //private readonly List<ShoppingListLine> lineCollection = new List<ShoppingListLine>();
 

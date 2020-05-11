@@ -15,10 +15,13 @@ namespace GrabAndGo.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        private readonly RoleManager<IdentityRole> roleManager;
+
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.roleManager = roleManager;
         }
 
         [HttpPost]
@@ -39,6 +42,8 @@ namespace GrabAndGo.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
+            string userRole = "User";
+
             if(ModelState.IsValid)
             {
                 var user = new ApplicationUser
@@ -50,14 +55,27 @@ namespace GrabAndGo.Controllers
                    ListName = model.FirstName + "'s List"
                 
             };
+
+                //var role = await roleManager.FindByNameAsync(userRole);
+
+
+
+
+                //Creates the newly created user
                 var result = await userManager.CreateAsync(user, model.Password);
 
                 if(result.Succeeded)
                 {
+                    //Retrieves the new user that now has an Id assigned
                     var newUser = await userManager.FindByNameAsync(model.Email);
+                    //assigns their ListId to be the same as their UserId
                     newUser.ListID = newUser.Id;
                     await userManager.UpdateAsync(newUser);
 
+                    //Assigns them to the User Role
+                    await userManager.AddToRoleAsync(newUser, userRole);
+
+                    //Sets their session to not be persistent
                     await signInManager.SignInAsync(newUser, isPersistent: false);
                     return RedirectToAction("MainPage", "Home");
                 }
@@ -93,6 +111,13 @@ namespace GrabAndGo.Controllers
                 ModelState.AddModelError(string.Empty, "Invlaid Login Attempt");
             }
             return View(model);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

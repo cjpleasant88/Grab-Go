@@ -489,3 +489,15 @@ C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\n
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\YourList.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUsersInRole.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\ShoppingList.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\ShareList.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\SharingSuccess.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\ShareRequest.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\ChangeStoreList.cshtml.g.cs

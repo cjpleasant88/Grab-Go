@@ -17,5 +17,11 @@ namespace GrabAndGo.Models
         public string ListName { get; set; }
 
         public int StorePref { get; set; }
+
+        public string SharedListId { get; set; }
+
+        public bool IsSharing { get; set; }
+
+        public bool RequestToShare { get; set; }
     }
 }

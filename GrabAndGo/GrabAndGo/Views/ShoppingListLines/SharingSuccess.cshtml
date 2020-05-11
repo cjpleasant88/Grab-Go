@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "Success!";
+    string user = ViewBag.Shared;
+}
+
+
+<h1 class="text-center">An invitation to Share your Shopping List has been sent to @user!</h1>
+
+<a class="btn btn-success text-center" asp-action="YourList" asp-controller="ShoppingListLines" asp-route-userName="@User.Identity.Name">Back to Your List</a>

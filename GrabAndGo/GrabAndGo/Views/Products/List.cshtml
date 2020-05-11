@@ -4,38 +4,39 @@
     ViewData["Title"] = "List";
 }
 
-<h1>Current Item List</h1>
+<h1 class="text-center">Current Item List</h1>
 
-<p>
+<p class="text-center">
     <a asp-action="Create">Create New</a>
 </p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryID)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="container">
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryID)
-                </td>
-                <td>
-                    <a asp-controller="ShoppingListLines" asp-action="AddToList" asp-route-ProductID="@item.ProductID" asp-route-userName="@User.Identity.Name">Add To List</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryID)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryID)
+                    </td>
+                    <td>
+                        <a asp-controller="ShoppingListLines" asp-action="AddToList" asp-route-ProductID="@item.ProductID" asp-route-userName="@User.Identity.Name">Add To List</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
