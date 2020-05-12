@@ -224,6 +224,9 @@ namespace GrabAndGo.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsAtStore")
+                        .HasColumnType("bit");
+
                     b.Property<string>("ListID")
                         .HasColumnType("nvarchar(max)");
 
@@ -244,6 +247,7 @@ namespace GrabAndGo.Migrations
                         new
                         {
                             ShoppingListLineID = 1,
+                            IsAtStore = false,
                             ListID = "1",
                             ProductID = 1,
                             ProductName = "Milk",
@@ -252,6 +256,7 @@ namespace GrabAndGo.Migrations
                         new
                         {
                             ShoppingListLineID = 2,
+                            IsAtStore = false,
                             ListID = "2",
                             ProductID = 2,
                             ProductName = "Bread",
@@ -260,6 +265,7 @@ namespace GrabAndGo.Migrations
                         new
                         {
                             ShoppingListLineID = 3,
+                            IsAtStore = false,
                             ListID = "2",
                             ProductID = 3,
                             ProductName = "Eggs",

@@ -114,6 +114,8 @@ namespace GrabAndGo.Controllers
 
             //string name = join.FirstOrDefault(line => line.id == ProductID).name;
 
+            
+
             Product product = _context.Product
             .FirstOrDefault(p => p.ProductID == ProductID);
 
@@ -123,6 +125,10 @@ namespace GrabAndGo.Controllers
                     .Where(p => p.ProductID == ProductID && p.ListID.Equals(user.ListID))
                     .FirstOrDefault();
 
+                var list = (from aisle in _context.Aisle
+                           where aisle.StoreID == user.StorePref && aisle.CategoryID == product.CategoryID
+                           select new { aisle.AisleNumber }).ToList();
+
                 if (line == null)
                 {
                     _context.ShoppingListLine.Add(new ShoppingListLine
@@ -131,7 +137,7 @@ namespace GrabAndGo.Controllers
                         ProductID = ProductID,
                         ProductName = product.ProductName,
                         Quantity = 1
-                    });
+                    }); ;
                 }
                 else
                 {
@@ -305,37 +311,29 @@ namespace GrabAndGo.Controllers
                 return RedirectToAction("HttpsStatusCodeHandler", "Error", new { statusCode = 123 });
             }
 
-            //List<ShoppingListLine> list = _context.ShoppingListLine.Where(p => p.ListID.Equals(user.ListID)).ToList();
 
-            //var join = from pid in _context.Product
-            //           join cat in _context.Category on pid.CategoryID equals cat.CategoryID
-            //           where pid.ProductID == ProductID
-            //           select new { name = pid.ProductName, id = pid.ProductID };
-
-            //string name = join.FirstOrDefault(line => line.id == ProductID).name;
-
-            //var join = from listLine in _context.ShoppingListLine
-            // join category in _context.Category 
-
-
-            //Main Logic to grab users list, join with other tables to filter out by store and order by Aisle numbers
+            //Below is Main Logic to grab users list, join with other tables to filter out by store and order by Aisle numbers
             //TODO: Add sections in the future for even easier store navigation (as in which section of the aisle the product is in)
 
-            List<ShoppingList> orderedList = (from listLine in _context.ShoppingListLine where listLine.ListID == user.ListID
-                                              join product in _context.Product on listLine.ProductID equals product.ProductID
-                                              join category in _context.Category on product.CategoryID equals category.CategoryID
-                                              join aisle in _context.Aisle on category.CategoryID equals aisle.CategoryID where aisle.StoreID == user.StorePref
-                                              orderby aisle.AisleNumber
-                                              select new ShoppingList { ProductName = listLine.ProductName, Quantity = listLine.Quantity, AisleNumber = aisle.AisleNumber, Category = category.CategoryName }).ToList();
+            //Get the aisles in the Users Store preference
+            var storePrefAisles = _context.Aisle.Where(aisle => aisle.StoreID == user.StorePref).Select(aisle => aisle);
 
-            //List<ShoppingList> orderedList2 = (from aisle in _context.Aisle
-            //                                      join category in _context.Category on aisle.CategoryID equals category.CategoryID
-            //                                      join product in _context.Product on category.CategoryID equals product.CategoryID
-            //                                      join listLine in _context.ShoppingListLine on product.ProductID equals listLine.ProductID
-            //                                      where listLine.ListID == user.ListID && aisle.StoreID == user.StorePref
-            //                                      orderby aisle.AisleNumber
-            //                                      select new ShoppingList { ProductName = listLine.ProductName, Quantity = listLine.Quantity, AisleNumber = aisle.AisleNumber, Category = category.CategoryName }).ToList();
+            List<ShoppingList> orderedList = (from listLine in _context.ShoppingListLine
+                                where listLine.ListID == user.ListID
+                                join product in _context.Product on listLine.ProductID equals product.ProductID                     //Joins users list with productDB to get category ID
+                                join category in _context.Category on product.CategoryID equals category.CategoryID                 //Joins previous with CategoryDB to get category name
+                                join aisle in storePrefAisles on category.CategoryID equals aisle.CategoryID into userList          //Left Joins previous with aisles in store
+                                from eachline in userList.DefaultIfEmpty()                                                          //if product is not in store, AisleNumber defaulst to 0
+                                orderby eachline.AisleNumber                                                                        //Orders by Aisle numbers
+                                select new ShoppingList                                                                             //Creates a new ShoppingList View Model to pass into the list
+                                {
+                                    ProductName = listLine.ProductName,
+                                    Quantity = listLine.Quantity,
+                                    AisleNumber = eachline.AisleNumber,// > 0 ? eachline.AisleNumber : -1,
+                                    Category = category.CategoryName,
+                                }).ToList();
 
+            //Retrieves the Store Name to Pass the View
             string StoreName = (from store in _context.Store
                                 where store.StoreID == user.StorePref
                                 select new { name = store.StoreName, id = store.StoreID})
@@ -388,9 +386,6 @@ namespace GrabAndGo.Controllers
             return View();
         }
 
-
-
-
         public async Task<IActionResult> ChangeStoreList()
         {
             return View(await _context.Store.ToListAsync());
@@ -406,7 +401,7 @@ namespace GrabAndGo.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("YourList", new { userName = User.Identity.Name });
+                return RedirectToAction("ShoppingList", new { userName = User.Identity.Name });
 
             }
 
