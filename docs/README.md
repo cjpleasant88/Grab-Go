@@ -1,3 +1,9 @@
+[(Back to Project Overview)](https://github.com/cjpleasant88/Grab-Go)
+
+<h5>**This application has moved from prototype to development stage, progress can be found here:</h5>
+
+[Web Application of Grab & Go (In-Development)](https://github.com/cjpleasant88/Grab-Go/tree/master/GrabAndGo)
+
 ## Grab & Go Prototype
 
 This is the home of version 0.1 of the Grab & Go application.
@@ -18,6 +24,7 @@ This is a proof of concept and just to get a feel for page navigation.
 Details of the files can be viewed in the HTML_Prototype folder, however, to use the application live in its current state please naviagate to the following link:
 
 https://cjpleasant88.github.io/Grab-Go/
+
 
 ## Screen Shots
 
