@@ -23,13 +23,13 @@
 ## <div align="center">INSPIRATION</div>
 [(back to top)](#table-of-contents)
 
-After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles as if I am on a scavenger hunt. 
+After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles to retrieve the items on my list. 
 
 ## <div align="center">CONCEPT</div>
 [(back to top)](#table-of-contents)
 
 The Concept is simple. 
-Have a list of grocery store items listed in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once. 
+Have a list of grocery store items that automatically re-arranges the items on the list in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once, and not spending time before the trip to organize your list.
 
 ## <div align="center">IMPLEMENTATION</div>
 [(back to top)](#table-of-contents)
@@ -37,9 +37,13 @@ Have a list of grocery store items listed in a way that allows you to traverse a
 To accomplish this task, a few inventories would have to be maintained:
 
  - List of Aisles in a particular store
- - The sections that each Aisle contains
- - A Catalog of items along with the section they belong to
+ - The Category of items that each Aisle contains
+ - A Catalog of items along with the category they belong to
  - A list of items on a users Shopping List
+ 
+ Also, to be able to order the list based on different stores and have multiple users we need:
+ - To maintain a List of Stores 
+ - To maintain a Database of unique users
 
 ## <div align="center">ENTITY RELATIONSHIP DIAGRAM</div>
 [Preliminary Database](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/ISTA420%20-%20CPleasant%20-%2020200216%20-%20Project%20Step%205%20-%20DataBase%20Creation.sql)
@@ -53,7 +57,7 @@ To accomplish this task, a few inventories would have to be maintained:
 
 2) As a User, I need to re-order my grocery List items, So they are listed in a way relating to their location in a Grocery store.
 
-3) As a User, I need to view a map the store aisles and my listed items, So I can have a better visual of my items and where they are in the store.
+3) As a User, I need to view a map the store aisles and my listed items, So I can have a better visual of my items and where they are in the store. - *future Update*
 
 4) As a User, I need to select the store that I would like to shop at, so my list is tailored to the aisle layout of the specific store I select.
 
