@@ -19,7 +19,8 @@ Details of the files can be viewed in the HTML_Prototype folder, however, to use
 
 https://cjpleasant88.github.io/Grab-Go/
 
-This application has moved from prototype to development stage, progress can be found here:
+
+<h5>This application has moved from prototype to development stage, progress can be found here:</h5>
 
 [Web Application of Grab & Go (In-Development)](https://github.com/cjpleasant88/Grab-Go/tree/master/GrabAndGo)
 
