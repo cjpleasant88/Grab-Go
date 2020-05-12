@@ -182,7 +182,11 @@ After selecting the "Sign Up' Tab, the user can enter their information where it
 One logged in, the user can create a shopping list in an arbitrary order. This list can be shared with other users such as a family member or spouse:
 ![Shopping List](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Shopping%20List.png)
 
-Once the "Let's go shopping" being has been clicked, the app will take the users list of items and reorder them in a way that creates the "fastest path" through the store. A map view can also be shown identifying the location of the items in the store with a bird's eye view of the store:
+Once the "Let's go shopping" being has been clicked, the app will take the users list of items and reorder them in a way that creates the "fastest path" through the store.
+![Ordered Shopping List](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Ordered%20Shopping%20List.PNG)
+
+*Future Update*
+A map view can also be shown identifying the location of the items in the store with a bird's eye view of the store:
 ![Store Map](https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Store%20Map.png)
 
 ## <div align="center">REQUIREMENTS TABLE</div>
