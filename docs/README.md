@@ -1,6 +1,6 @@
 [(Back to Project Overview)](https://github.com/cjpleasant88/Grab-Go)
 
-<h5>This application has moved from prototype to development stage, progress can be found here:</h5>
+<h5>**This application has moved from prototype to development stage, progress can be found here:</h5>
 
 [Web Application of Grab & Go (In-Development)](https://github.com/cjpleasant88/Grab-Go/tree/master/GrabAndGo)
 
