@@ -237,7 +237,7 @@ A map view can also be shown identifying the location of the items in the store 
 | TC005   | 1.0.0, 1.1.0                             | Add bread, milk, eggs to an existing users list              | :heavy_check_mark:     | 5/6/2020   | N/A     |
 | TC006   | 1.1.1, 1.1.2                             | Have administrator look at SQL data base and verify that report can be  pulled by category, and that the list in the application id the same items | :heavy_check_mark:     | 5/12/2020   | N/A     |
 | TC007   | 2.0.0, 2.1.0, 2.1.1                      | Logged in user can select "Let's go Shopping" and see their  list in an ordered format according to store layout | :heavy_check_mark:     | 5/12/2020   | N/A     |
-| TC008   | 3.0.0, 3.1.0                             | User can select "map View" and see their items on store map,  matching their physical location in the store | Not Tested     | 3/8/2020   | N/A     |
+| TC008   | 3.0.0, 3.1.0                             | User can select "map View" and see their items on store map,  matching their physical location in the store | Not Implemented :x:     | 3/8/2020   | N/A     |
 | TC009   | 6.0.0, 6.1.0, 6.1.1                      | Administrator adds a new item to database, adds a non-existing item,  verifies that is shows up in the application | :heavy_check_mark:     | 5/6/2020   | N/A     |
 | TC010   | 7.0.0, 7.1.0, 7.1.1                      | Administrator add a new store and layout to the database, verifies that  store and layout populate in the application | :heavy_check_mark:     | 5/12/2020   | N/A     |
 
