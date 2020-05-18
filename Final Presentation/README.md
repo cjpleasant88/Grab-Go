@@ -63,6 +63,8 @@ To accomplish this task, a few inventories would have to be maintained:
  Also, to be able to order the list based on different stores and have multiple users we need:
  - To maintain a List of Stores 
  - To maintain a Database of unique users
+ 
+ ## <div align="center">IMPLEMENTATION</div>
 
 ## <div align="center">TESTING</div>
 
