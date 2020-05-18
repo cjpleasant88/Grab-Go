@@ -13,7 +13,7 @@ After having a newborn this past year, I have discovered how precious and valuab
 The Concept is simple. 
 Have a list of grocery store items that automatically re-arranges the items on the list in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once, and not spending time before the trip to organize your list.
 
- ## <div align="center">Requirement Analysis</div><br>
+## <div align="center">Requirement Analysis</div><br>
  <div align="center">X.0.0 = User Requirement<br>
  X.X.0 = System Requirement<br>
  X.X.X = Software Requirement</div><br>
@@ -51,7 +51,7 @@ Have a list of grocery store items that automatically re-arranges the items on t
    | 7.1.0           | The System shall display a  form to the administrator for all required information of a Store entity | Demonstration | TC010        |
    | 7.1.1           | The software shall run  script(s) to take form data and create a new record of the item in the Store  Table | Inspection    | TC010        |
 
-  ## <div align="center">DESIGN</div>
+## <div align="center">DESIGN</div>
 
 To accomplish this task, a few inventories would have to be maintained:
 
@@ -64,9 +64,9 @@ To accomplish this task, a few inventories would have to be maintained:
  - To maintain a List of Stores 
  - To maintain a Database of unique users
 
-   Testing
+## <div align="center">TESTING</div>
 
-   ## <div align="center">TESTS TABLE</div>
+### <div align="center">Tests Table</div>
 
    | Test ID | Requirement ID(s)                        | Test Procedure                                               | Current Status      | Time Stamp | Version |
    | ------- | ---------------------------------------- | ------------------------------------------------------------ | ------------------- | ---------- | ------- |
@@ -80,6 +80,8 @@ To accomplish this task, a few inventories would have to be maintained:
    | TC008   | 3.0.0, 3.1.0                             | User can select "map View" and see their items on store map,  matching their physical location in the store | Not Implemented :x: | 3/8/2020   | N/A     |
    | TC009   | 6.0.0, 6.1.0, 6.1.1                      | Administrator adds a new item to database, adds a non-existing item,  verifies that is shows up in the application | :heavy_check_mark:  | 5/6/2020   | N/A     |
    | TC010   | 7.0.0, 7.1.0, 7.1.1                      | Administrator add a new store and layout to the database, verifies that  store and layout populate in the application | :heavy_check_mark:  | 5/12/2020  | N/A     |
+
+### <div align="center">Requirements Traceability Matrix</div>
 
    | Requirements ID | Test ID            |||||||||| Total Tests              |
    | --------------- | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ---- | ------------------ | ------------------ | ---- |
