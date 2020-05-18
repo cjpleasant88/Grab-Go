@@ -13,7 +13,7 @@ After having a newborn this past year, I have discovered how precious and valuab
 The Concept is simple. 
 Have a list of grocery store items that automatically re-arranges the items on the list in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once, and not spending time before the trip to organize your list.
 
-## <div align="center">Requirement Analysis</div><br>
+## <div align="center">REQUIREMENT ANALYSIS</div><br>
  <div align="center">X.0.0 = User Requirement<br>
  X.X.0 = System Requirement<br>
  X.X.X = Software Requirement</div><br>
