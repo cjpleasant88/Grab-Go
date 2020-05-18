@@ -2,7 +2,7 @@
 
 1. Describe project experience including each phase of the SDLC and the project artifacts (design documents, requirements trace, test reports...)
 
-   <div align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/sdlc.png" width="600"/></div>
+   <div  align="center"><span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="300"/></span><span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/sdlccycle.png" width="500"/></span></div>
 
    Requirement Analysis
 
