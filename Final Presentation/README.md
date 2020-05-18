@@ -4,11 +4,11 @@
 
    <div  align="center"><span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/sdlccycle.png" width="300"/></span></div>
    
-## <div align="center">INSPIRATION</div>
+## <div align="center">Inspiration</div>
 
 After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles to retrieve the items. 
 
-## <div align="center">CONCEPT</div>
+## <div align="center">Concept</div>
 
 The Concept is simple. 
 Have a list of grocery store items that automatically re-arranges the items on the list in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once, and not spending time before the trip to organize your list.
