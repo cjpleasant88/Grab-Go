@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace GrabAndGo.Models
 {

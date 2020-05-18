@@ -6,43 +6,65 @@
     ViewData["Title"] = "Shopping List";
     bool IsSharing = ViewBag.IsSharing;
 }
+    <div class="background-image" style="background-image: url('../Images/baby.jpg');">
 
-    <div class="container">
-        <div class="form-group text-center">
-            <a asp-controller="Products" asp-action="List" asp-route-userName="@User.Identity.Name" class="btn btn-primary text-center">Add Item</a>
-        </div>
-        @if (IsSharing)
-        {
-            <span>Sharing: Yes</span>
-            <div class="form-group text-center">
-                <a asp-controller="ShoppingListLines" asp-action="StopSharing" class="btn btn-primary text-center">Stop Sharing</a>
+
+        <div class="container">
+
+            @*<div class="container text-center col-12 mb-2">
+            <div class="row">
+                <div class="col-12">
+                    <div><img class="cart-img center" src="~/Images/speedycart.png" alt="Grab&Go Logo"></div>
+                </div>
             </div>
-        }
-        else
-        {
-            <span>Sharing: No</span>
-            <div class="form-group text-center">
-                <a asp-controller="ShoppingListLines" asp-action="ShareList" asp-route-userName="@User.Identity.Name" class="btn btn-primary text-center">Share List</a>
+        </div>*@
+
+            <div class="col-12 text-center mt-3">
+                <img class="cart-img" src="~/Images/blankicon.png" alt="Grab&Go Logo">
             </div>
-        }
+
+            @*<div class="text-center col-12">
+                <h1 class="text-center">@ViewBag.ListName</h1>
+            </div>*@
+
+            
 
 
-        @if (Model.Count() > 0)
-        {
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ProductID)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Quantity)
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+            <div class="form-container">
+
+                @*<div class="text-center col-12">*@
+                    <h1 class="text-center">@ViewBag.ListName</h1>
+                @*</div>*@
+
+                <div class="text-center col-12 mb-2">
+                    <a asp-controller="Products" asp-action="AllItems" asp-route-userName="@User.Identity.Name" class="btn btn-primary text-center">Add Item</a>
+                    @if (IsSharing)
+                        {<a asp-controller="ShoppingListLines" asp-action="StopSharing" class="btn btn-outline-primary text-center">Stop Sharing</a> }
+                    else
+                        { <a asp-controller="ShoppingListLines" asp-action="ShareList" asp-route-userName="@User.Identity.Name" class="btn btn-outline-primary text-center">Share List</a> }
+                    
+                </div>
+
+                @if (Model.Count() > 0)
+                {
+
+
+
+                <table class="table table-striped" style="width:auto" align="center">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProductName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                            {
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.ProductName)
@@ -50,16 +72,22 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Quantity)
                             </td>
+                            <td>
+                                <a asp-action="RemoveYourList" asp-route-id="@item.ShoppingListLineID" class="btn-sm btn-danger">X</a>
+                            </td>
                         </tr>
-                    }
-                </tbody>
-            </table>
-        }
-        else
-        {
-            <h1 class="text-center">Your shopping list is empty</h1>
-        }
-        <div class="text-center mb-2">
-            <a asp-action="ShoppingList" asp-route-userName="@User.Identity.Name" class="btn btn-outline-success">Let's Go Shopping</a>
+                            }
+                    </tbody>
+                </table>
+                <div class="text-center mb-2">
+                    <a asp-action="ShoppingList" asp-route-userName="@User.Identity.Name" class="btn btn-outline-success">Let's Go Shopping</a>
+                </div>
+
+                }
+                else
+                {
+                <h1 class="text-center">Your shopping list is empty</h1>
+                }
+            </div>
         </div>
     </div>

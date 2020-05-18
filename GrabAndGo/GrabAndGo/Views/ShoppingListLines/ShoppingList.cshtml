@@ -4,112 +4,161 @@
     ViewData["Title"] = "ShoppingList";
     string storeName = ViewBag.StoreName;
 }
+    <div class="background-image" style="background-image: url('../Images/strawberries.jpg');">
 
-<h1 class="text-center">ShoppingList</h1>
+        @*<div class="container text-center col-12 mt-2">
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <div><img class="cart-img center" src="~/Images/speedycart.png" alt="Grab&Go Logo"></div>
+                </div>
+            </div>
+        </div>*@
 
-<h2 class="text-center">Current Store: @storeName</h2>
-<a asp-action="ChangeStoreList" class="btn btn-outline-success text-center">Change Store</a>
+        <div class="col-12 text-center mt-3">
+            <img class="cart-img" src="~/Images/blankicon.png" alt="Grab&Go Logo">
+        </div>
 
-<div class="container">
-    <div class="form-group text-center">
-        <a asp-controller="Products" asp-action="List" asp-route-userName="@User.Identity.Name" class="btn btn-primary text-center">Add Item</a>
-    </div>
+        
+
+        @*<div class="text-center col-12">
+            <h2 class="text-center">Current Store: @storeName</h2>
+        </div>*@
+
+        @*<div class="container">*@
+            @*<div class="text-center">
+                <a asp-action="ChangeStoreList" class="btn btn-outline-success text-center">Change Store</a>
+            </div>*@
+
+            <div class="form-container">
 
 
-    @if (Model.Count() > 0)
-    {
-        @for (int i = 1; i < 15; i++)
-        {
-            bool itemsExists = false;
-            string category = null;
+                <div class="form-group col-12">
+                    <h1 class="text-center">Shopping List</h1>
+                </div>
+                <div class="form-group col-12">
+                    <h6 class="text-center">Current Store: @storeName</h6>
+                </div>
 
-            //Checks to see if there are items in this aisle
-            foreach (var item in Model)
-            {
-                if (i == item.AisleNumber)
+                <div class="form-group text-center">
+                    <a asp-controller="Products" asp-action="AllItems" asp-route-userName="@User.Identity.Name" class="btn btn-primary text-center">Add Item</a>
+                    <a asp-action="ChangeStoreList" class="btn btn-outline-success text-center">Change Store</a>
+                </div>
+
+                @if (Model.Count() > 0)
                 {
-                    itemsExists = true;
-                    category = item.Category;
-                }
-            }
-            //If there are items on this aisle, display the aisle, category, and the items in this aisle
-            if (itemsExists)
-            {
-                <h5 class="text-center">Aisle: @i (@category)</h5>
+                    bool ItemsNotInStore = false;
 
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ProductName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Quantity)
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (itemsExists)
-                        {
-                            foreach (var item in Model)
-                            {
-                                if (item.AisleNumber == i)
-                                {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ProductName)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Quantity)
-                                        </td>
-                                    </tr>
-                                }
-                            }
-                        }
-                    </tbody>
-                </table>
-            }
-
-            itemsExists = false;
-        }
-        <h5 class="text-center">Items on your List that are not at  @ViewBag.storeName</h5>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ProductName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Quantity)
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    if (item.AisleNumber == 0)
+                    @for (int i = 1; i <= ViewBag.NumberOfAisles; i++)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ProductName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Quantity)
-                            </td>
-                        </tr>
+                        bool itemsExists = false;
+                        string category = null;
+
+                        //Checks to see if there are items in this aisle
+                        foreach (var item in Model)
+                        {
+                            if (item.AisleNumber == 0)
+                            {
+                                ItemsNotInStore = true;
+                            }
+                            else if (i == item.AisleNumber)
+                            {
+                                itemsExists = true;
+                                category = item.Category;
+                            }
+
+                        }
+                        //If there are items on this aisle, display the aisle, category, and the items in this aisle
+                        if (itemsExists)
+                        {
+                            <h5 class="text-center">Aisle: @i (@category)</h5>
+
+
+                            <table class="table table-striped" style="width:290px;" align="center">
+                                <thead>
+                                    <tr>
+                                        <th style="width:140px;">
+                                            @Html.DisplayNameFor(model => model.ProductName)
+                                        </th>
+                                        <th style="width:100px;">
+                                            @Html.DisplayNameFor(model => model.Quantity)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (itemsExists)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            if (item.AisleNumber == i)
+                                            {
+                                                <tr>
+                                                    <td style="width:140px;">
+                                                        @Html.DisplayFor(modelItem => item.ProductName)
+                                                    </td>
+                                                    <td style="width:100px;">
+                                                        @Html.DisplayFor(modelItem => item.Quantity)
+                                                    </td>
+                                                    <td>
+                                                        <a asp-action="RemoveShoppingList" asp-route-id="@item.LineID" class="btn-sm btn-danger">X</a>
+                                                    </td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        }
+
+                        itemsExists = false;
                     }
+                    if (ItemsNotInStore)
+                    {
+                        <h5 class="text-center text-danger">Items on your List that are not at  @ViewBag.storeName</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ProductName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Quantity)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    if (item.AisleNumber == 0)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ProductName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Quantity)
+                                            </td>
+                                            <td>
+                                                <a asp-action="RemoveShoppingList" asp-route-id="@item.LineID" class="btn-sm btn-danger">X</a>
+                                            </td>
+                                        </tr>
+                                    }
 
+                                }
+                            </tbody>
+                        </table>
+                    }
                 }
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <h1 class="text-center">Your shopping list is empty</h1>
-    }
+                else
+                {
+                    <h1 class="text-center">Your shopping list is empty</h1>
+                }
 
-    <div class="text-center mb-2">
-        <a asp-controller="ShoppingListLines" asp-action="YourList" asp-route-userName="@User.Identity.Name" class="btn btn-outline-success">Back to Your List</a>
+                <div class="text-center mb-2">
+                    <a asp-controller="ShoppingListLines" asp-action="YourList" class="btn btn-outline-success">Back to Your List</a>
+                </div>
+            </div>
+        @*</div>*@
     </div>
-</div>

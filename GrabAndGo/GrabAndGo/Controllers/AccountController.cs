@@ -7,6 +7,7 @@ using GrabAndGo.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace GrabAndGo.Controllers
 {
@@ -22,6 +23,8 @@ namespace GrabAndGo.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.roleManager = roleManager;
+
+            IdentitySeedData.EnsurePopulated(userManager, roleManager).Wait();
         }
 
         [HttpPost]
@@ -44,17 +47,19 @@ namespace GrabAndGo.Controllers
         {
             string userRole = "User";
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
                 {
-                   UserName = model.Email,
-                   Email = model.Email,  
-                   FirstName = model.FirstName,
-                   LastName = model.LastName,
-                   ListName = model.FirstName + "'s List"
-                
-            };
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    ListName = model.FirstName + "'s List",
+                    StorePref = 1
+
+                };
+            
 
                 //var role = await roleManager.FindByNameAsync(userRole);
 
@@ -70,6 +75,7 @@ namespace GrabAndGo.Controllers
                     var newUser = await userManager.FindByNameAsync(model.Email);
                     //assigns their ListId to be the same as their UserId
                     newUser.ListID = newUser.Id;
+                    
                     await userManager.UpdateAsync(newUser);
 
                     //Assigns them to the User Role
@@ -105,7 +111,7 @@ namespace GrabAndGo.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("MainPage", "Home");
+                    return RedirectToAction("YourList", "ShoppingListLines");
                 }
 
                 ModelState.AddModelError(string.Empty, "Invlaid Login Attempt");

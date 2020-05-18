@@ -1,40 +1,36 @@
 ﻿@model RegisterViewModel
 
 @{
-    Layout = "_Validation";
+    //Layout = "_Validation";
     ViewData["Title"] = "Sign Up!";
 }
 
 <div class="background-image" style="background-image: url('../Images/vegies.jpg');">
     <div class="container text-center">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-12">
+        @*<div class="container text-center">
+            <div class="row">*@
+                @*<div class="col-12">
                     <h2 class="title">Grab & Go</h2>
-                </div>
-            </div>
-        </div>
+                </div>*@
+            @*</div>
+        </div>*@
 
 
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-12">
-                    <div><img class="cart-img center" src="~/Images/speedycart.png" alt="Grab&Go Logo"></div>
-                </div>
-            </div>
+        <div class="col-12">
+            <img class="cart-img" src="~/Images/blankicon.png" alt="Grab&Go Logo">
         </div>
 
 
         <div class="form-container">
 
-            <h2 class="text-center">Member Register</h2>
+            <h2 class="text-center"> New Member Registration</h2>
 
             <form method="post">
                 <div asp-validation-summary="All" class="text-danger"></div>
 
                 <div class="form-group">
                     @*<label asp-for="FirstName" class="control-label"></label>*@
-                    <input asp-for="FirstName" class="form-control input-gray" placeholder="FirstName" />
+                    <input asp-for="FirstName" class="form-control input-gray" placeholder="First Name" />
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="form-group">

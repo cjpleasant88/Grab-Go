@@ -3,8 +3,14 @@
     ViewData["Title"] = "Success!";
     string user = ViewBag.Shared;
 }
-
-
-<h1 class="text-center">An invitation to Share your Shopping List has been sent to @user!</h1>
-
-<a class="btn btn-success text-center" asp-action="YourList" asp-controller="ShoppingListLines" asp-route-userName="@User.Identity.Name">Back to Your List</a>
+    <div class="background-image" style="background-image: url('../Images/vegiesblur.jpg');">
+        <div class="col-12 text-center mt-3">
+            <img class="cart-img" src="~/Images/blankicon.png" alt="Grab&Go Logo">
+        </div>
+        <div class="form-container">
+            <h1 class="text-center">An invitation to Share your Shopping List has been sent to @user!</h1>
+            <div class="text-center">
+            <a class="btn btn-success text-center" asp-action="YourList" asp-controller="ShoppingListLines">Back to Your List</a>
+        </div>
+        </div>
+    </div>

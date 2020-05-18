@@ -9,6 +9,8 @@ using GrabAndGo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace GrabAndGo.Controllers
 {
@@ -23,65 +25,67 @@ namespace GrabAndGo.Controllers
             listRepo = listItems;
         }
 
-        public IActionResult Index()
-        {
-            return View(repository.Products);
-        }
-
-        public IActionResult HomePage()
-        {
-            return View();
-        }
-
-        public IActionResult SignUp()
-        {
-            var newUser = new User();
-            return View(newUser);
-        }
-
-        public IActionResult List()
-        {
-            return View();
-        }
-
         [AllowAnonymous]
         public IActionResult MainPage()
         {
             return View();
         }
 
-        //public async Task<IActionResult> List2(int listID, string searchString)
-        public IActionResult List2(int listID)
+        [AllowAnonymous]
+        public IActionResult Map()
         {
-            //IEnumerable<ShoppingListLine> UserShoppingList = from listItem in listRepo.ShoppingListLines where listItem.ListID == listID select listItem;
-            //var list = listRepo.ShoppingListLines.Where(p => p.ListID == listID);
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-            //Gets all products in product list
-            //IQueryable<string> products = from p in repository.Products orderby p.ProductName select p.ProductName;
-            //creates a list of all items in the users shoppinglist
-            //IQueryable<ShoppingListLine> shoppingList2 = from listItem in listRepo.ShoppingListLines where listItem.ListID == listID select listItem;
-            //var products = from p in repository.Products select p;
-            //if (!string.IsNullOrEmpty(searchString))
-            //{
-            //    products = products.Where(p => p.Contains(searchString));
-            //}
-            //var UserShoppingListModel = new ShoppingList
-            //{
-            //    Products = await products.ToListAsync(),
-            //    UserShoppingList = await shoppingList2.ToListAsync()
-            //};
-            //return View(UserShoppingListModel);
+            IConfigurationRoot configuration = builder.Build();
 
-            //return View(UserShoppingList);
-            ViewBag.ListID = listID;
-
-            return View(listRepo.ShoppingListLines.Where(p => p.ListID.Equals(listID)));
+            string GoogleMaps = configuration.GetValue<string>("Google:Maps");
+            ViewBag.GoogleMaps = GoogleMaps;
+            return View();
         }
 
-
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult AddressLookup()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Index()
+        {
+            return View(repository.Products);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult HomePage()
+        {
+            return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult SignUp()
+        {
+            var newUser = new User();
+            return View(newUser);
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult List()
+        {
+            return View();
+        }
+
+        //public async Task<IActionResult> List2(int listID, string searchString)
+        [Authorize(Roles = "Admin")]
+        public IActionResult List2(int listID)
+        {
+            ViewBag.ListID = listID;
+            return View(listRepo.ShoppingListLines.Where(p => p.ListID.Equals(listID)));
         }
     }
 }

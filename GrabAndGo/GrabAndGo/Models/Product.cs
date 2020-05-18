@@ -15,6 +15,7 @@ namespace GrabAndGo.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductID { get; set; }
 
+        [Display(Name = "Product")]
         public string ProductName { get; set; }
 
         public int CategoryID { get; set; }

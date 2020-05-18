@@ -9,7 +9,6 @@ using Microsoft.Extensions.Logging;
 using System.IO;
 using Microsoft.AspNetCore;
 
-
 namespace GrabAndGo
 {
     public class Program

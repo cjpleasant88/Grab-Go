@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using GrabAndGo.Models.ViewModels;
+using Microsoft.Extensions.DependencyModel.Resolution;
 
 namespace GrabAndGo
 {
@@ -41,7 +43,9 @@ namespace GrabAndGo
                 });
 
             services.AddDbContext<GrabAndGoContext>(options =>
-                    options.UseSqlServer(Configuration["Data:GrabAndGoContext:ConnectionString5"]));
+                    options.UseSqlServer(Configuration["Data:GrabAndGoContext:ConnectionStringAzure"]));
+
+            
 
             //Using the Identity Servieds all while changing the password Regular Expression charactersitics to allow less secure passwords.
             //Passowrd only needs to be 3 characters in length and needs 3 different characters
@@ -85,6 +89,7 @@ namespace GrabAndGo
             //services.AddTransient<IShoppingListLineRepository, FakeShoppingListLineRepository>();
             //---------------------------------------------------------------
 
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -122,6 +127,8 @@ namespace GrabAndGo
             });
 
             //SeedData.EnsurePopulated(app);
+
+            //IdentitySeedData.EnsurePopulated();
         }
     }
 }

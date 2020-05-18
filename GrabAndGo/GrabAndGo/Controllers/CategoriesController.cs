@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
 using GrabAndGo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrabAndGo.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private readonly GrabAndGoContext _context;

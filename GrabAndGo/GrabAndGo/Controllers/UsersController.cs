@@ -9,6 +9,7 @@ using GrabAndGo.Data;
 using GrabAndGo.Models;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrabAndGo.Controllers
 {
@@ -23,6 +24,7 @@ namespace GrabAndGo.Controllers
 
 
         // GET: Users
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.User.ToListAsync());

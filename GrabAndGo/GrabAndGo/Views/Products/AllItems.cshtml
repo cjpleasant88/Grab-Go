@@ -1,0 +1,85 @@
+﻿@model IEnumerable<GrabAndGo.Models.Product>
+ 
+@{
+    ViewData["Title"] = "All Items";
+    string searchString = "";
+}
+
+
+    <div class="background-image" style="background-image: url('../Images/baby.jpg');">
+
+
+        <div class="container">
+
+            @*<div class="container text-center col-12 mb-2">
+            <div class="row">
+                <div class="col-12">
+                    <div><img class="cart-img center" src="~/Images/speedycart.png" alt="Grab&Go Logo"></div>
+                </div>
+            </div>
+        </div>*@
+            <div class="col-12 text-center mt-3">
+                <img class="cart-img" src="~/Images/blankicon.png" alt="Grab&Go Logo">
+            </div>
+
+
+            @*<div class="text-center col-12">
+                <h1 class="text-center">All Items</h1>
+            </div>
+
+            <form asp-controller="Products" asp-action="AllItems" asp-route-searchString="@searchString" method="get">
+                <div class="text-center">
+                    <input class="input-gray" type="text" asp-for="@searchString" placeholder="seach" />
+                    <input class="btn-sm btn-info" type="submit" value="Filter" />
+                </div>
+            </form>
+
+            <p class="text-center">
+                <a asp-action="Create">Create New</a>
+            </p>*@
+
+        <div class="form-container" style="max-width: 300px">
+            <div class="text-center col-12">
+                <h1 class="text-center">All Items</h1>
+            </div>
+
+            <form asp-controller="Products" asp-action="AllItems" asp-route-searchString="@searchString" method="get">
+                <div class="text-center">
+                    <input class="input-gray" type="text" asp-for="@searchString" placeholder="seach" />
+                    <input class="btn-sm btn-info" type="submit" value="Search" />
+                </div>
+            </form>
+
+            <p class="text-center">
+                <a asp-action="Create">Create New</a>
+            </p>
+            <table class="table table-striped test-center" style="width:auto" align="center">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProductName)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                            <td>
+                                <a asp-controller="ShoppingListLines"
+                                   asp-action="AddToList"
+                                   asp-route-ProductID="@item.ProductID"
+                                   asp-route-userName="@User.Identity.Name"
+                                   class="btn-sm btn-success">Add</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>

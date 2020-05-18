@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
 using GrabAndGo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrabAndGo.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AislesController : Controller
     {
         private readonly GrabAndGoContext _context;
@@ -26,6 +28,7 @@ namespace GrabAndGo.Controllers
         }
 
         // GET: Aisles/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

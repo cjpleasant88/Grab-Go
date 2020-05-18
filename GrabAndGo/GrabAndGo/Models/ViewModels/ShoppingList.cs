@@ -10,7 +10,9 @@ namespace GrabAndGo.Models.ViewModels
 {
     public class ShoppingList
     {
+        public int LineID { get; set; }
 
+        [Display(Name = "Product")]
         public string  ProductName { get; set; }
         public int Quantity { get; set; }
         public int AisleNumber { get; set; }

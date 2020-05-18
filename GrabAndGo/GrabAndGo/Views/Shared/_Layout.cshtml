@@ -10,8 +10,21 @@
     <title>@ViewData["Title"] - Grab & Go</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/css/style.css" rel="stylesheet" />
+    @*<link rel="apple-touch-icon" sizes="152x152" href="~/Images/speedycartsmall.png" />*@
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="~/Images/speedycartsmall.png">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Images/bagicon.png" />
+    <link rel="shortcut icon" type="image/jpg" href="~/Images/bagicon.png" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </head>
     <body>
+
+        
         <header>
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
                 <div class="container">
@@ -27,8 +40,12 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MainPage">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Map">Participating Locations</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
+                           
                             @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
@@ -42,12 +59,9 @@
                     <ul class="navbar-nav ml-auto">
                         @if (signInManager.IsSignedIn(User))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" 
-                                   asp-controller="ShoppingListLines" 
-                                   asp-action="YourList" 
-                                   asp-route-userName="@User.Identity.Name">Your List</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingListLines" asp-action="YourList">Your List</a>
+                        </li>
                             <li class="nav-item">
                                 <form method="post" asp-action="Logout" asp-controller="account">
                                     <button type="submit" class="nav-link btn btn-link py-0" style="width: auto">

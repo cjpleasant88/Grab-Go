@@ -3,9 +3,16 @@
     ViewData["Title"] = "ShareList Invitation";
     string user = ViewBag.SharingUser;
 }
-
-<h2 class="text-center">You have a request from @user to share their list with you.</h2>
-<a asp-action="ShareAccept" class="btn btn-success">Accept</a>
-<a asp-action="ShareDeny" class="btn btn-danger">Deny</a>
-
-<h6 class="text-center text-danger">Note** Accepting will override what is in your current List</h6>
+    <div class="background-image" style="background-image: url('../Images/openaisle.jpg');">
+        <div class="col-12 text-center mt-3">
+            <img class="cart-img" src="~/Images/blankicon.png" alt="Grab&Go Logo">
+        </div>
+        <div class="form-container">
+            <h2 class="text-center">You have a request from @user to share their list with you.</h2>
+            <h6 class="text-center text-danger">Note** Accepting will override what is in your current List</h6>
+            <div class="text-center">
+                <a asp-action="ShareAccept" class="btn btn-success">Accept</a>
+                <a asp-action="ShareDeny" class="btn btn-danger">Deny</a>
+            </div>
+        </div>
+    </div>

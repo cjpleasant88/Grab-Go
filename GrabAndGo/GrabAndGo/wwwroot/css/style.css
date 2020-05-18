@@ -28,7 +28,9 @@
     }
 
 .cart-img {
-    width: 20%;
+    width: 30%;
+    max-width: 700px;
+    min-width: 250px;
     height: auto;
     /*background-size: 100%;*/
     /*position: relative;*/
@@ -46,9 +48,10 @@
 
 
 .form-container {
-    width: 250px;
+    width: auto;
+    max-width: 320px;
     height: auto;
-    padding: 40px 30px 25px;
+    padding: 40px 15px 25px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 #000;
@@ -66,6 +69,13 @@
     width:100px;
 }
 
+.remove{
+    width: 25px;
+    height: 25px;
+    font: 100;
+    text-align: center;
+}
+
 .input-gray {
     margin-bottom: 15px;
     text-align: center;
@@ -78,4 +88,28 @@
 .input-validation-error {
     border-color: red;
     background-color: #fee;
+}
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+    /* Portrait styles */
+
+    .landscape {
+        display: none;
+    }
+
+    /*.portrait {
+        display: normal;
+    }*/
+}
+/* Landscape */
+@media screen and (orientation:landscape) {
+    /* Landscape styles */
+
+    /*.landscape{
+        display: normal;
+    }*/
+    .portrait{
+        display: none;
+    }
 }

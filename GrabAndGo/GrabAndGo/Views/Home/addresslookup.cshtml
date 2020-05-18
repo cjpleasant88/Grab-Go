@@ -1,0 +1,1312 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+    <html lang="en">
+    <head>
+        <style>
+            .mq-logo-control {
+                margin-left: 2px !important;
+                margin-bottom: 5px !important;
+            }
+
+                .mq-logo-control img {
+                    position: relative;
+                }
+        </style>
+        <style>
+            .leaflet-bottom.leaflet-right .mq-attribution-control {
+                background: #eaeaea;
+                bottom: -2px;
+                color: #777777;
+                height: 13px;
+                margin: 0;
+                padding: 0px 5px;
+                text-align: right;
+                text-transform: uppercase;
+                font-weight: normal;
+                font-family: sans-serif;
+                font-size: 9px;
+                white-space: nowrap;
+                margin-bottom: 2px;
+                letter-spacing: .5px;
+            }
+
+                .leaflet-bottom.leaflet-right .mq-attribution-control a {
+                    color: inherit;
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+        </style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="/documentation/assets/img/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/documentation/assets/img/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/documentation/assets/img/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/documentation/assets/img/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/documentation/assets/img/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/documentation/assets/img/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/documentation/assets/img/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/documentation/assets/img/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/documentation/assets/img/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/documentation/assets/img/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/documentation/assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/documentation/assets/img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/documentation/assets/img/favicon-16x16.png">
+        <link rel="manifest" href="/documentation/assets/img/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/documentation/assets/img/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="/documentation/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/documentation/favicon.ico" type="image/x-icon">
+
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <script type="text/javascript" async="" src="//munchkin.marketo.net/158/munchkin.js"></script>
+        <script>
+    !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function l(){d.addEventListener&&d.removeEventListener("load",l),d.media=r||"all"}var a,i=e.document,d=i.createElement("link");if(n)a=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;a=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){a.parentNode.insertBefore(d,n?a:a.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",l),d.onloadcssdefined=f,f(l),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)})}}}(this);
+    loadCSS('/documentation/assets/styles/main.css');
+    loadCSS('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700');
+    loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" media="all">
+        <link rel="stylesheet" href="/documentation/assets/styles/main.css" media="all">
+        @*<style>@media (min-width:1200px) and (max-width:1599px){.hidden-lg{display:none!important}}.visible-xl,.visible-xl-block,.visible-xl-inline,.visible-xl-inline-block{display:none!important}@media (min-width:1600px){.container{width:1570px}.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9{float:left}.col-xl-12{width:100%}.col-xl-11{width:91.66666667%}.col-xl-10{width:83.33333333%}.col-xl-9{width:75%}.col-xl-8{width:66.66666667%}.col-xl-7{width:58.33333333%}.col-xl-6{width:50%}.col-xl-5{width:41.66666667%}.col-xl-4{width:33.33333333%}.col-xl-3{width:25%}.col-xl-2{width:16.66666667%}.col-xl-1{width:8.33333333%}.col-xl-pull-12{right:100%}.col-xl-pull-11{right:91.66666667%}.col-xl-pull-10{right:83.33333333%}.col-xl-pull-9{right:75%}.col-xl-pull-8{right:66.66666667%}.col-xl-pull-7{right:58.33333333%}.col-xl-pull-6{right:50%}.col-xl-pull-5{right:41.66666667%}.col-xl-pull-4{right:33.33333333%}.col-xl-pull-3{right:25%}.col-xl-pull-2{right:16.66666667%}.col-xl-pull-1{right:8.33333333%}.col-xl-pull-0{right:auto}.col-xl-push-12{left:100%}.col-xl-push-11{left:91.66666667%}.col-xl-push-10{left:83.33333333%}.col-xl-push-9{left:75%}.col-xl-push-8{left:66.66666667%}.col-xl-push-7{left:58.33333333%}.col-xl-push-6{left:50%}.col-xl-push-5{left:41.66666667%}.col-xl-push-4{left:33.33333333%}.col-xl-push-3{left:25%}.col-xl-push-2{left:16.66666667%}.col-xl-push-1{left:8.33333333%}.col-xl-push-0{left:auto}.col-xl-offset-12{margin-left:100%}.col-xl-offset-11{margin-left:91.66666667%}.col-xl-offset-10{margin-left:83.33333333%}.col-xl-offset-9{margin-left:75%}.col-xl-offset-8{margin-left:66.66666667%}.col-xl-offset-7{margin-left:58.33333333%}.col-xl-offset-6{margin-left:50%}.col-xl-offset-5{margin-left:41.66666667%}.col-xl-offset-4{margin-left:33.33333333%}.col-xl-offset-3{margin-left:25%}.col-xl-offset-2{margin-left:16.66666667%}.col-xl-offset-1{margin-left:8.33333333%}.col-xl-offset-0{margin-left:0}.visible-xl{display:block!important}table.visible-xl{display:table}tr.visible-xl{display:table-row!important}td.visible-xl,th.visible-xl{display:table-cell!important}.visible-xl-block{display:block!important}.visible-xl-inline{display:inline!important}.visible-xl-inline-block{display:inline-block!important}.hidden-xl{display:none!important}}.darker-grey{background-color:#0f161f}.darker-gray{background-color:#0f161f}.dark-grey{background-color:#414142}.dark-gray{background-color:#414142}.grey{background-color:#b1b2b4}.gray{background-color:#b1b2b4}.light-gray{background-color:#dedede}.light-grey{background-color:#dedede}.lighter-gray{background-color:#eaeaea}.lighter-grey{background-color:#eaeaea}.dark-blue{background-color:#1c4d73}.teal{background-color:#39b0d5}.darker-blue{background-color:#022941}.light-blue{background-color:#0d78a6}.light-teal{background-color:#a3dce6}.red{background-color:#900}.green{background-color:#393}.black{background-color:#000}.white{background-color:#fff}.purple-text{color:#6c197f;font-weight:700}.green-text{color:#0e850f;font-weight:700}.blue-text{color:#07a;font-weight:600}.red-text{color:#900;font-weight:600}html{font-family:Raleway,sans-serif;font-size:100%}body{font-family:Raleway,sans-serif;line-height:1.4}p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;font-size:1.1em;line-height:1.58;margin-bottom:1.5rem}h1,h2,h3{font-family:Raleway,sans-serif;color:rgba(0,0,0,.8)}h1{font-size:3em;margin-bottom:1.5rem}h2{font-size:2em;margin-bottom:1.25rem}h3{font-size:1.5em}code{background-color:#dedede;color:rgba(0,0,0,.8);border-radius:2px}li{text-align:left}ul{list-style-type:disc}ul li{text-align:left}ol{list-style-type:none}ol li{display:list-item;list-style-type:decimal;line-height:20px;text-align:left;margin-bottom:5px}b,strong{font-weight:600}a{color:#39b0d5}a:hover{text-decoration:none;color:#2693b5}.btn{padding-right:10px;padding-left:10px;color:#fff;font-weight:500;border:none;border-radius:5px;position:relative;cursor:pointer}.btn:after{border-color:transparent transparent transparent transparent}.btn:before{border-color:transparent transparent transparent transparent}.btn:hover{background-color:transparent}.btn:hover:before{border-color:transparent transparent transparent transparent}.btn:hover:after{border-color:transparent transparent transparent transparent}.btn.focus,.btn:focus{background-color:transparent;outline-offset:-1px}.btn.focus:after,.btn:focus:after{border-color:transparent transparent transparent transparent}.btn.focus:before,.btn:focus:before{border-color:transparent transparent transparent transparent}.btn.active,.btn:active{background-color:transparent}.btn.active:after,.btn:active:after{border-color:transparent transparent transparent transparent}.btn.active:before,.btn:active:before{border-color:transparent transparent transparent transparent}.btn:active:focus{outline-offset:-1px;background-color:transparent;color:transparent}.btn:active:focus:after{border-color:transparent transparent transparent transparent}.btn:active:focus:before{border-color:transparent transparent transparent transparent}.btn:active:hover{background-color:transparent;color:transparent}.btn:active:hover:after{border-color:transparent transparent transparent transparent}.btn:active:hover:before{border-color:transparent transparent transparent transparent}.btn:focus:hover{color:transparent}.btn::after{content:'';width:0;height:0;border-style:solid;border-width:0 0 10px 10px;border-color:transparent;border-bottom-right-radius:0;position:absolute;bottom:0;right:0;z-index:1}.btn::before{content:'';width:0;height:0;border-style:solid;border-width:10px 10px 0 0;border-color:transparent;border-bottom-right-radius:0;position:absolute;bottom:0;right:0;z-index:1}.btn:hover{color:#fff}a i{margin-right:5px}.btn-default{color:#525252;background-color:#ccc}.btn-default:after{border-color:transparent transparent #39b0d5 transparent}.btn-default:before{border-color:#ccc transparent #ccc #ccc}.btn-default:hover{background-color:#39b0d5}.btn-default:hover:before{border-color:#39b0d5 transparent #39b0d5 transparent}.btn-default:hover:after{border-color:#ccc transparent #ccc transparent}.btn-default.focus,.btn-default:focus{background-color:#ccc;outline-offset:-1px}.btn-default.focus:after,.btn-default:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-default.focus:before,.btn-default:focus:before{border-color:#ccc transparent #ccc #ccc}.btn-default.active,.btn-default:active{background-color:#ccc}.btn-default.active:after,.btn-default:active:after{border-color:transparent transparent #39b0d5 transparent}.btn-default.active:before,.btn-default:active:before{border-color:#ccc transparent #ccc #ccc}.btn-default:active:focus{outline-offset:-1px;background-color:#ccc;color:#39b0d5}.btn-default:active:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-default:active:focus:before{border-color:#ccc transparent #ccc #ccc}.btn-default:active:hover{background-color:#ccc;color:#39b0d5}.btn-default:active:hover:after{border-color:transparent transparent #39b0d5 transparent}.btn-default:active:hover:before{border-color:#ccc transparent #ccc #ccc}.btn-default:focus:hover{color:#39b0d5}.btn-default:hover{color:#525252}.btn-hero{background-color:#fff;color:#4b4b4b}.btn-hero:after{border-color:transparent transparent #39b0d5 transparent}.btn-hero:before{border-color:#fff transparent #fff #fff}.btn-hero:hover{background-color:#39b0d5}.btn-hero:hover:before{border-color:#39b0d5 transparent #39b0d5 transparent}.btn-hero:hover:after{border-color:#fff transparent #fff transparent}.btn-hero.focus,.btn-hero:focus{background-color:#fff;outline-offset:-1px}.btn-hero.focus:after,.btn-hero:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-hero.focus:before,.btn-hero:focus:before{border-color:#fff transparent #fff #fff}.btn-hero.active,.btn-hero:active{background-color:#fff}.btn-hero.active:after,.btn-hero:active:after{border-color:transparent transparent #39b0d5 transparent}.btn-hero.active:before,.btn-hero:active:before{border-color:#fff transparent #fff #fff}.btn-hero:active:focus{outline-offset:-1px;background-color:#fff;color:#39b0d5}.btn-hero:active:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-hero:active:focus:before{border-color:#fff transparent #fff #fff}.btn-hero:active:hover{background-color:#fff;color:#39b0d5}.btn-hero:active:hover:after{border-color:transparent transparent #39b0d5 transparent}.btn-hero:active:hover:before{border-color:#fff transparent #fff #fff}.btn-hero:focus:hover{color:#39b0d5}.btn-hero:hover{color:#fff}.btn-primary{background-color:#4b4b4b}.btn-primary:after{border-color:transparent transparent #39b0d5 transparent}.btn-primary:before{border-color:#4b4b4b transparent #4b4b4b #4b4b4b}.btn-primary:hover{background-color:#39b0d5}.btn-primary:hover:before{border-color:#39b0d5 transparent #39b0d5 transparent}.btn-primary:hover:after{border-color:#4b4b4b transparent #4b4b4b transparent}.btn-primary.focus,.btn-primary:focus{background-color:#4b4b4b;outline-offset:-1px}.btn-primary.focus:after,.btn-primary:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-primary.focus:before,.btn-primary:focus:before{border-color:#4b4b4b transparent #4b4b4b #4b4b4b}.btn-primary.active,.btn-primary:active{background-color:#4b4b4b}.btn-primary.active:after,.btn-primary:active:after{border-color:transparent transparent #39b0d5 transparent}.btn-primary.active:before,.btn-primary:active:before{border-color:#4b4b4b transparent #4b4b4b #4b4b4b}.btn-primary:active:focus{outline-offset:-1px;background-color:#4b4b4b;color:#39b0d5}.btn-primary:active:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-primary:active:focus:before{border-color:#4b4b4b transparent #4b4b4b #4b4b4b}.btn-primary:active:hover{background-color:#4b4b4b;color:#39b0d5}.btn-primary:active:hover:after{border-color:transparent transparent #39b0d5 transparent}.btn-primary:active:hover:before{border-color:#4b4b4b transparent #4b4b4b #4b4b4b}.btn-primary:focus:hover{color:#39b0d5}.btn-success{background-color:#5daf5f}.btn-success:after{border-color:transparent transparent #4b4b4b transparent}.btn-success:before{border-color:#5daf5f transparent #5daf5f #5daf5f}.btn-success:hover{background-color:#676767}.btn-success:hover:before{border-color:#676767 transparent #676767 transparent}.btn-success:hover:after{border-color:#5daf5f transparent #5daf5f transparent}.btn-success.focus,.btn-success:focus{background-color:#5daf5f;outline-offset:-1px}.btn-success.focus:after,.btn-success:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-success.focus:before,.btn-success:focus:before{border-color:#5daf5f transparent #5daf5f #5daf5f}.btn-success.active,.btn-success:active{background-color:#5daf5f}.btn-success.active:after,.btn-success:active:after{border-color:transparent transparent #4b4b4b transparent}.btn-success.active:before,.btn-success:active:before{border-color:#5daf5f transparent #5daf5f #5daf5f}.btn-success:active:focus{outline-offset:-1px;background-color:#5daf5f;color:#4b4b4b}.btn-success:active:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-success:active:focus:before{border-color:#5daf5f transparent #5daf5f #5daf5f}.btn-success:active:hover{background-color:#5daf5f;color:#4b4b4b}.btn-success:active:hover:after{border-color:transparent transparent #4b4b4b transparent}.btn-success:active:hover:before{border-color:#5daf5f transparent #5daf5f #5daf5f}.btn-success:focus:hover{color:#4b4b4b}.btn-info{background-color:#333}.btn-info:after{border-color:transparent transparent #39b0d5 transparent}.btn-info:before{border-color:#333 transparent #333 #333}.btn-info:hover{background-color:#39b0d5}.btn-info:hover:before{border-color:#39b0d5 transparent #39b0d5 transparent}.btn-info:hover:after{border-color:#333 transparent #333 transparent}.btn-info.focus,.btn-info:focus{background-color:#333;outline-offset:-1px}.btn-info.focus:after,.btn-info:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-info.focus:before,.btn-info:focus:before{border-color:#333 transparent #333 #333}.btn-info.active,.btn-info:active{background-color:#333}.btn-info.active:after,.btn-info:active:after{border-color:transparent transparent #39b0d5 transparent}.btn-info.active:before,.btn-info:active:before{border-color:#333 transparent #333 #333}.btn-info:active:focus{outline-offset:-1px;background-color:#333;color:#39b0d5}.btn-info:active:focus:after{border-color:transparent transparent #39b0d5 transparent}.btn-info:active:focus:before{border-color:#333 transparent #333 #333}.btn-info:active:hover{background-color:#333;color:#39b0d5}.btn-info:active:hover:after{border-color:transparent transparent #39b0d5 transparent}.btn-info:active:hover:before{border-color:#333 transparent #333 #333}.btn-info:focus:hover{color:#39b0d5}.btn-info:hover{color:#333}.btn-warning{background-color:#edd73f}.btn-warning:after{border-color:transparent transparent #4b4b4b transparent}.btn-warning:before{border-color:#edd73f transparent #edd73f #edd73f}.btn-warning:hover{background-color:#676767}.btn-warning:hover:before{border-color:#676767 transparent #676767 transparent}.btn-warning:hover:after{border-color:#edd73f transparent #edd73f transparent}.btn-warning.focus,.btn-warning:focus{background-color:#edd73f;outline-offset:-1px}.btn-warning.focus:after,.btn-warning:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-warning.focus:before,.btn-warning:focus:before{border-color:#edd73f transparent #edd73f #edd73f}.btn-warning.active,.btn-warning:active{background-color:#edd73f}.btn-warning.active:after,.btn-warning:active:after{border-color:transparent transparent #4b4b4b transparent}.btn-warning.active:before,.btn-warning:active:before{border-color:#edd73f transparent #edd73f #edd73f}.btn-warning:active:focus{outline-offset:-1px;background-color:#edd73f;color:#4b4b4b}.btn-warning:active:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-warning:active:focus:before{border-color:#edd73f transparent #edd73f #edd73f}.btn-warning:active:hover{background-color:#edd73f;color:#4b4b4b}.btn-warning:active:hover:after{border-color:transparent transparent #4b4b4b transparent}.btn-warning:active:hover:before{border-color:#edd73f transparent #edd73f #edd73f}.btn-warning:focus:hover{color:#4b4b4b}.btn-danger{background-color:#c76466}.btn-danger:after{border-color:transparent transparent #4b4b4b transparent}.btn-danger:before{border-color:#c76466 transparent #c76466 #c76466}.btn-danger:hover{background-color:#676767}.btn-danger:hover:before{border-color:#676767 transparent #676767 transparent}.btn-danger:hover:after{border-color:#c76466 transparent #c76466 transparent}.btn-danger.focus,.btn-danger:focus{background-color:#c76466;outline-offset:-1px}.btn-danger.focus:after,.btn-danger:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-danger.focus:before,.btn-danger:focus:before{border-color:#c76466 transparent #c76466 #c76466}.btn-danger.active,.btn-danger:active{background-color:#c76466}.btn-danger.active:after,.btn-danger:active:after{border-color:transparent transparent #4b4b4b transparent}.btn-danger.active:before,.btn-danger:active:before{border-color:#c76466 transparent #c76466 #c76466}.btn-danger:active:focus{outline-offset:-1px;background-color:#c76466;color:#4b4b4b}.btn-danger:active:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-danger:active:focus:before{border-color:#c76466 transparent #c76466 #c76466}.btn-danger:active:hover{background-color:#c76466;color:#4b4b4b}.btn-danger:active:hover:after{border-color:transparent transparent #4b4b4b transparent}.btn-danger:active:hover:before{border-color:#c76466 transparent #c76466 #c76466}.btn-danger:focus:hover{color:#4b4b4b}.btn-link{color:#39b0d5}.btn-link:hover{color:#1d718b}.btn-link:active:focus{outline-offset:-1px;color:#1d718b}.btn-link:active:hover{color:#1d718b}.btn-link:focus:hover{color:#1d718b}.btn-white{background-color:#fff;color:#4b4b4b}.btn-white:after{border-color:transparent transparent #4b4b4b transparent}.btn-white:before{border-color:#fff transparent #fff #fff}.btn-white:hover{background-color:#4b4b4b}.btn-white:hover:before{border-color:#4b4b4b transparent #4b4b4b transparent}.btn-white:hover:after{border-color:#fff transparent #fff transparent}.btn-white.focus,.btn-white:focus{background-color:#fff;outline-offset:-1px}.btn-white.focus:after,.btn-white:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-white.focus:before,.btn-white:focus:before{border-color:#fff transparent #fff #fff}.btn-white.active,.btn-white:active{background-color:#fff}.btn-white.active:after,.btn-white:active:after{border-color:transparent transparent #4b4b4b transparent}.btn-white.active:before,.btn-white:active:before{border-color:#fff transparent #fff #fff}.btn-white:active:focus{outline-offset:-1px;background-color:#fff;color:#4b4b4b}.btn-white:active:focus:after{border-color:transparent transparent #4b4b4b transparent}.btn-white:active:focus:before{border-color:#fff transparent #fff #fff}.btn-white:active:hover{background-color:#fff;color:#4b4b4b}.btn-white:active:hover:after{border-color:transparent transparent #4b4b4b transparent}.btn-white:active:hover:before{border-color:#fff transparent #fff #fff}.btn-white:focus:hover{color:#4b4b4b}.btn-white:hover{color:#fff}.btn{padding:10px 12px;font-size:17px}.btn-xs{padding:6px 8px;font-size:14px;border-radius:3px}.btn-sm{padding:8px 10px;font-size:15px;border-radius:3px}.btn-lg{padding:13px 15px;font-size:20px;border-radius:6px}.form-group .btn{margin:10px 10px 0 0}.form-control{background-color:#eaeaea;border:1px solid #eaeaea;border-radius:4px;box-shadow:none;color:#0f161f;font-family:Raleway,sans-serif;height:45px;margin:10px 10px 0 0;padding:10px;text-align:left}.form-control .control-label{color:#414142}.form-control:hover{border:1px solid #0d78a6}.form-control:focus{border:1px solid #0d78a6;box-shadow:0 0 3px #0d78a6}.checkbox input[type=checkbox]{border:1px solid #b1b2b4;border-radius:4px}.has-success .form-control{border:1px solid #393;color:#393;font-weight:600}.has-success .form-control:hover{border:1px solid #393}.has-success .form-control:focus{border:1px solid #393;box-shadow:0 0 3px #393}.has-success .control-label{color:#414142}.has-error .form-control{border:1px solid #900;color:#900;font-weight:600}.has-error .form-control:hover{border:1px solid #900}.has-error .form-control:focus{border:1px solid #900;box-shadow:0 0 3px #900}.has-error .control-label{color:#414142}.table>thead>tr>th{border-bottom:0;vertical-align:middle;font-family:Raleway,sans-serif;font-weight:600}.table>tbody>tr>th{border-top:1px solid #b1b2b4;font-family:Raleway,sans-serif;font-weight:600}.table>tbody>tr>td{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;border-top:1px solid #dedede}.table>tbody>tr>td b{font-weight:600}.table>tbody>tr>td .well{width:300px}.table>tbody>tr>td .well p{margin-bottom:4px!important}.table>tbody>tr>td p{font-size:1em;margin-bottom:10px}.table>tbody>tr>td p:last-child{margin-bottom:0}table th{background-color:#dedede;color:#414142}table thead th{background-color:#dedede;color:#414142}table tbody th{background-color:rgba(179,195,220,.7);color:#414142}.table-striped>tbody>tr:nth-of-type(odd){background-color:#f7f7f7}.table-bordered{border:none}.table-bordered>tbody>tr>td{border-right:1px solid #dedede;border-bottom:1px solid #dedede}.table-bordered>tbody>tr>th{border:1px solid rgba(179,195,220,.7);border-bottom:1px solid #dedede}.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border-bottom-width:2px}.alert{border:1px solid transparent;font-size:14px;margin-bottom:20px;padding:15px;border-radius:4px}.alert h4{color:inherit;margin-top:0}.alert .alert-link{font-weight:700}.alert>p{margin-bottom:0}.alert>p+p{margin-top:5px}.alert>ul{margin-bottom:0}.alert-dismissible{padding-right:35px}.alert-dismissible .close{color:inherit;position:relative;right:-21px;top:-2px}.alert-success{background-color:rgba(51,153,51,.2);color:#393}.alert-success hr{border-top-color:#c9e2b3}.alert-success .alert-link{color:#2b542c}.alert-info{background-color:rgba(13,120,166,.15);color:rgba(0,0,0,.8)}.alert-info hr{border-top-color:#a6e1ec}.alert-info .alert-link{color:#245269}.alert-warning{background-color:rgba(255,204,0,.2);color:#b38000}.alert-warning hr{border-top-color:#f7e1b5}.alert-warning .alert-link{color:#66512c}.alert-danger{background-color:rgba(153,0,0,.2);color:#900}.alert-danger hr{border-top-color:#e4b9c0}.alert-danger .alert-link{color:#843534}.darker-grey{background-color:#0f161f}.darker-gray{background-color:#0f161f}.dark-grey{background-color:#414142}.dark-gray{background-color:#414142}.grey{background-color:#b1b2b4}.gray{background-color:#b1b2b4}.light-gray{background-color:#dedede}.light-grey{background-color:#dedede}.lighter-gray{background-color:#eaeaea}.lighter-grey{background-color:#eaeaea}.dark-blue{background-color:#1c4d73}.teal{background-color:#39b0d5}.darker-blue{background-color:#022941}.light-blue{background-color:#0d78a6}.light-teal{background-color:#a3dce6}.red{background-color:#900}.green{background-color:#393}.black{background-color:#000}.white{background-color:#fff}.purple-text{color:#6c197f;font-weight:700}.green-text{color:#0e850f;font-weight:700}.blue-text{color:#07a;font-weight:600}.red-text{color:#900;font-weight:600}body{padding-top:110px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}@media (min-width:768px){body{padding-top:102px}}.navigation-group{position:absolute;right:10px;top:0;margin-right:2%}@media (min-width:768px){.navigation-group{left:290px;right:auto}}@media (min-width:992px){.navigation-group{display:none}}.navigation-group .btn{margin-top:6px;border:none;border-radius:4px}@media (min-width:376px){.navigation-group .btn{margin-top:11px}}@media (min-width:768px){.navigation-group .btn{margin-top:43px;height:45px}}.dropdown-toggle{margin-bottom:0;height:30px;line-height:8px}.navbar-right{margin-right:0}.navigation-menu{left:-120px;overflow:scroll;height:600px}.navigation-menu .active{color:#39b0d5;font-weight:600;background-color:#fff}.navigation-menu .leaf{margin-bottom:4px}.navigation-menu .active{display:block}.navigation-menu>li>a{display:inline-block;color:#39b0d5;padding:0}.navigation-menu>li>a:hover{color:#1d718b;background-color:#fff}.navigation-menu>.active>a{color:#39b0d5;background-color:#fff;font-weight:600}.navigation-menu>.active>a:hover{color:#1d718b;background-color:#fff}.navigation-menu>li{display:inline-block;width:94%;padding-left:3%;overflow:hidden;text-overflow:ellipsis}.navigation-menu .sub-menu{padding-left:4px;display:block}.navigation-menu .sub-menu .leaf{width:100%}.site-logo{height:46px;width:252px;white-space:nowrap;text-align:center;margin:1em 0}@media (min-width:768px){.site-logo{height:62px;width:400px}}.site-logo img{margin-left:6px;margin-top:7px;vertical-align:middle;max-height:40px;max-width:194px}@media (min-width:376px){.site-logo img{max-height:46px;max-width:252px}}@media (min-width:768px){.site-logo img{margin-left:10px;max-height:62px;max-width:400px}}.helper{display:inline-block;height:100%;vertical-align:middle}.navbar-default{background-color:#333;border:none;-webkit-font-smoothing:antialiased}.navbar-default .navbar-nav>li>a{color:#fff;font-size:16px}@media (min-width:768px){.navbar-default .navbar-nav>li>a{padding-top:26px;padding-bottom:26px}}.navbar-default .navbar-nav>li>a:hover{color:#fff}.navbar-default .navbar-nav>.active>a{background-color:#fff;color:#fff}.navbar-default .navbar-nav>.active>a:hover{background-color:#fff;color:#fff}.navbar-default .navbar-nav>li>a.btn{padding:15px;margin:10px;color:#fff;border:none}#search-container{vertical-align:middle;text-align:center;position:relative;margin-left:25px;margin-right:20px}@media (min-width:768px){#search-container{height:72px;width:100%;margin:0}}#search-container label{color:#b1b2b4;position:absolute;left:12px;top:13px}@media (min-width:768px){#search-container label{top:26px}}#search-container input{vertical-align:middle;background-color:#fff;border:none;border-radius:4px;box-shadow:none;color:#0f161f;font-family:Raleway,sans-serif;height:45px;width:100%;margin:0 auto;padding:10px 10px 10px 35px;font-size:16px;text-align:left;transition:width .5s}@media (min-width:768px){#search-container input{border:1px solid #eaeaea;width:400px;margin:13px 20px 0 0;float:right}}@media (min-width:768px) and (max-width:991px){#search-container input{width:220px}}#search-container input ::-webkit-input-placeholder{color:#b1b2b4}#search-container input :-moz-placeholder{color:#b1b2b4}#search-container input ::-moz-placeholder{color:#b1b2b4}#search-container input :-ms-input-placeholder{color:#b1b2b4}#search-container #results-container{padding:10px;border-radius:0 0 4px 4px;background-color:#fff;position:absolute;margin:-4px auto 0;width:100%;list-style:none}@media (min-width:768px){#search-container #results-container{box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);position:relative;margin:55px 0 0;width:400px;left:0}}@media (min-width:768px) and (max-width:991px){#search-container #results-container{width:220px}}#search-container #results-container li{list-style:none;font-size:16px;margin-bottom:5px}#search-container #results-container li :last-child{margin-bottom:0}#top_nav{display:none;background-color:#4b4b4b;list-style:none;margin:0;padding:0;height:30px;vertical-align:middle}#top_nav li{float:right;display:inline-block;margin-top:9px;margin-right:25px;margin-bottom:0;list-style-type:none;font-size:12px;line-height:1}#top_nav li a{text-decoration:none;color:#fff;font-weight:500;font-size:12px;line-height:1}#top_nav li a:hover{color:#39b0d5}#top_nav li:last-child{margin-right:20px}@media (min-width:768px){#top_nav{display:block}}.menu-container{padding-left:1%;width:20%;display:inline-block;position:fixed;height:90vh;overflow:auto;vertical-align:top;padding-bottom:40px;z-index:1}@media print{.menu-container{display:none}}.page-container{padding-left:20%;width:100%;display:inline-block;min-height:1000px;height:100%;vertical-align:top}.page-container>div[class^=col-]:first-child{border-left:solid #eaeaea 2px}@media print{.page-container{padding-left:0}}@media (max-width:991px){.page-container{padding-left:0;min-height:initial}}.side-menu{word-wrap:break-word;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;margin-bottom:0;list-style:none;font-weight:400;padding:20px 20px 0 0;font-size:1em;z-index:1}.side-menu .leaf.side-menu-header{border-bottom:solid #eaeaea 2px;padding-bottom:.2em;text-transform:uppercase;font-size:1.2em;line-height:1;font-weight:500;color:#414142;margin-top:1em;margin-bottom:1em}.side-menu .leaf.side-menu-h2{font-size:1.1em;line-height:1;font-weight:500;color:#414142;margin-top:.8em;margin-bottom:.3em}.side-menu .leaf{list-style:none;margin-bottom:.25em;padding:0}.side-menu .leaf .nolink{font-size:1em;line-height:1;font-weight:500;color:#414142}.side-menu .active{font-weight:600;color:#1c4d73}.side-menu .sub-menu{padding:0 0 0 .8em}@media print{.side-menu{display:none}}.share-btn{text-align:center;width:36px;display:inline-block;background:#dedede;border:#b1b2b4 solid 1px;font-size:16px;line-height:20px;padding:8px;border-radius:4px;font-weight:700;color:#0f161f;margin-right:4px}@media print{.share-btn{display:none}}.share-btn i{margin:0}.new-pill{border-radius:4px;background:#328f2f;color:#fff;display:inline-block;font-family:Raleway,sans-serif;font-size:12px;font-weight:600;letter-spacing:.17px;line-height:1.2;margin-left:10px;text-align:center;text-transform:uppercase;vertical-align:middle;padding-left:4px;padding-right:4px;padding-top:2px;padding-bottom:2px}.new-pill i{margin-right:0}.static-map-example-nav{margin-top:20px;display:inline-block;position:relative;top:0}.documentation{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;line-height:1.4;color:rgba(0,0,0,.8)}.documentation .block{min-width:35px;border-radius:4px;color:#fff;display:inline-block;font-family:Raleway,sans-serif;font-size:18px;font-weight:600;height:30px;letter-spacing:.17px;line-height:30px;margin-right:10px;text-align:center;text-transform:uppercase;vertical-align:middle;padding-left:8px;padding-right:8px}.documentation .block i{margin-right:0}.documentation .get{background:#1879a4}.documentation .post{background:#328f2f}.documentation .stream{background:#808183}.documentation .document{background:#333}.documentation .sample{background:#6c197f}.documentation .method-types .method{margin-bottom:10px;width:100%;display:inline-block}.documentation .method-types .method:last-child{margin-bottom:0}.documentation .method-types a{font-size:18px;vertical-align:middle}.documentation .method-types a:hover{text-decoration:none}.documentation .method-types span{vertical-align:middle;margin-right:10px}.documentation .method-types .method-path{display:inline-block;vertical-align:middle}.documentation .method-types .method-path p{color:#b1b2b4;font-size:18px;margin:10px 0!important}.documentation .documentation-header{margin-bottom:20px}.documentation .documentation-header .api-name{color:#414142;display:inline-block;font-family:Raleway,sans-serif;font-size:36px;height:40px;line-height:40px;margin:0;vertical-align:middle}@media screen and (max-width:1190px){.documentation .documentation-header .api-name{font-size:28px}}.documentation .resource-table tr th{width:150px}.documentation .resource-table tr td{text-align:center}.documentation .method-types{margin-bottom:40px}.documentation .well{border-top:0;padding:10px;overflow:auto}.documentation .well p{color:rgba(0,0,0,.8);display:block;font-family:Courier,serif;font-size:14px;line-height:24px;margin:0 0 10px;padding:0}.documentation .well p:last-child{margin-bottom:0}.documentation .well::-webkit-scrollbar-thumb{background:rgba(0,0,0,.26)}.documentation .well::-webkit-scrollbar{height:8px;width:4px}.documentation .tab-content{background-color:#f5f5f5;border:1px solid #e3e3e3;border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:0;margin-bottom:20px;padding:10px 10px 10px 20px}.documentation .nav-tabs>.active>a,.documentation .nav-tabs>.active>a:active,.documentation .nav-tabs>.active>a:focus,.documentation .nav-tabs>.active>a:hover{background-color:#f5f5f5;border:1px solid #e3e3e3;border-bottom-color:transparent;color:#555;cursor:default;outline:0}.documentation .quality-sample .form-group label{width:100%}.documentation .quality-sample .form-group input{display:inline-block;margin-bottom:10px;vertical-align:middle;width:100px}.documentation .quality-sample .form-group button{display:inline-block;height:45px;vertical-align:top;padding:0 10px}.documentation .position-table .centered{text-align:center}.documentation .position-table tbody tr th{text-align:center}.documentation .quality-table{width:350px}.documentation .quality-table tbody tr th{text-align:center;width:80px}.documentation .js-map{height:420px;margin-bottom:20px;border-radius:4px;z-index:0}.documentation .demo{min-height:20px;padding:19px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-radius:4px;box-shadow:inset 0 1px 1px rgba(0,0,0,.05);margin-bottom:20px}.documentation .demo .image{width:400px;display:inline-block;vertical-align:middle;margin-right:20px;border-radius:4px}.documentation .demo .description{vertical-align:top;width:40%;display:inline-block}.documentation .demo .description .title{font-size:34px;margin-bottom:10px}.documentation .demo .description .title a{text-decoration:none}.jumpTarget:before{content:"";display:block;height:112px;margin:-112px 0 0}.dropdown-menu li{list-style:none}.android-image,.iphone-image{max-width:100%;max-height:600px;margin-right:auto;margin-left:auto;margin-bottom:20px}.screenshot-image{max-width:100%;max-height:400px;margin-right:auto;margin-left:auto;margin-bottom:20px}.service{margin-bottom:20px}.service .image img{max-height:200px;margin-bottom:10px}.service .name{margin-top:0;max-width:200px;text-align:center;margin-bottom:6px;font-size:20px;line-height:1.3;height:80px;vertical-align:top;color:rgba(0,0,0,.8);text-decoration:none}.service .name:hover{text-decoration:none}.service .description{text-decoration:none;margin-bottom:20px;color:rgba(0,0,0,.8)}.service .description:hover{text-decoration:none}.feature-box{text-align:left;min-height:150px;height:auto;padding:20px 15px 20px 67px;background-color:#eaeaea;position:relative;margin:0 0 30px 44px}@media screen and (min-width:480px){.feature-box{padding:20px 30px 20px 77px}}.feature-box h3{line-height:1.2;color:#39b0d5;min-height:56px;margin-bottom:6px;margin-top:0}.feature-box p a{color:#39b0d5}.feature-box p a:hover{color:#1d718b}.feature-box .feature-icon{position:absolute;left:-57px;top:0;transform:scale(.8)}@media screen and (min-width:480px){.feature-box .feature-icon{top:18px;transform:scale(1)}}.feature-box h3{margin-bottom:10px;font-size:16px}@media screen and (min-width:480px){.feature-box h3{margin-bottom:6px;font-size:20px;padding-top:10px}}.feature-box .btn-primary{padding:6px 8px;font-size:14px;border-radius:3px;width:120px}@media screen and (min-width:480px){.feature-box .btn-primary{padding:8px 10px;font-size:15px;border-radius:3px;width:150px}}.feature-icon{width:114px;height:114px;background-repeat:no-repeat}.blog-icon .feature-icon{background-image:url(/documentation/assets/img/homepage/icon-journal.png)}.forum-icon .feature-icon{background-image:url(/documentation/assets/img/homepage/icon-microphone.png)}.faq-icon .feature-icon{background-image:url(/documentation/assets/img/homepage/icon-typewriter.png)}.contact-us .feature-icon{background-image:url(/documentation/assets/img/homepage/icon-telephone.png)}.img-container{background-color:#eaeaea;width:100%;border-radius:6px}.img-container .img-responsive{background-color:#eaeaea;max-height:230px;margin:0 auto 20px;border-radius:6px}.welcome-card-row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%}.welcome-card-row>.col{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;margin:0 0 20px}.welcome-card-row .welcome-card{-ms-flex:1 0 auto;flex:1 0 auto;border-radius:4px;background-color:#eaeaea;position:relative;padding:10px 10px 50px}.welcome-card-row .welcome-card .description{margin-bottom:20px}.welcome-card-row .welcome-card .description p{margin:0}.welcome-card-row .welcome-card h2{margin:0 0 10px;vertical-align:top;display:inline-block}.welcome-card-row .welcome-card .action-container{margin-bottom:0;width:100%;height:40px;position:absolute;bottom:12px;right:10px}.welcome-card-row .welcome-card .action-container .btn{margin:0;float:right}.image-wrapper{max-width:400px;max-height:400px;width:400px;display:inline-block;margin-bottom:10px;margin-right:20px;background-color:rgba(0,0,0,.05)}@media screen and (max-width:991px){.image-wrapper{display:block;width:auto}}.image-wrapper .responsive-container{width:100%;padding-bottom:100%;position:relative}.image-wrapper .responsive-container img{position:absolute;top:0;left:0;width:100%}.wrap-600{max-width:600px;width:600px}.wrap-600 .responsive-container{padding-bottom:66.66%}.static-map{display:inline-block;width:400px;margin-right:20px}@media screen and (max-width:848px){.static-map{margin-bottom:10px}}.static-map-example-image{border-radius:8px;margin-bottom:10px}.width-600{width:600px}.static-map-small{display:inline-block;vertical-align:top;width:200px;height:200px;margin-bottom:220px;margin-right:220px}section{margin-bottom:102px}section::before{display:block;content:"";padding-top:102px;margin-top:-102px;visibility:hidden}@media screen and (max-width:848px){section::before{padding-top:106px;margin-top:-106px}}section h3:before{display:block;content:"";padding-top:112px;margin-top:-112px;visibility:hidden}@media screen and (max-width:848px){section h3:before{padding-top:116px;margin-top:-116px}}.parameter-list{list-style:none;margin:0;padding:0}.parameter-list,.static-map{margin-bottom:135px}.parameter-list-item{zoom:1;display:block;border-bottom:1px solid #f0f4f7;line-height:24px}.parameter-list-item:last-child{border-bottom:none}.parameter-list-item:before{display:block;content:"";padding-top:117px;margin-top:-102px;visibility:hidden}@media screen and (max-width:848px){.parameter-list-item:before{padding-top:121px;margin-top:-106px}}.parameter-list-item p{font-size:13px;line-height:21px}.parameter-list-item:after{display:block;content:"";visibility:hidden;clear:both}@media screen and (max-width:848px){.parameter-list-item:after{padding-bottom:121px;margin-bottom:-106px}}.parameter-list-header h3{color:rgba(179,195,220,.9);margin:0}.parameter-list-header h3:not(first-child){margin-top:15px}.parameter-list-item .parameter-list-item-label{float:left;position:relative;text-align:left;width:220px;margin-bottom:12px}@media screen and (max-width:848px){.parameter-list-item .parameter-list-item-label{width:auto;float:none}}.parameter-list-item-label{margin:0;padding:0;font-size:15px;line-height:21px;word-break:break-all;white-space:normal}a.header-anchor{display:inline-block;opacity:0;position:relative;top:0;width:12px;height:12px;background-repeat:no-repeat;background-image:url(/documentation/assets/img/anchor.png);background-position:50% 50%;isolation:isolate}.parameter-list-item-label:hover a.header-anchor{opacity:1;-ms-filter:none;filter:none}.parameter-list-item-label-details{color:#939da3;font-size:12px;font-weight:400;text-transform:none;word-break:normal;display:block}.parameter-list-item-label-badge{vertical-align:top;color:#39b0d5;font-size:12px;font-weight:600;text-transform:uppercase;display:block;margin-left:0;padding:4px 0 0;border:0;border-radius:0;line-height:1.2em}.parameter-list-item-description{font-size:13px;line-height:21px;position:relative;margin:6px 0 12px 240px;word-wrap:break-word}@media screen and (max-width:848px){.parameter-list-item-description{margin:0}}.parameter-list-item-description ul{margin-bottom:10px}.parameter-list-item-description h5{margin-bottom:4px}.parameter-list-item-description p{margin-bottom:10px}.parameter-list-item-description p:last-child{margin-bottom:0}#getting-started-nav{padding-right:10px;position:fixed;top:130px;text-decoration:none;font-size:1em;height:100%;overflow:auto}#getting-started-nav>ul{list-style-type:none;margin:0;padding:0}.request{padding:10px;overflow:auto;min-height:20px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-top:0;border-radius:4px;box-shadow:inset 0 1px 1px rgba(0,0,0,.05)}.request .type{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:60px;float:left}.request .url{white-space:nowrap}.request p{color:rgba(0,0,0,.8);display:block;font-family:Courier,serif;font-size:14px;line-height:24px;margin:0;padding:0 10px 0 0}.request::-webkit-scrollbar-thumb{background:rgba(0,0,0,.26)}.request::-webkit-scrollbar{height:8px;width:4px}.static-map-example-request{margin-bottom:40px}.icons-header{padding-bottom:15px}.circle-showcase,.flag-showcase,.incident-showcase,.marker-showcase,.via-showcase{background-color:#dedede;padding:30px;text-align:center;border-radius:4px;min-height:105px;margin-bottom:20px}td .circle-showcase,td .flag-showcase,td .incident-showcase,td .marker-showcase,td .via-showcase{margin-bottom:0}.circle-showcase img,.flag-showcase img,.incident-showcase img,.marker-showcase img,.via-showcase img{margin-right:10px;margin-bottom:10px}.marker-retina-sm{height:35px;width:28px}.marker-retina-md{height:44px;width:35px}.marker-retina-lg{height:53px;width:42px}.circle-retina-sm{height:28px;width:28px}.circle-retina-md{height:35px;width:35px}.circle-retina-lg{height:42px;width:42px}.via-retina-sm{height:10px;width:10px}.via-retina-md{height:14px;width:14px}.via-retina-lg{height:18px;width:18px}.flag-retina-sm{height:30px;width:60px}.flag-retina-md{height:35px;width:70px}.flag-retina-lg{height:40px;width:80px}.incident-retina-sm{height:25px;width:28px}.incident-retina-md{height:31px;width:35px}.incident-retina-lg{height:33px;width:42px}.mapquest-js .parameter-list{margin-bottom:40px}.mapquest-js .CodeMirror{background:#eaeaea;margin-bottom:20px;border-radius:4px}.md-and-scrollable{max-height:200px!important;overflow-y:scroll}iframe{margin-bottom:100px}pre[class*=language-]{max-height:800px;overflow-y:scroll}pre[class*=language-]::-webkit-scrollbar{width:8px;height:8px}pre[class*=language-]::-webkit-scrollbar-thumb{background:rgba(0,0,0,.26)}</style>*@
+
+        <!-- Begin Jekyll SEO tag v2.5.0 -->
+        <title>Latitude Longitude Finder Tool | MapQuest API Documentation</title>
+        <meta name="generator" content="Jekyll v3.8.2">
+        <meta property="og:title" content="Latitude Longitude Finder Tool">
+        <meta property="og:locale" content="en_US">
+        <meta name="description" content="A tool to use an address or interactively click on the MapQuest map to find the corresponding latitude and longitude.">
+        <meta property="og:description" content="A tool to use an address or interactively click on the MapQuest map to find the corresponding latitude and longitude.">
+        <link rel="canonical" href="https://developer.mapquest.com/documentation/tools/latitude-longitude-finder/">
+        <meta property="og:url" content="https://developer.mapquest.com/documentation/tools/latitude-longitude-finder/">
+        <meta property="og:site_name" content="MapQuest API Documentation">
+        <script type="application/ld+json">
+            @*{"url":"https://developer.mapquest.com/documentation/tools/latitude-longitude-finder/","description":"A tool to use an address or interactively click on the MapQuest map to find the corresponding latitude and longitude.","headline":"Latitude Longitude Finder Tool","@type":"WebPage","@context":"http://schema.org"}*@
+        </script>
+        <!-- End Jekyll SEO tag -->
+
+        <script type="text/javascript" async="" src="//munchkin.marketo.net/munchkin.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <ul id="top_nav">
+                <li class="mapquest-link"><a href="https://www.mapquest.com">MapQuest.com</a></li>
+                <li class="mapquest-link"><a href="https://business.mapquest.com">Business</a></li>
+            </ul>
+            <div class="navbar-header">
+                <span class="helper"></span>
+                <a href="https://developer.mapquest.com/" class="site-logo">
+                    <img alt="MapQuest Developer Logo" src="/documentation/assets/img/developer-logo-white.png" height="131">
+                </a>
+
+                <!-- Single button -->
+                <div class="navigation-group btn-group .visible-xs-*">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Navigation <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu navigation-menu">
+
+                        <li class="leaf">
+
+                            <a href="/documentation/">Getting Started</a>
+                        </li>
+                        <li class="leaf">
+                            <a href="https://developer.mapquest.com/devblog" target="_blank">Developer Blog</a>
+                        </li>
+
+
+                        <li class="leaf side-menu-h2">
+                            <span>Mobile SDKs</span>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/nav-sdk/android/v3.5/">Navigation Android</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/nav-sdk/ios/v3.5/">Navigation iOS</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/maps-sdk/android/v2.0.10/">Maps Android</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/maps-sdk/ios/v4.0/">Maps iOS</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/searchahead-sdk/android/v1.3/">Search Ahead Android</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/searchahead-sdk/ios/v1.0/">Search Ahead iOS</a>
+                        </li>
+
+
+
+
+                        <li class="leaf side-menu-h2">
+                            <span>Web SDKs</span>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/mapquest-js/v1.3/">MapQuest.js</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/mapquest-gl/v0.4/">MapQuest-GL.js</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/place-search-js/v1.0/">PlaceSearch.js</a>
+                        </li>
+
+
+
+
+
+
+                        <li class="leaf side-menu-h2">
+                            <span>APIs</span>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/data-manager/">Data Manager API</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/directions-api/">Directions API</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/geocoding-api/">Geocoding API</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/icons-api/v2/">Icons API</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/search-api/v2/">Search API</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/search-api/v4/swagger/">Place Search API</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/searchahead-api/">Search Ahead API</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/static-map-api/v5/">Static Map API</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/traffic-api/">Traffic API</a>
+                        </li>
+
+
+
+
+
+
+                        <li class="leaf side-menu-h2">
+                            <span>Open APIs</span>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/open/directions-api/">Open Directions API</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/open/elevation-api/">Open Elevation API</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/open/geocoding-api/">Open Geocoding API</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/open/guidance-api/v2/">Open Guidance API</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/open/nominatim-search/">Open Search (Nominatim) API</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/open/static-map-api/v5/">Open Static Map API</a>
+                        </li>
+
+
+
+
+                        <li class="leaf side-menu-h2">
+                            <span>Legacy Products</span>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/leaflet-plugins/">Leaflet Plugins</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/static-map-api/v4/">Static Map v4 API</a>
+                        </li>
+
+
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/open/guidance-api/v1/">Open Guidance v1 API</a>
+                        </li>
+
+
+
+
+                        <li class="leaf side-menu-h2">
+                            <span>Tools</span>
+                        </li>
+
+
+
+                        <li class="leaf active">
+                            <a href="/documentation/tools/latitude-longitude-finder/">Lat/Lng Finder</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/tools/link-to-mapquest/">Link to MapQuest</a>
+                        </li>
+
+
+
+                        <li class="leaf ">
+                            <a href="/documentation/static-map-api/v4/static-map-wizard/">Static Map v4 Wizard</a>
+                        </li>
+
+
+
+
+                        <li class="leaf side-menu-h2">
+                            <span>Share</span>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Html Elements for Search -->
+                <li id="search-container">
+                    <label for="search-input">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </label>
+                    <input type="text" id="search-input" placeholder="Search documentation">
+                    <ul style="display: none" id="results-container"></ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="hidden-xs hidden-sm menu-container">
+            <ul class="side-menu">
+
+                <li class="leaf">
+
+                    <a href="/documentation/">Getting Started</a>
+                </li>
+                <li class="leaf">
+                    <a href="https://developer.mapquest.com/devblog" target="_blank">Developer Blog</a>
+                </li>
+                <li class="leaf side-menu-header">
+                    <span>Documentation</span>
+                </li>
+
+
+                <li class="leaf side-menu-h2">
+                    <span>Mobile SDKs</span>
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/nav-sdk/android/v3.5/">Navigation Android</a>
+
+                    <span class="new-pill">new</span>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/nav-sdk/ios/v3.5/">Navigation iOS</a>
+
+                    <span class="new-pill">new</span>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/maps-sdk/android/v2.0.10/">Maps Android</a>
+
+                    <span class="new-pill">new</span>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/maps-sdk/ios/v4.0/">Maps iOS</a>
+
+                    <span class="new-pill">new</span>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/searchahead-sdk/android/v1.3/">Search Ahead Android</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/searchahead-sdk/ios/v1.0/">Search Ahead iOS</a>
+
+                </li>
+
+
+
+
+                <li class="leaf side-menu-h2">
+                    <span>Web SDKs</span>
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/mapquest-js/v1.3/">MapQuest.js</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/mapquest-gl/v0.4/">MapQuest-GL.js</a>
+
+                    <span class="new-pill">beta</span>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/place-search-js/v1.0/">PlaceSearch.js</a>
+
+                    <span class="new-pill">new</span>
+
+                </li>
+
+
+
+
+
+
+                <li class="leaf side-menu-h2">
+                    <span>APIs</span>
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/data-manager/">Data Manager API</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/directions-api/">Directions API</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/geocoding-api/">Geocoding API</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/icons-api/v2/">Icons API</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/search-api/v2/">Search API</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/search-api/v4/swagger/">Place Search API</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/searchahead-api/">Search Ahead API</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/static-map-api/v5/">Static Map API</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/traffic-api/">Traffic API</a>
+
+                </li>
+
+
+
+
+
+
+                <li class="leaf side-menu-h2">
+                    <span>Open APIs</span>
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/open/directions-api/">Open Directions API</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/open/elevation-api/">Open Elevation API</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/open/geocoding-api/">Open Geocoding API</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/open/guidance-api/v2/">Open Guidance API</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/open/nominatim-search/">Open Search (Nominatim) API</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/open/static-map-api/v5/">Open Static Map API</a>
+
+                </li>
+
+
+
+
+                <li class="leaf side-menu-h2">
+                    <span>Legacy Products</span>
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/leaflet-plugins/">Leaflet Plugins</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/static-map-api/v4/">Static Map v4 API</a>
+
+                </li>
+
+
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/open/guidance-api/v1/">Open Guidance v1 API</a>
+
+                </li>
+
+
+
+
+                <li class="leaf side-menu-h2">
+                    <span>Tools</span>
+                </li>
+
+
+
+                <li class="leaf active">
+                    <a href="/documentation/tools/latitude-longitude-finder/">Lat/Lng Finder</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/tools/link-to-mapquest/">Link to MapQuest</a>
+
+                </li>
+
+
+
+                <li class="leaf ">
+                    <a href="/documentation/static-map-api/v4/static-map-wizard/">Static Map v4 Wizard</a>
+
+                </li>
+
+
+
+
+                <li class="leaf side-menu-h2">
+                    <span>Share</span>
+                </li>
+
+
+
+            </ul>
+            <div class="share-page">
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=Latitude Longitude Finder Tool&amp;url=https://developer.mapquest.com/documentation/tools/latitude-longitude-finder/&amp;via=MQDeveloper&amp;related=MQDeveloper" rel="nofollow" target="_blank" title="Share on Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a class="share-btn" href="https://facebook.com/sharer.php?u=https://developer.mapquest.com/documentation/tools/latitude-longitude-finder/" rel="nofollow" target="_blank" title="Share on Facebook">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a class="share-btn" href="https://plus.google.com/share?url=https://developer.mapquest.com/documentation/tools/latitude-longitude-finder/" rel="nofollow" target="_blank" title="Share on Google+">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="page-container">
+            <div class="col-md-12 col-lg-6">
+                <h2>Lat/Lng Finder</h2>
+
+                <h3>To locate a latitude/longitude coordinate, enter a starting address.</h3>
+
+                <form>
+                    <div class="form-group">
+                        <label for="street">Street:</label>
+                        <input class="input-text form-control" id="street" name="street" onkeypress="searchKeyPress(event);" size="50" tabindex="1" title="Enter the address or intersection information" type="text">
+                    </div>
+                    <div class="form-group cityForm">
+                        <label for="city">City:</label>
+                        <input class="input-text form-control" id="city" onkeypress="searchKeyPress(event);" size="29" tabindex="2" title="Enter the city" type="text">
+                    </div>
+
+                    <div class="form-group stateForm">
+                        <label for="state">State:</label>
+                        <input class="input-text form-control" id="state" name="state" onkeypress="searchKeyPress(event);" size="2" tabindex="3" title="Enter the state" type="text">
+                    </div>
+
+                    <div class="form-group postalForm">
+                        <label for="postalCode">Zip:</label>
+                        <input class="input-text form-control" id="postalCode" name="postalCode" onkeypress="searchKeyPress(event);" size="10" tabindex="4" title="Enter the ZIP code" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+
+                        <div class="select">
+                            <select id="country" name="country" onkeypress="searchKeyPress(event);" tabindex="5" title="Country">
+                                <option value="AF">Afghanistan</option>
+                                <option value="AL">Albania</option>
+                                <option value="DZ">Algeria</option>
+                                <option value="AS">American Samoa</option>
+                                <option value="AD">Andorra</option>
+                                <option value="AO">Angola</option>
+                                <option value="AI">Anguilla</option>
+                                <option value="AG">Antigua and Barbuda</option>
+                                <option value="AR">Argentina</option>
+                                <option value="AM">Armenia</option>
+                                <option value="AW">Aruba</option>
+                                <option value="AU">Australia</option>
+                                <option value="AT">Austria</option>
+                                <option value="AZ">Azerbaijan</option>
+                                <option value="BS">Bahamas</option>
+                                <option value="BH">Bahrain</option>
+                                <option value="BD">Bangladesh</option>
+                                <option value="BB">Barbados</option>
+                                <option value="BY">Belarus</option>
+                                <option value="BE">Belgium</option>
+                                <option value="BZ">Belize</option>
+                                <option value="BJ">Benin</option>
+                                <option value="BM">Bermuda</option>
+                                <option value="BT">Bhutan</option>
+                                <option value="BO">Bolivia</option>
+                                <option value="BA">Bosnia and Herzegovina</option>
+                                <option value="BW">Botswana</option>
+                                <option value="BV">Bouvet Island</option>
+                                <option value="BR">Brazil</option>
+                                <option value="IO">British Indian Ocean Territory</option>
+                                <option value="VG">British Virgin Islands</option>
+                                <option value="BN">Brunei</option>
+                                <option value="BG">Bulgaria</option>
+                                <option value="BF">Burkina Faso</option>
+                                <option value="BI">Burundi</option>
+                                <option value="KH">Cambodia</option>
+                                <option value="CM">Cameroon</option>
+                                <option value="CA">Canada</option>
+                                <option value="CV">Cape Verde</option>
+                                <option value="KY">Cayman Islands</option>
+                                <option value="CF">Central African Republic</option>
+                                <option value="TD">Chad</option>
+                                <option value="CL">Chile</option>
+                                <option value="CN">China</option>
+                                <option value="CX">Christmas Island</option>
+                                <option value="CC">Cocos (Keeling) Islands</option>
+                                <option value="CO">Colombia</option>
+                                <option value="CG">Congo</option>
+                                <option value="CD">Congo - Democratic Republic of</option>
+                                <option value="CK">Cook Islands</option>
+                                <option value="CR">Costa Rica</option>
+                                <option value="CI">Cote d'Ivoire</option>
+                                <option value="HR">Croatia</option>
+                                <option value="CU">Cuba</option>
+                                <option value="CY">Cyprus</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="DK">Denmark</option>
+                                <option value="DJ">Djibouti</option>
+                                <option value="DM">Dominica</option>
+                                <option value="DO">Dominican Republic</option>
+                                <option value="TP">East Timor</option>
+                                <option value="EC">Ecuador</option>
+                                <option value="EG">Egypt</option>
+                                <option value="SV">El Salvador</option>
+                                <option value="GQ">Equitorial Guinea</option>
+                                <option value="ER">Eritrea</option>
+                                <option value="EE">Estonia</option>
+                                <option value="ET">Ethiopia</option>
+                                <option value="FK">Falkland Islands (Islas Malvinas)</option>
+                                <option value="FO">Faroe Islands</option>
+                                <option value="FJ">Fiji</option>
+                                <option value="FI">Finland</option>
+                                <option value="FR">France</option>
+                                <option value="GF">French Guyana</option>
+                                <option value="PF">French Polynesia</option>
+                                <option value="TF">French Southern and Antarctic Lands</option>
+                                <option value="GA">Gabon</option>
+                                <option value="GM">Gambia</option>
+                                <option value="GZ">Gaza Strip</option>
+                                <option value="GE">Georgia</option>
+                                <option value="DE">Germany</option>
+                                <option value="GH">Ghana</option>
+                                <option value="GI">Gibraltar</option>
+                                <option value="GR">Greece</option>
+                                <option value="GL">Greenland</option>
+                                <option value="GD">Grenada</option>
+                                <option value="GP">Guadeloupe</option>
+                                <option value="GU">Guam</option>
+                                <option value="GT">Guatemala</option>
+                                <option value="GN">Guinea</option>
+                                <option value="GW">Guinea-Bissau</option>
+                                <option value="GY">Guyana</option>
+                                <option value="HT">Haiti</option>
+                                <option value="HM">Heard Island and McDonald Islands</option>
+                                <option value="VA">Holy See (Vatican City)</option>
+                                <option value="HN">Honduras</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="HU">Hungary</option>
+                                <option value="IS">Iceland</option>
+                                <option value="IN">India</option>
+                                <option value="ID">Indonesia</option>
+                                <option value="IR">Iran</option>
+                                <option value="IQ">Iraq</option>
+                                <option value="IE">Ireland</option>
+                                <option value="IL">Israel</option>
+                                <option value="IT">Italy</option>
+                                <option value="JM">Jamaica</option>
+                                <option value="JP">Japan</option>
+                                <option value="JO">Jordan</option>
+                                <option value="KZ">Kazakhstan</option>
+                                <option value="KE">Kenya</option>
+                                <option value="KI">Kiribati</option>
+                                <option value="KW">Kuwait</option>
+                                <option value="KG">Kyrgyzstan</option>
+                                <option value="LA">Laos</option>
+                                <option value="LV">Latvia</option>
+                                <option value="LB">Lebanon</option>
+                                <option value="LS">Lesotho</option>
+                                <option value="LR">Liberia</option>
+                                <option value="LY">Libya</option>
+                                <option value="LI">Liechtenstein</option>
+                                <option value="LT">Lithuania</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="MO">Macau</option>
+                                <option value="MK">Macedonia - The Former Yugoslav Republic of</option>
+                                <option value="MG">Madagascar</option>
+                                <option value="MW">Malawi</option>
+                                <option value="MY">Malaysia</option>
+                                <option value="MV">Maldives</option>
+                                <option value="ML">Mali</option>
+                                <option value="MT">Malta</option>
+                                <option value="MH">Marshall Islands</option>
+                                <option value="MQ">Martinique</option>
+                                <option value="MR">Mauritania</option>
+                                <option value="MU">Mauritius</option>
+                                <option value="YT">Mayotte</option>
+                                <option value="MX">Mexico</option>
+                                <option value="FM">Micronesia - Federated States of</option>
+                                <option value="MD">Moldova</option>
+                                <option value="MC">Monaco</option>
+                                <option value="MN">Mongolia</option>
+                                <option value="ME">Montenegro</option>
+                                <option value="MS">Montserrat</option>
+                                <option value="MA">Morocco</option>
+                                <option value="MZ">Mozambique</option>
+                                <option value="MM">Myanmar</option>
+                                <option value="NA">Namibia</option>
+                                <option value="NR">Naura</option>
+                                <option value="NP">Nepal</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="AN">Netherlands Antilles</option>
+                                <option value="NC">New Caledonia</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="NI">Nicaragua</option>
+                                <option value="NE">Niger</option>
+                                <option value="NG">Nigeria</option>
+                                <option value="NU">Niue</option>
+                                <option value="NF">Norfolk Island</option>
+                                <option value="KP">North Korea</option>
+                                <option value="MP">Northern Mariana Islands</option>
+                                <option value="NO">Norway</option>
+                                <option value="OM">Oman</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="PW">Palau</option>
+                                <option value="PA">Panama</option>
+                                <option value="PG">Papua New Guinea</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="PE">Peru</option>
+                                <option value="PH">Philippines</option>
+                                <option value="PN">Pitcairn Islands</option>
+                                <option value="PL">Poland</option>
+                                <option value="PT">Portugal</option>
+                                <option value="PR">Puerto Rico</option>
+                                <option value="QA">Qatar</option>
+                                <option value="RE">Reunion</option>
+                                <option value="RO">Romania</option>
+                                <option value="RU">Russia</option>
+                                <option value="RW">Rwanda</option>
+                                <option value="SH">Saint Helena</option>
+                                <option value="KN">Saint Kitts and Nevis</option>
+                                <option value="LC">Saint Lucia</option>
+                                <option value="PM">Saint Pierre and Miquelon</option>
+                                <option value="VC">Saint Vincent and the Grenadines</option>
+                                <option value="WS">Samoa</option>
+                                <option value="SM">San Marino</option>
+                                <option value="ST">Sao Tome and Principe</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="SN">Senegal</option>
+                                <option value="RS">Serbia</option>
+                                <option value="SC">Seychelles</option>
+                                <option value="SL">Sierra Leone</option>
+                                <option value="SG">Singapore</option>
+                                <option value="SK">Slovakia</option>
+                                <option value="SI">Slovenia</option>
+                                <option value="SB">Solomon Islands</option>
+                                <option value="SO">Somalia</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                <option value="KR">South Korea</option>
+                                <option value="ES">Spain</option>
+                                <option value="LK">Sri Lanka</option>
+                                <option value="SD">Sudan</option>
+                                <option value="SR">Suriname</option>
+                                <option value="SJ">Svalbard</option>
+                                <option value="SZ">Swaziland</option>
+                                <option value="SE">Sweden</option>
+                                <option value="CH">Switzerland</option>
+                                <option value="SY">Syria</option>
+                                <option value="TW">Taiwan</option>
+                                <option value="TJ">Tajikistan</option>
+                                <option value="TZ">Tanzania</option>
+                                <option value="TH">Thailand</option>
+                                <option value="TG">Togo</option>
+                                <option value="TK">Tokelau</option>
+                                <option value="TO">Tonga</option>
+                                <option value="TT">Trinidad and Tobago</option>
+                                <option value="TN">Tunisia</option>
+                                <option value="TR">Turkey</option>
+                                <option value="TM">Turkmenistan</option>
+                                <option value="TC">Turks and Caicos Islands</option>
+                                <option value="TV">Tuvalu</option>
+                                <option value="UG">Uganda</option>
+                                <option value="UA">Ukraine</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="GB">United Kingdom</option>
+                                <option selected="selected" value="US">United States</option>
+                                <option value="VI">United States Virgin Islands</option>
+                                <option value="UY">Uruguay</option>
+                                <option value="UZ">Uzbekistan</option>
+                                <option value="VU">Vanuatu</option>
+                                <option value="VE">Venezuela</option>
+                                <option value="VN">Vietnam</option>
+                                <option value="WF">Wallis and Futuna</option>
+                                <option value="PS">West Bank</option>
+                                <option value="EH">Western Sahara</option>
+                                <option value="YE">Yemen</option>
+                                <option value="ZM">Zambia</option>
+                                <option value="ZW">Zimbabwe</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <p>
+                        <input class="btn btn-default" id="btnGC" onclick="popInfo()" type="button" value="FIND LAT/LNG">
+                        <span id="clearDiv"><a onclick="clearMap()">Clear Form</a></span>
+                    </p>
+                </form>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <h2>Result</h2>
+
+                <div class="alert alert-info" role="alert">
+                    <b>Note:</b> Drag the POI or click on the map to
+                    update marker location and latitude/longitude. Quality refers to the
+                    <a class="alert-link" href="/documentation/geocoding-api/quality-codes">Geocode Quality Code</a>.
+                </div>
+
+                <div id="note" style="visibility: hidden;">
+
+                </div>
+
+                <div id="map_container">
+                    <div class="mapHead" id="resultDiv"><div class="mapTitle"><span class="latitude">Latitude:</span> 33.252859<span class="longitude">, Longitude:</span> -117.405754<span class="quality">, Quality: </span>L1AAA</div></div>
+
+                    <div id="lat-long-map" class="leaflet-container leaflet-retina leaflet-fade-anim" tabindex="0" style="position: relative;">&nbsp;<div class="leaflet-map-pane" style="transform: translate3d(-312px, 0px, 0px);"><div class="leaflet-tile-pane"><div class="leaflet-layer" style="z-index: 1;"><div class="leaflet-tile-container"></div><div class="leaflet-tile-container leaflet-zoom-animated"><img class="leaflet-tile leaflet-tile-loaded" src="https://a.tiles.mapbox.com/v4/mapquest.streets/15/5697/13171@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 376px; top: 82px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://d.tiles.mapbox.com/v4/mapquest.streets/15/5697/13170@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 376px; top: -174px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://d.tiles.mapbox.com/v4/mapquest.streets/15/5696/13171@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 120px; top: 82px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://b.tiles.mapbox.com/v4/mapquest.streets/15/5698/13171@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 632px; top: 82px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://b.tiles.mapbox.com/v4/mapquest.streets/15/5697/13172@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 376px; top: 338px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://c.tiles.mapbox.com/v4/mapquest.streets/15/5696/13170@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 120px; top: -174px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://a.tiles.mapbox.com/v4/mapquest.streets/15/5698/13170@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 632px; top: -174px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://a.tiles.mapbox.com/v4/mapquest.streets/15/5696/13172@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 120px; top: 338px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://c.tiles.mapbox.com/v4/mapquest.streets/15/5698/13172@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 632px; top: 338px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://c.tiles.mapbox.com/v4/mapquest.streets/15/5695/13171@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: -136px; top: 82px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://c.tiles.mapbox.com/v4/mapquest.streets/15/5699/13171@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 888px; top: 82px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://b.tiles.mapbox.com/v4/mapquest.streets/15/5695/13170@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: -136px; top: -174px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://b.tiles.mapbox.com/v4/mapquest.streets/15/5699/13170@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 888px; top: -174px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://d.tiles.mapbox.com/v4/mapquest.streets/15/5695/13172@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: -136px; top: 338px;"><img class="leaflet-tile leaflet-tile-loaded" src="https://d.tiles.mapbox.com/v4/mapquest.streets/15/5699/13172@2x.png?access_token=pk.eyJ1IjoibWFwcXVlc3QiLCJhIjoiY2Q2N2RlMmNhY2NiZTRkMzlmZjJmZDk0NWU0ZGJlNTMifQ.mPRiEubbajc6a5y9ISgydg" style="height: 256px; width: 256px; left: 888px; top: 338px;"></div></div></div><div class="leaflet-objects-pane"><div class="leaflet-shadow-pane"></div><div class="leaflet-overlay-pane"></div><div class="leaflet-marker-pane"><img src="https://api-s.mqcdn.com/sdk/leaflet/v2.2/images/poi@2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-clickable leaflet-marker-draggable" tabindex="0" style="margin-left: -15px; margin-top: -35px; width: 36px; height: 35px; transform: translate3d(496px, 199px, 0px); z-index: 199;"></div><div class="leaflet-popup-pane"></div></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a></div></div><div class="leaflet-top leaflet-right"><div class="leaflet-control-layers leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="#" title="Layers"></a><form class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"><label><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> Map</span></label><label><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> Dark</span></label><label><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> Light</span></label><label><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> Satellite</span></label></div><div class="leaflet-control-layers-separator" style="display: none;"></div><div class="leaflet-control-layers-overlays"></div></form></div></div><div class="leaflet-bottom leaflet-left"><div class="mq-logo-control leaflet-control"><img src="https://api-s.mqcdn.com/sdk/leaflet/v2.2/images/questy_sm.png" width="100" height="20"></div></div><div class="leaflet-bottom leaflet-right"><div class="mq-attribution-control leaflet-control"><a id="terms" class="termsLink" target="_blank" href="http://hello.mapquest.com/terms-of-use">Terms</a></div><div class="leaflet-control-attribution leaflet-control"></div></div></div></div>
+                </div>
+            </div>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" rel="stylesheet">
+            <link href="/documentation/assets/styles/lat-long.css" rel="stylesheet">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+            <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24"></script>
+            <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24"></script>
+
+            <script type="text/javascript">
+  if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(str) {
+      return this.lastIndexOf(str, 0) === 0;
+    };
+  }
+
+  var mapLayer = MQ.mapLayer();
+  var mapLeaflet;
+
+  var latLng = new L.LatLng(39.743943, -105.020089);
+
+  showLL(latLng, '');
+
+  var map = L.map('lat-long-map', {
+    layers: mapLayer,
+    center: latLng,
+    zoom: 15
+  }).on('click', function(e) {
+    addMarker(e);
+  });
+
+  L.control.layers({
+    'Map': mapLayer,
+    'Dark': MQ.darkLayer(),
+    'Light': MQ.lightLayer(),
+    'Satellite': MQ.satelliteLayer()
+  }).addTo(map);
+
+  var mapQuestMarker = L.icon({
+    iconUrl: MQ.mapConfig.getConfig("imagePath") + 'poi.png',
+    iconRetinaUrl: MQ.mapConfig.getConfig("imagePath") + 'poi@2x.png',
+    iconSize: [36, 35],
+    iconAnchor: [15, 35],
+    popupAnchor: [-1, -30]
+  });
+
+  var popup = L.marker(latLng, {icon: mapQuestMarker, draggable: true}).addTo(map);
+
+  popup.on('dragend', function(event) {
+    var marker = event.target;
+    var position = marker.getLatLng().wrap();
+    showLL(position, 'USER_DEFINED');
+  });
+
+  function roundNumber(num, dec) {
+    return Math.round(num * Math.pow(10, dec)) / Math.pow(10, dec);
+  }
+
+  function popInfo() {
+    street = document.getElementById("street").value;
+    city = document.getElementById("city").value;
+    state = document.getElementById("state").value;
+    postal = document.getElementById("postalCode").value;
+    country = document.getElementById("country").value;
+
+    if (document.getElementById("country").value == "") {
+      country = "US";
+    } else {
+      country = document.getElementById("country").value;
+    }
+    simpleGeocode();
+  }
+
+  function clearMap() {
+    document.getElementById('resultDiv').innerHTML = strResult;
+    document.getElementById("street").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("state").value = "";
+    document.getElementById("postalCode").value = "";
+  }
+
+  function addMarker(e) {
+    popup.setLatLng(e.latlng);
+    showLL(e.latlng.wrap(), 'USER_DEFINED');
+  }
+
+  function simpleGeocode() {
+    var geocode = MQ.geocode()
+      .search({
+        'street': street,
+        'city': city,
+        'state': state,
+        'postalCode': postal,
+        'adminArea1': country
+      })
+      .on('success', function(e) {
+        var best = e.result.best;
+        var latlng = best.latlng;
+
+        var quality = best.geocodeQualityCode;
+
+        map.setView(latlng, getZoomFromResultCode(quality));
+
+        popup.setLatLng(latlng);
+
+        showLL(latlng, quality);
+      });
+  }
+
+  function getZoomFromResultCode(resultCode) {
+    var zoom = 12;
+    if (resultCode.startsWith("P") || resultCode.startsWith("L") || resultCode.startsWith("B")
+      || resultCode.startsWith("I")) {
+      zoom = 15;
+    } else if (resultCode.startsWith("Z") || resultCode.startsWith("A5")) {
+      zoom = 12;
+    } else if (resultCode.startsWith("A4")) {
+      zoom = 9;
+    } else if (resultCode.startsWith("A3")) {
+      zoom = 5;
+    } else if (resultCode.startsWith("A1")) {
+      zoom = 2;
+    }
+
+    return zoom;
+  }
+
+  function showLL(ll, quality) {
+    strResult = "<div class='mapTitle'><span class='latitude'>Latitude:</span> " + roundNumber(ll.lat, 6) + "<span class='longitude'>, Longitude:</span> " + roundNumber(ll.lng, 6) + "<span class='quality'>, Quality: </span>" + quality + "</div>";
+    document.getElementById('resultDiv').innerHTML = strResult;
+  }
+
+  function searchKeyPress(e) {
+    if (window.event) {
+      e = window.event;
+    }
+    if (e.keyCode == 13) {
+      document.getElementById('btnGC').click();
+    }
+  }
+            </script>
+
+
+        </div>
+        <footer>
+            <div class="footer-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+                            <h2 class="title">About MapQuest for Business</h2>
+                            <div class="content">
+                                <p class="description">
+                                    MapQuest for Business powers thousands of businesses with
+                                    location-enabled Geospatial solutions. Our platform provides companies of any size
+                                    with the means to increase efficiency and streamline processes, connect with
+                                    customers, and ultimately deliver the all-important exceptional user experience.
+                                    And, as usual, the MapQuest for Business experience is backed by the customer
+                                    service and technical support that we're known for.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                            <h2 class="title small no-subtitle">For Sales and Support</h2>
+                            <div class="contact-info">
+                                <ul>
+                                    <li>1555 Blake St 3rd Floor</li>
+                                    <li>Denver, CO 80202</li>
+                                    <li><a href="mailto:sales@mapquest.com">sales@mapquest.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="footer-menu">
+                        <div class="col-xs-6 col-sm-3">
+                            <ul class="menu">
+                                <li class="first expanded ">
+                                    <a href="https://developer.mapquest.com/user/register">Get Started</a>
+                                    <ul class="menu">
+                                        <li><a href="https://developer.mapquest.com/plans">Pricing &amp; Plans</a></li>
+                                        <li><a href="https://developer.mapquest.com/faq">FAQ</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-2">
+                            <ul class="menu">
+                                <li class="expanded ">
+                                    <a href="https://business.mapquest.com/company">About Us</a>
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="https://business.mapquest.com/company/mapquest-leadership">Leadership</a>
+                                        </li>
+                                        <li><a href="https://business.mapquest.com/resources/partnerships">Partners</a></li>
+                                        <li><a href="https://developer.mapquest.com/devblog">Blog</a></li>
+                                        <li><a href="http://company.mapquest.com/careers/">Jobs</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-3">
+                            <ul class="menu">
+                                <li class="expanded ">
+                                    <a href="https://business.mapquest.com/products">Products &amp; Services</a>
+                                    <ul class="menu">
+                                        <li><a href="https://business.mapquest.com/developer-apis-sdks">APIs &amp; SDKs</a></li>
+                                        <li>
+                                            <a href="https://business.mapquest.com/products/professional-services">
+                                                Professional
+                                                Services
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://business.mapquest.com/products/location-data">
+                                                Location
+                                                Intelligence
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://business.mapquest.com/products/targeted-advertising">
+                                                Advertise With
+                                                Us
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-2">
+                            <ul class="menu">
+                                <li class="expanded ">
+                                    <a href="https://business.mapquest.com/products/professional-services/">Support</a>
+                                    <ul class="menu">
+                                        <li><a href="https://business.mapquest.com/resources">Resources</a></li>
+                                        <li><a href="https://developer.mapquest.com/documentation">Documentation</a></li>
+                                        <li><a href="https://developer.mapquest.com/forum">Forums</a></li>
+                                        <li>
+                                            <a href="https://developer.mapquest.com/contact-us">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-2">
+                            <ul class="menu">
+                                <li class="last expanded ">
+                                    <a href="https://business.mapquest.com/social" target="_blank">Social</a>
+                                    <ul class="menu">
+                                        <li><a href="//www.linkedin.com/company/mapquest/" target="_blank">LinkedIn</a></li>
+                                        <li><a href="//www.twitter.com/mqdeveloper/" target="_blank">Twitter</a></li>
+                                        <li><a href="//www.facebook.com/mapquest/" target="_blank">Facebook</a></li>
+                                        <li><a href="//www.instagram.com/mapquest/" target="_blank">Instagram</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="copyright col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <p>
+                            <a href="/">
+                                <img class="copyright-logo" alt="MapQuest Logo" src="/documentation/assets/img/mq_2014.png">
+                            </a>© 2018 MAPQUEST, INC. ALL RIGHTS RESERVED.
+                            <a href="https://hello.mapquest.com/privacy" target="_blank">PRIVACY POLICY</a> |
+                            <a href="https://hello.mapquest.com/terms-of-use" target="_blank">TERMS OF USE</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+
+
+        <script type="text/javascript" src="https://developer.mapquest.com/documentation/assets/js/main.js" async=""></script>
+
+        <noscript>
+            <link href='/documentation/assets/styles/main.css' rel='stylesheet' type='text/css'>
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet" type="text/css" />
+        </noscript>
+
+
+    </body>
+    </html>

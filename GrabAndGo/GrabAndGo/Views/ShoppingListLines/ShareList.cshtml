@@ -2,7 +2,8 @@
 
 <div class="background-image" style="background-image: url('../Images/vegies.jpg');">
     <div class="container text-center">
-        <div class="container text-center">
+
+        @*<div class="container text-center">
             <div class="row">
                 <div class="col-12">
                     <h2 class="title">Grab & Go</h2>
@@ -17,12 +18,16 @@
                     <div><img class="cart-img center" src="~/Images/speedycart.png" alt="Grab&Go Logo"></div>
                 </div>
             </div>
+        </div>*@
+
+        <div class="col-12 text-center mt-3">
+            <img class="cart-img" src="~/Images/blankicon.png" alt="Grab&Go Logo">
         </div>
 
 
         <div class="form-container">
 
-            <h2 class="text-center">Who would you like to share your list with?</h2>
+            <h2 class="text-center">Share your List with another Grab & Go User!</h2>
 
             <form method="post">
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -35,6 +40,7 @@
                 <div class="form-group">
                     <input type="submit" value="Share!" class="btn btn-primary text-center" />
                 </div>
+                <a class="btn btn-success text-center" asp-action="YourList" asp-controller="ShoppingListLines">Back to Your List</a>
                 @*<button type="submit" class="btn btn-primary">Register</button>*@
             </form>
 

@@ -484,8 +484,6 @@ C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\bin\Debug\n
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\GrabAndGo.csproj.CoreCompileInputs.cache
-C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\GrabAndGo.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\YourList.cshtml.g.cs
@@ -501,3 +499,8 @@ C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\n
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\SharingSuccess.cshtml.g.cs
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\ShareRequest.cshtml.g.cs
 C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingListLines\ChangeStoreList.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Home\map.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Home\addresslookup.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\Razor\Views\Products\AllItems.cshtml.g.cs
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\GrabAndGo.csproj.CoreCompileInputs.cache
+C:\Users\cplea\OneDrive\Documents\GitHub\Grab-Go\GrabAndGo\GrabAndGo\obj\Debug\netcoreapp3.1\GrabAndGo.MvcApplicationPartsAssemblyInfo.cache

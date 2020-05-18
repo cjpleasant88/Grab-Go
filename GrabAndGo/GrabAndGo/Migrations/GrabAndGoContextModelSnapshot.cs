@@ -38,29 +38,6 @@ namespace GrabAndGo.Migrations
                     b.HasKey("AisleID");
 
                     b.ToTable("Aisle");
-
-                    b.HasData(
-                        new
-                        {
-                            AisleID = 1,
-                            AisleNumber = 1,
-                            CategoryID = 1,
-                            StoreID = 1
-                        },
-                        new
-                        {
-                            AisleID = 2,
-                            AisleNumber = 2,
-                            CategoryID = 3,
-                            StoreID = 1
-                        },
-                        new
-                        {
-                            AisleID = 3,
-                            AisleNumber = 1,
-                            CategoryID = 2,
-                            StoreID = 2
-                        });
                 });
 
             modelBuilder.Entity("GrabAndGo.Models.ApplicationUser", b =>
@@ -165,18 +142,6 @@ namespace GrabAndGo.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Category");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryID = 1,
-                            CategoryName = "Dairy"
-                        },
-                        new
-                        {
-                            CategoryID = 2,
-                            CategoryName = "Bakery"
-                        });
                 });
 
             modelBuilder.Entity("GrabAndGo.Models.Product", b =>
@@ -195,26 +160,6 @@ namespace GrabAndGo.Migrations
                     b.HasKey("ProductID");
 
                     b.ToTable("Product");
-
-                    b.HasData(
-                        new
-                        {
-                            ProductID = 1,
-                            CategoryID = 1,
-                            ProductName = "Milk"
-                        },
-                        new
-                        {
-                            ProductID = 2,
-                            CategoryID = 2,
-                            ProductName = "Bread"
-                        },
-                        new
-                        {
-                            ProductID = 3,
-                            CategoryID = 3,
-                            ProductName = "Eggs"
-                        });
                 });
 
             modelBuilder.Entity("GrabAndGo.Models.ShoppingListLine", b =>
@@ -223,9 +168,6 @@ namespace GrabAndGo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("IsAtStore")
-                        .HasColumnType("bit");
 
                     b.Property<string>("ListID")
                         .HasColumnType("nvarchar(max)");
@@ -242,35 +184,6 @@ namespace GrabAndGo.Migrations
                     b.HasKey("ShoppingListLineID");
 
                     b.ToTable("ShoppingListLine");
-
-                    b.HasData(
-                        new
-                        {
-                            ShoppingListLineID = 1,
-                            IsAtStore = false,
-                            ListID = "1",
-                            ProductID = 1,
-                            ProductName = "Milk",
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            ShoppingListLineID = 2,
-                            IsAtStore = false,
-                            ListID = "2",
-                            ProductID = 2,
-                            ProductName = "Bread",
-                            Quantity = 3
-                        },
-                        new
-                        {
-                            ShoppingListLineID = 3,
-                            IsAtStore = false,
-                            ListID = "2",
-                            ProductID = 3,
-                            ProductName = "Eggs",
-                            Quantity = 12
-                        });
                 });
 
             modelBuilder.Entity("GrabAndGo.Models.Store", b =>
@@ -302,26 +215,6 @@ namespace GrabAndGo.Migrations
                     b.HasKey("StoreID");
 
                     b.ToTable("Store");
-
-                    b.HasData(
-                        new
-                        {
-                            StoreID = 1,
-                            City = "Ocenaside",
-                            State = "CA",
-                            StoreName = "Target",
-                            Street = "123 BeachTime",
-                            ZipCode = 12345
-                        },
-                        new
-                        {
-                            StoreID = 2,
-                            City = "Vista",
-                            State = "CA",
-                            StoreName = "Ralphs",
-                            Street = "456 ImHungry",
-                            ZipCode = 98765
-                        });
                 });
 
             modelBuilder.Entity("GrabAndGo.Models.User", b =>
@@ -359,30 +252,6 @@ namespace GrabAndGo.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("User");
-
-                    b.HasData(
-                        new
-                        {
-                            UserID = 1,
-                            Email = "test123@456.com",
-                            FirstName = "Test User",
-                            LastName = "Test Last",
-                            ListID = 123,
-                            ListName = "Test List",
-                            Password = "superSecret",
-                            StorePref = 1
-                        },
-                        new
-                        {
-                            UserID = 2,
-                            Email = "john@grabandgo.com",
-                            FirstName = "John",
-                            LastName = "Smith",
-                            ListID = 3,
-                            ListName = "John's List",
-                            Password = "johnnyrocks",
-                            StorePref = 2
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

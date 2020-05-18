@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Authorization;
 using GrabAndGo.Models.ViewModels;
 using System.Composition;
 using SQLitePCL;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace GrabAndGo.Controllers
 {
@@ -25,11 +27,13 @@ namespace GrabAndGo.Controllers
         private readonly GrabAndGoContext _context;
 
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public ShoppingListLinesController(GrabAndGoContext context, UserManager<ApplicationUser> userManager)
+        public ShoppingListLinesController(GrabAndGoContext context, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         // GET: ShoppingListLines
@@ -41,9 +45,18 @@ namespace GrabAndGo.Controllers
             return View(await _context.ShoppingListLine.ToListAsync());
         }
 
-        public async Task<IActionResult> YourList(string userName)
+        public async Task<IActionResult> YourList()
         {
-            var user = await _userManager.FindByNameAsync(userName);
+            //if (userName != User.Identity.Name)
+            //{
+            //    return RedirectToAction("AccessDenied", "Account");
+            //}
+            if (!_signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
 
             if (user == null)
             {
@@ -57,7 +70,26 @@ namespace GrabAndGo.Controllers
                 return RedirectToAction("ShareRequest", new {email = sharingUser.UserName });
             }
             ViewBag.IsSharing = user.IsSharing;
+            ViewBag.ListName = user.ListName;
             return View(_context.ShoppingListLine.Where(p => p.ListID.Equals(user.ListID)));
+        }
+
+        public async Task<IActionResult> RemoveShoppingList(int id)
+        {
+            var shoppingListLine = await _context.ShoppingListLine.FindAsync(id);
+            _context.ShoppingListLine.Remove(shoppingListLine);
+            await _context.SaveChangesAsync();
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            return RedirectToAction("ShoppingList", "ShoppingListLines", new { userName = user.Email });
+        }
+
+        public async Task<IActionResult> RemoveYourList(int id)
+        {
+            var shoppingListLine = await _context.ShoppingListLine.FindAsync(id);
+            _context.ShoppingListLine.Remove(shoppingListLine);
+            await _context.SaveChangesAsync();
+            //var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            return RedirectToAction("YourList", "ShoppingListLines");//, new { userName = user.Email }
         }
 
         public IActionResult ShareRequest(string email)
@@ -74,9 +106,9 @@ namespace GrabAndGo.Controllers
             user.IsSharing = true;
             user.RequestToShare = false;
 
-            var result = await _userManager.UpdateAsync(user);
+            await _userManager.UpdateAsync(user);
 
-            return RedirectToAction("YourList", new { userName = user.UserName });
+            return RedirectToAction("YourList");//, new { userName = user.UserName }
         }
 
         public async Task<IActionResult> ShareDeny()
@@ -85,9 +117,9 @@ namespace GrabAndGo.Controllers
 
             user.RequestToShare = false;
 
-            var result = await _userManager.UpdateAsync(user);
+            await _userManager.UpdateAsync(user);
 
-            return RedirectToAction("YourList", new { userName = user.UserName });
+            return RedirectToAction("YourList");//, new { userName = user.UserName }
         }
 
         public async Task<IActionResult> StopSharing()
@@ -98,9 +130,9 @@ namespace GrabAndGo.Controllers
             user.IsSharing = false;
             user.RequestToShare = false;
 
-            var result = await _userManager.UpdateAsync(user);
+            await _userManager.UpdateAsync(user);
 
-            return RedirectToAction("YourList", new { userName = user.UserName });
+            return RedirectToAction("YourList");//, new { userName = user.UserName }
         }
 
         public async Task<IActionResult> AddToList(int ProductID, string userName)
@@ -173,7 +205,7 @@ namespace GrabAndGo.Controllers
             await _context.SaveChangesAsync();
 
             //return View();
-            return RedirectToAction("YourList", "ShoppingListLines", new { userName = user.Email });
+            return RedirectToAction("YourList", "ShoppingListLines");//, new { userName = user.Email }
         }
 
         // GET: ShoppingListLines/Details/5
@@ -303,6 +335,11 @@ namespace GrabAndGo.Controllers
 
         public async Task<IActionResult> ShoppingList(string userName)
         {
+            if (userName != User.Identity.Name)
+            {
+                return RedirectToAction("AccessDenied", "Account");
+            }
+
             var user = await _userManager.FindByNameAsync(userName);
 
             if (user == null)
@@ -315,8 +352,20 @@ namespace GrabAndGo.Controllers
             //Below is Main Logic to grab users list, join with other tables to filter out by store and order by Aisle numbers
             //TODO: Add sections in the future for even easier store navigation (as in which section of the aisle the product is in)
 
-            //Get the aisles in the Users Store preference
+            //Get the aisles of the store that the user has a preference for
             var storePrefAisles = _context.Aisle.Where(aisle => aisle.StoreID == user.StorePref).Select(aisle => aisle);
+
+            //initiates a variable to keep track of the highest aisle number in the store
+            int numberOfAisles = 0;
+
+            //iterates through and keeps the highest aisle number
+            foreach(var aisle in storePrefAisles)
+            {
+                if(aisle.AisleNumber > numberOfAisles)
+                {
+                    numberOfAisles = aisle.AisleNumber;
+                }
+            }
 
             List<ShoppingList> orderedList = (from listLine in _context.ShoppingListLine
                                 where listLine.ListID == user.ListID
@@ -327,6 +376,7 @@ namespace GrabAndGo.Controllers
                                 orderby eachline.AisleNumber                                                                        //Orders by Aisle numbers
                                 select new ShoppingList                                                                             //Creates a new ShoppingList View Model to pass into the list
                                 {
+                                    LineID = listLine.ShoppingListLineID,
                                     ProductName = listLine.ProductName,
                                     Quantity = listLine.Quantity,
                                     AisleNumber = eachline.AisleNumber,// > 0 ? eachline.AisleNumber : -1,
@@ -341,6 +391,7 @@ namespace GrabAndGo.Controllers
                                 .FirstOrDefault(store => store.id == user.StorePref).name;
 
             ViewBag.StoreName = StoreName;
+            ViewBag.NumberOfAisles = numberOfAisles;
             return View(orderedList);
         }
 
@@ -369,7 +420,7 @@ namespace GrabAndGo.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("SharingSuccess", new { Email = sharedUser.Email});
+                return RedirectToAction("SharingSuccess", new {sharedUser.Email});
             }
    
             foreach (var error in result.Errors)
@@ -388,6 +439,14 @@ namespace GrabAndGo.Controllers
 
         public async Task<IActionResult> ChangeStoreList()
         {
+            var builder = new ConfigurationBuilder()
+               .SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            IConfigurationRoot configuration = builder.Build();
+
+            string GoogleMaps = configuration.GetValue<string>("Google:Maps");
+            ViewBag.GoogleMaps = GoogleMaps;
             return View(await _context.Store.ToListAsync());
         }
 
@@ -407,7 +466,6 @@ namespace GrabAndGo.Controllers
 
             Response.StatusCode = 404;
             return RedirectToAction("HttpsStatusCodeHandler", "Error", new { statusCode = 123 });
-
         }
     }
 }

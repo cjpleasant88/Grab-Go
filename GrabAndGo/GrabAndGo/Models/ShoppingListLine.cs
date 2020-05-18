@@ -17,6 +17,8 @@ namespace GrabAndGo.Models
 
         public string ListID { get; set; }
         public int ProductID { get; set; }
+
+        [Display(Name = "Product")]
         public string ProductName { get; set; }
         public int Quantity { get; set; }
     }

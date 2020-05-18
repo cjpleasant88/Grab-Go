@@ -8,9 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using GrabAndGo.Data;
 using GrabAndGo.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace GrabAndGo.Controllers
 {
+    
     public class ProductsController : Controller
     {
         private readonly GrabAndGoContext _context;
@@ -23,6 +26,7 @@ namespace GrabAndGo.Controllers
         }
 
         // GET: Products
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Product.ToListAsync());
@@ -36,7 +40,20 @@ namespace GrabAndGo.Controllers
             return View(await _context.Product.ToListAsync());
         }
 
+        public async Task<IActionResult> AllItems(string searchString)
+        {
+            var products = from p in _context.Product select p;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                return View(await products.Where(p => p.ProductName.Contains(searchString)).ToListAsync());
+            }
+            
+            return View(await _context.Product.ToListAsync());
+        }
+
         // GET: Products/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -55,6 +72,7 @@ namespace GrabAndGo.Controllers
         }
 
         // GET: Products/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -77,6 +95,7 @@ namespace GrabAndGo.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,6 +115,7 @@ namespace GrabAndGo.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,CategoryID")] Product product)
         {
@@ -128,6 +148,7 @@ namespace GrabAndGo.Controllers
         }
 
         // GET: Products/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
