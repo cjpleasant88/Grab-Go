@@ -1,7 +1,5 @@
 # <div align="center">Product Release / Project Presentation</div>
 
-1. Describe project experience including each phase of the SDLC and the project artifacts (design documents, requirements trace, test reports...)
-
 <div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></div>
    
 ## <div align="center">Inspiration</div>
