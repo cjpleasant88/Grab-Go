@@ -1,4 +1,4 @@
-# Product Release / Project Presentation
+# <div align="center">Product Release / Project Presentation</div>
 
 1. Describe project experience including each phase of the SDLC and the project artifacts (design documents, requirements trace, test reports...)
 
