@@ -13,20 +13,7 @@ After having a newborn this past year, I have discovered how precious and valuab
 The Concept is simple. 
 Have a list of grocery store items that automatically re-arranges the items on the list in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once, and not spending time before the trip to organize your list.
 
-## <div align="center">IMPLEMENTATION</div>
-
-To accomplish this task, a few inventories would have to be maintained:
-
- - List of Aisles in a particular store
- - The Category of items that each Aisle contains
- - A Catalog of items along with the category they belong to
- - A list of items on a users Shopping List
- 
- Also, to be able to order the list based on different stores and have multiple users we need:
- - To maintain a List of Stores 
- - To maintain a Database of unique users
-
-   Requirement Analysis
+ ## <div align="center">Requirement Analysis</div>
 
    | Requirement  ID | Requirement Description                                      | Test Method   | TEST ID      |
    | --------------- | ------------------------------------------------------------ | ------------- | ------------ |
@@ -61,11 +48,18 @@ To accomplish this task, a few inventories would have to be maintained:
    | 7.1.0           | The System shall display a  form to the administrator for all required information of a Store entity | Demonstration | TC010        |
    | 7.1.1           | The software shall run  script(s) to take form data and create a new record of the item in the Store  Table | Inspection    | TC010        |
 
-   ## 
+  ## <div align="center">DESIGN</div>
 
-   Design
+To accomplish this task, a few inventories would have to be maintained:
 
-   Implementation
+ - List of Aisles in a particular store
+ - The Category of items that each Aisle contains
+ - A Catalog of items along with the category they belong to
+ - A list of items on a users Shopping List
+ 
+ Also, to be able to order the list based on different stores and have multiple users we need:
+ - To maintain a List of Stores 
+ - To maintain a Database of unique users
 
    Testing
 
