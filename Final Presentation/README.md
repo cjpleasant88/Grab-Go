@@ -4,7 +4,7 @@
 
    <div  align="center"><span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/sdlccycle.png" width="300"/></span></div>
    
-   ## <div align="center">INSPIRATION</div>
+## <div align="center">INSPIRATION</div>
 
 After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles to retrieve the items. 
 
@@ -16,7 +16,7 @@ Have a list of grocery store items that automatically re-arranges the items on t
  ## <div align="center">Requirement Analysis</div><br>
  <div align="center">X.0.0 = User Requirement<br>
  X.X.0 = System Requirement<br>
- X.X.X = Software Requirement</div>
+ X.X.X = Software Requirement</div><br>
 
    | Requirement  ID | Requirement Description                                      | Test Method   | TEST ID      |
    | --------------- | ------------------------------------------------------------ | ------------- | ------------ |
