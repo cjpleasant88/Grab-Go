@@ -81,6 +81,7 @@ A prototype was created to get a feel for page design page flow using GitHub's S
 Web-App development began using:
 - A SQL Server hosted in Azure
 - MVC 5 design pattern utilizing ASP.NET Core
+- Entity Core Framework
 - Visual Studio 2019 Integrated Development Environment<br>
 (Code walk through and Source code link in section below)
 
