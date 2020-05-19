@@ -1,10 +1,23 @@
-# Product Release / Project Presentation
+# <div align="center">Product Release / Project Presentation</div>
 
-1. Describe project experience including each phase of the SDLC and the project artifacts (design documents, requirements trace, test reports...)
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></div>
+   
+## <div align="center">Inspiration</div>
 
-   <div  align="center"><span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="300"/></span><span><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/sdlccycle.png" width="500"/></span></div>
+After having a newborn this past year, I have discovered how precious and valuable all those 86,400 seconds in the day are.  This application is an attempt to gain back a few of them each week. It was thought of after many trips of going to the store trying to find the few items on my list quickly, only to find myself backtracking down aisles to retrieve the items. 
 
-   Requirement Analysis
+## <div align="center">Concept</div>
+
+The Concept is simple. 
+Have a list of grocery store items that automatically re-arranges the items on the list in a way that allows you to traverse a store in the most efficient/quickest manner. This way you are not going down an aisle more than once, and not spending time before the trip to organize your list.
+
+<br><br>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/sdlccycle.png" width="300"/></div>
+
+## <div align="center">REQUIREMENT ANALYSIS</div><br>
+ <div align="center">X.0.0 = User Requirement<br>
+ X.X.0 = System Requirement<br>
+ X.X.X = Software Requirement</div><br>
 
    | Requirement  ID | Requirement Description                                      | Test Method   | TEST ID      |
    | --------------- | ------------------------------------------------------------ | ------------- | ------------ |
@@ -39,15 +52,41 @@
    | 7.1.0           | The System shall display a  form to the administrator for all required information of a Store entity | Demonstration | TC010        |
    | 7.1.1           | The software shall run  script(s) to take form data and create a new record of the item in the Store  Table | Inspection    | TC010        |
 
-   ## 
+## <div align="center">DESIGN</div>
 
-   Design
+To accomplish this task, a few inventories would have to be maintained:
 
-   Implementation
+ - List of Aisles in a particular store
+ - The Category of items that each Aisle contains
+ - A Catalog of items along with the category they belong to
+ - A list of items on a users Shopping List
+ 
+ Also, to be able to order the list based on different stores and have multiple users we need:
+ - To maintain a List of Stores 
+ - To maintain a Database of unique users
+ 
+### <div align="center">Entity Relationship Diagram</div>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(20200404).png"width="90%"/></div>
+ 
+### <div align="center">Wire Frames</div>
 
-   Testing
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Sign%20Up%20Screen.png"width="50%"/><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Shopping%20List.png"width="50%"/></div>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Store%20Map.png"width="50%"/><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Ordered%20Shopping%20List.PNG"width="50%"/></div>
+ 
+## <div align="center">IMPLEMENTATION</div>
 
-   ## <div align="center">TESTS TABLE</div>
+A prototype was created to get a feel for page design page flow using GitHub's Static page Viewer:<br>
+[Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
+
+Web-App development began using:
+- A SQL Server hosted in Azure
+- MVC 5 design pattern utilizing ASP.NET Core
+- Visual Studio 2019 Integrated Development Environment
+(Code walk through and Source code link in section below)
+
+## <div align="center">TESTING</div>
+
+### <div align="center">Tests Table</div>
 
    | Test ID | Requirement ID(s)                        | Test Procedure                                               | Current Status      | Time Stamp | Version |
    | ------- | ---------------------------------------- | ------------------------------------------------------------ | ------------------- | ---------- | ------- |
@@ -61,6 +100,8 @@
    | TC008   | 3.0.0, 3.1.0                             | User can select "map View" and see their items on store map,  matching their physical location in the store | Not Implemented :x: | 3/8/2020   | N/A     |
    | TC009   | 6.0.0, 6.1.0, 6.1.1                      | Administrator adds a new item to database, adds a non-existing item,  verifies that is shows up in the application | :heavy_check_mark:  | 5/6/2020   | N/A     |
    | TC010   | 7.0.0, 7.1.0, 7.1.1                      | Administrator add a new store and layout to the database, verifies that  store and layout populate in the application | :heavy_check_mark:  | 5/12/2020  | N/A     |
+
+### <div align="center">Requirements Traceability Matrix</div>
 
    | Requirements ID | Test ID            |||||||||| Total Tests              |
    | --------------- | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ---- | ------------------ | ------------------ | ---- |
@@ -96,6 +137,13 @@
    | 7.1.0           |                    |                    |                    |                    |                    |                    |                    |      |                    | :heavy_check_mark: | 1    |
    | 7.1.1           |                    |                    |                    |                    |                    |                    |                    |      |                    | :heavy_check_mark: | 1    |
 
+100% of Requirements are covered by Tests
+90% of Tests are passing leading to
+93.33% of Requirements being met
+
+Store Layout View has not been implemented as of May 18, 2020
+
+
    Evolution
 
    
@@ -111,3 +159,4 @@
 - where were you lucky?
 - what would you change / what do you know now that you wish you knew "then"?
 
+[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
