@@ -212,3 +212,4 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
    - Setting up the database and knowing exactly how the Entity RelationShip Diagram should be set up is very important
    - Wish I had a better understanding of Javascipt/React , any of the responsive languages
    - Have a custom domain name for web page (custom support email)
+   - Remove MVC Template NavBar -> Add more mobile friendly navigation
