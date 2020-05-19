@@ -191,4 +191,4 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 - where were you lucky?
 - what would you change / what do you know now that you wish you knew "then"?
 
-<div align="center">[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)</div>
+<div align="center">[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)]</div>(https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
