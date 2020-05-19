@@ -152,7 +152,11 @@ Device Rotation
 <div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/StoreListView.PNG"width="50%"/></div>
 
 HomeScreen Icon
-<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Savedhomescreenbutton.png"width="50%"/><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Homescreen.png"width="50%"/></div>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Sharebuttoncrop.png"width="50%"/></div>
+<br>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Savedhomescreenbutton.png"width="50%"/></div>
+<br>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Homescreen.png"width="50%"/></div>
 
 2. code and architecture walk-through
 
