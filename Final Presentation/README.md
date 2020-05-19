@@ -75,6 +75,14 @@ To accomplish this task, a few inventories would have to be maintained:
  
 ## <div align="center">IMPLEMENTATION</div>
 
+Created a prototype to get a feel for page design page flow:
+[Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
+
+Web-App development began using:
+- A SQL Server hosted in Azure
+- MVC 5 design pattern utilizing ASP.NET Core
+- Visual Studio 2019 Integrated Development Environment
+
 ## <div align="center">TESTING</div>
 
 ### <div align="center">Tests Table</div>
