@@ -145,14 +145,14 @@ Store Layout View has not been implemented as of May 18, 2020
 
 ## <div align="center">EVOLUTION</div>
 
-Google Maps
+Google Maps [Javascript Tutorial](https://developers.google.com/maps/documentation/javascript/tutorial)<br>
 <div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/GoogleMapView.PNG"width="90%"/></div>
 
 Device Rotation
-<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/StoreListView.PNG"width="90%"/></div>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/StoreListView.PNG"width="50%"/></div>
 
 HomeScreen Icon
-<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Homescreen.png"width="90%"/></div>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Savedhomescreenbutton.png"width="50%"/><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Homescreen.png"width="50%"/></div>
 
 2. code and architecture walk-through
 
