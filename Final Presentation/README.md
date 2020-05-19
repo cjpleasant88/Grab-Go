@@ -72,6 +72,9 @@ To accomplish this task, a few inventories would have to be maintained:
  
 ## <div align="center">IMPLEMENTATION</div>
 
+### <div align="center">Entity Relationship Diagram</div>
+<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/Grab%20and%20Go%20ERD%20(20200404).png"width="75%"/></div>
+
 ## <div align="center">TESTING</div>
 
 ### <div align="center">Tests Table</div>
