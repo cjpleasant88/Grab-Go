@@ -182,9 +182,10 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 <br>
 
 ## <div align="center">Product Demonstration</div><br>
-# [Grab & Go Application](https://grabandgo.azurewebsites.net)
 
-<div align="center"><a href="https://grabandgo.azurewebsites.net" ><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></a></div>
+<div align="center"><a href="https://grabandgo.azurewebsites.net" ><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></a></div><br>
+
+### <div align="center">^ Click for Demo ^</div>
 
 ## <div align="center">Lessons Learned</div>
 
