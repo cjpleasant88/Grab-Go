@@ -163,8 +163,11 @@ HomeScreen Icon
 Source code can be found here: [Source Code](https://github.com/cjpleasant88/Grab-Go/tree/master/GrabAndGo/GrabAndGo)
 
 ### <div>Some Key turning points in development:</div>
+<hr>
+
 #### <div align="center">Account Creation and saving List ID</div>
 <div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/Account%20Creation.PNG"width="70%"/></div>
+<hr>
 
 #### <div align="center">Logic for Ordering Items</div>
 <div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/orderedlistcode.PNG"width="100%"/></div>
