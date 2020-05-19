@@ -82,7 +82,8 @@ Web-App development began using:
 - A SQL Server hosted in Azure
 - MVC 5 design pattern utilizing ASP.NET Core
 - Entity Core Framework
-- Visual Studio 2019 Integrated Development Environment<br>
+- Visual Studio 2019 Integrated Development Environment
+- GitHub for Task Management and Versioning<br>
 (Code walk through and Source code link in section below)
 
 [Scrum Sprints Detailing Progress](https://github.com/cjpleasant88/Grab-Go/projects)
