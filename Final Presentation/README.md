@@ -81,9 +81,10 @@ A prototype was created to get a feel for page design page flow using GitHub's S
 Web-App development began using:
 - A SQL Server hosted in Azure
 - MVC 5 design pattern utilizing ASP.NET Core
-- Entity Core Framework
+- Entity Framework Core
 - Visual Studio 2019 Integrated Development Environment
-- GitHub for Task Management and Versioning<br>
+- GitHub for Task Management and Versioning
+- Microsoft Azure App Services for hosting<br>
 (Code walk through and Source code link in section below)
 
 [Scrum Sprints Detailing Progress](https://github.com/cjpleasant88/Grab-Go/projects)
@@ -210,3 +211,4 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
    - As I was learning, my code was very sporradic as I tested out new ways to implement something. More uniform and organized code going forward will help. There are many commented out blocks of code where you can tell I has no idea what I was doing at the time.
    - Setting up the database and knowing exactly how the Entity RelationShip Diagram should be set up is very important
    - Wish I had a better understanding of Javascipt/React , any of the responsive languages
+   - Have a custom domain name for web page (custom support email)
