@@ -193,4 +193,6 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 
 [![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
 
+<div  align="center">[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)</div>
+
 ![<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/orderedlistcode.PNG"width="100%"/></div>](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
