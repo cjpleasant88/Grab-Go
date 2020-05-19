@@ -184,6 +184,8 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 ## <div align="center">Product Demonstration</div><br>
 # [Grab & Go Application](https://grabandgo.azurewebsites.net)
 
+<div align="center"><a href="https://grabandgo.azurewebsites.net" ><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></a></div>
+
 ## <div align="center">Lessons Learned</div>
 
 - what did you do right?
@@ -192,7 +194,3 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 - what would you change / what do you know now that you wish you knew "then"?
 
 [![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
-
-<div  align="center">[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)</div>
-
-![<div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/orderedlistcode.PNG"width="100%"/></div>](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
