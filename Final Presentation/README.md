@@ -181,14 +181,14 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 <div  align="center"><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Final%20Presentation/Assets/appsettings.PNG"width="50%"/></div>
 <br>
 
+## <div align="center">Product Demonstration</div><br>
+# [Grab & Go Application](https://grabandgo.azurewebsites.net)
 
-3. product demonstration
-
-4. lessons learned:
+## <div align="center">Lessons Learned</div>
 
 - what did you do right?
 - what did you do wrong?
 - where were you lucky?
 - what would you change / what do you know now that you wish you knew "then"?
 
-[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
+<div align="center">[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)</div>
