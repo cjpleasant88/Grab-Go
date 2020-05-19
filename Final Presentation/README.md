@@ -182,16 +182,23 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 <br>
 
 ## <div align="center">Product Demonstration</div><br>
-
+#### <div align="center">v Click for Demo V</div>
 <div align="center"><a href="https://grabandgo.azurewebsites.net" ><img src="https://github.com/cjpleasant88/Grab-Go/blob/master/Assets/blankicon.png"width="500"/></a></div><br>
-
-#### <div align="center">^ Click for Demo ^</div>
 
 ## <div align="center">Lessons Learned</div>
 
 - what did you do right?
+   - Design ...Initially.. had to scale back
+   - Database creation
 - what did you do wrong?
+   - Design had to be scaled back due to timeline constraints and lack of knowledge...Took away shelf and section model to simplify
+   - Database Keys...I was getting many errors in the beginning due to constraints. Opened up the database and use the code to maintain database until I felt I understood how to implement.
 - where were you lucky?
+   - Lots of places
+   - Initial Database Migrations
+   - I leaned on (search engine of your choice) quite a bit
+   - Was referred to a teaching site that I relied on heavily for Security, Account, and Role Management:
+               [![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
 - what would you change / what do you know now that you wish you knew "then"?
-
-[![IdentityDbContext](http://img.youtube.com/vi/egITMrwMOPU/0.jpg)](https://www.youtube.com/watch?v=egITMrwMOPU&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=66&t=0s)
+   - A few sprints started off slower just due to many other tasks taking prioroty
+   - As I was learning, my code was very sporradic as I tested out new ways to implement something. More uniform and organized code goingn forward will help. There are many commented out blocks of code where you can tell I has no idea what I was doing at the time.
