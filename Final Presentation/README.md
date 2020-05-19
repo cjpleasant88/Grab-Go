@@ -75,13 +75,14 @@ To accomplish this task, a few inventories would have to be maintained:
  
 ## <div align="center">IMPLEMENTATION</div>
 
-Created a prototype to get a feel for page design page flow:
+A prototype was created to get a feel for page design page flow using GitHub's Static page Viewer:<br>
 [Grab & Go Prototype](https://github.com/cjpleasant88/Grab-Go/tree/master/docs)
 
 Web-App development began using:
 - A SQL Server hosted in Azure
 - MVC 5 design pattern utilizing ASP.NET Core
 - Visual Studio 2019 Integrated Development Environment
+(Code walk through and Source code link in section below)
 
 ## <div align="center">TESTING</div>
 
@@ -135,6 +136,13 @@ Web-App development began using:
    | 7.0.0           |                    |                    |                    |                    |                    |                    |                    |      |                    | :heavy_check_mark: | 1    |
    | 7.1.0           |                    |                    |                    |                    |                    |                    |                    |      |                    | :heavy_check_mark: | 1    |
    | 7.1.1           |                    |                    |                    |                    |                    |                    |                    |      |                    | :heavy_check_mark: | 1    |
+
+100% of Requirements are covered by Tests
+90% of Tests are passing leading to
+93.33% of Requirements being met
+
+Store Layout View has not been implemented as of May 18, 2020
+
 
    Evolution
 
