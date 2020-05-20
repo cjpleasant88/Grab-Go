@@ -200,8 +200,7 @@ Source code can be found here: [Source Code](https://github.com/cjpleasant88/Gra
 - what did you do wrong?
    - Design had to be scaled back due to timeline constraints and lack of knowledge...Took away shelf and section model to simplify implementation
    - Database Keys...I was getting many errors in the beginning due to constraints. Opened up the database and use the code to maintain database until I felt I understood how to implement.
-   
-   -Unit Testing. I had 0 Tests. Any Testing was done through testing of the live site as a user.
+   - Unit Testing. I had 0 Tests. Any Testing was done through testing of the live site as a user.
 - where were you lucky?
    - Lots of places
    - Initial Database Migrations
